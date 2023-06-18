@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useTheme } from "../../providers/ThemeProvider";
-import css from "./header.module.scss";
+import { useTheme } from "app/providers/ThemeProvider";
+import css from "./Header.module.scss";
 
 const Header = () => {
   const { toggleTheme } = useTheme();

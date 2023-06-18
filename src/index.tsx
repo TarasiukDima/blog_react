@@ -1,13 +1,4 @@
 import { render } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "./providers/ThemeProvider";
-import App from "./components/App";
+import App from "./app";
 
-render(
-  <ThemeProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ThemeProvider>,
-  document.querySelector("#root")
-);
+render(<App />, document.querySelector("#root"));

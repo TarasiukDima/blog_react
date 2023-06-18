@@ -1,0 +1,13 @@
+@import "shared/styles/mixins";
+
+@include font-face("Roboto", "../fonts/RobotoRegular");
+@include font-face("Roboto", "../fonts/RobotoMedium", 600);
+@include font-face("Roboto", "../fonts/RobotoBold", bold);
+
+:root {
+  --font-family-main: "Roboto", Serif;
+
+  --font-size: 16px;
+  --font-line: 24px;
+  --font: var(--font-size) / var(--font-line) var(--font-family-main);
+}
