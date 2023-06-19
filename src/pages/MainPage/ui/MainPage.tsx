@@ -1,7 +1,7 @@
-import React from "react";
+import Section from "shared/ui/Section";
 
 const MainPage = () => {
-  return <div>MainPage</div>;
+  return <Section>MainPage PAGE</Section>;
 };
 
 export default MainPage;

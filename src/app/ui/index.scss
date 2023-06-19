@@ -1,12 +1,55 @@
-@import "../styles/reset";
+@import "../styles/normalize";
 @import "../styles/themes/normal";
 @import "../styles/themes/dark";
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
 .app {
-  font: var(--font);
-
-  background: var(--bg-color);
-  color: var(--primary-color);
-
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+  font: var(--font);
+  color: var(--primary-color);
+  background: var(--bg-color);
+}
+
+.main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }

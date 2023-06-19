@@ -1,15 +1,24 @@
-import { Link } from "react-router-dom";
+import { FC } from "react";
 import { useTheme } from "app/providers/ThemeProvider";
+import HeaderNavigation, { INavigationProps } from "./HeaderNavigation";
+import ThemeSwitcher from "shared/ui/ThemeSwitcher";
+import Wrapper from "shared/ui/Wrapper";
+import { classNames } from "shared/lib/classNames";
+import { Theme } from "shared/types/common";
 import css from "./Header.module.scss";
 
-const Header = () => {
-  const { toggleTheme } = useTheme();
+const Header: FC<INavigationProps> = ({ navigationApp }) => {
+  const { theme } = useTheme();
 
   return (
-    <header className={css.header}>
-      <button onClick={toggleTheme}>TOGGLE</button>
-      <Link to={"/"}>Главная</Link>
-      <Link to={"/about"}>О сайте</Link>
+    <header
+      className={classNames(css.header, { [css.dark]: theme === Theme.DARK })}
+    >
+      <Wrapper className={css.wrapper}>
+        <HeaderNavigation navigationApp={navigationApp} />
+
+        <ThemeSwitcher />
+      </Wrapper>
     </header>
   );
 };

@@ -1,0 +1,24 @@
+@import "shared/styles/variables";
+@import "shared/styles/mixins";
+
+.Wrapper {
+  width: calc(100% - 20px);
+  max-width: $max-width-content;
+  margin: 0 auto;
+}
+
+/* > 576px */
+@include small-tablet() {
+  .Wrapper {
+    width: calc(100% - 40px);
+  }
+}
+/* > 576px */
+
+/* > 1101px */
+@include desktop() {
+  .Wrapper {
+    width: calc(100% - 80px);
+  }
+}
+/* > 1101px */

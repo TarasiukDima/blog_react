@@ -1,13 +1,12 @@
-import { BrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "../providers/ThemeProvider";
-import AppContent from "./AppContent";
+import { appRouter } from "./AppRouter";
+import "./index.scss";
 
 const App = () => {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <AppContent />
-      </BrowserRouter>
+      <RouterProvider router={appRouter()} />
     </ThemeProvider>
   );
 };

@@ -1,0 +1,9 @@
+@import "shared/styles/mixins";
+
+main {
+  flex-grow: 1;
+
+  .wrapper {
+    @include dflex(space-between, center, row, wrap);
+  }
+}

@@ -1,6 +1,10 @@
-.app.dark {
-    --bg-color: #27282d;
+@import "shared/styles/variables";
 
-    --primary-color: #fbefdf;
-    --secondary-color: #8d6852;
+.app.dark {
+    --bg-color: #{$darkBlue};
+
+    --primary-color: #{$whiteColor};
+    --secondary-color: #{$brown};
+
+    --invert-bg: #{$light};
 }

@@ -1,3 +1,46 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
 .header {
-  font-size: 16px;
+  padding: 10px 0;
+  box-shadow: 0 1px 0 transparentize($black, 0.8);
+
+  .wrapper {
+    @include dflex(space-between, center, row, wrap);
+  }
+
+  .header__nav {
+  }
+
+  .header__nav_list {
+    @include dflex(space-between, center, row, wrap);
+  }
+
+  a {
+    color: var(--primary-color);
+  }
 }
+
+.dark {
+  box-shadow: 0 1px 0 transparentize($light, 0.8);
+}
+
+/* > 576px */
+@include small-tablet() {
+}
+/* > 576px */
+
+/* > 768px */
+@include tablet() {
+}
+/* > 768px */
+
+/* > 992px */
+@include small-desktop() {
+}
+/* > 992px */
+
+/* > 1101px */
+@include desktop() {
+}
+/* > 1101px */

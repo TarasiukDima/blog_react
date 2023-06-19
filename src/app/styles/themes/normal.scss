@@ -1,6 +1,10 @@
-:root {
-    --bg-color: #F6F2F6;
+@import "shared/styles/variables.scss";
 
-    --primary-color: #1C252C;
-    --secondary-color: #8d6852;
+:root {
+  --bg-color: #{$light};
+
+  --primary-color: #{$black};
+  --secondary-color: #{$brown};
+
+  --invert-bg: #{$darkBlue};
 }
