@@ -18,8 +18,7 @@ const Sidebar: FC<ISidebarProps> = ({ className }) => {
         className,
       ])}
     >
-      <button onClick={toggleSidebar}></button>
-      Component
+      <button onClick={toggleSidebar}>Component</button>
     </div>
   );
 };

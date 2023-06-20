@@ -1,11 +1,10 @@
 import { FC } from "react";
-import css from "./Header.module.scss";
 import { TRouteObject } from "shared/types/common";
 import AppLink from "shared/ui/AppLink/ui/AppLink";
+import css from "./Header.module.scss";
 
 export interface INavigationProps {
   navigationApp: Array<TRouteObject>;
-  className?: string;
 }
 
 const HeaderNavigation: FC<INavigationProps> = ({ navigationApp }) => {

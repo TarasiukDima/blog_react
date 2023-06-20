@@ -7,8 +7,8 @@ interface IWrapperProps {
   children: ReactNode;
 }
 
-const Wrapper: FC<IWrapperProps> = ({ className, children }) => {
-  return <div className={classNames(css.Wrapper, {}, [className])}>{children}</div>;
-};
+const Wrapper: FC<IWrapperProps> = ({ className, children }) => (
+  <div className={classNames(css.Wrapper, {}, [className])}>{children}</div>
+);
 
 export default Wrapper;

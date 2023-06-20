@@ -24,7 +24,7 @@ const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className = "" }) => {
       onClick={toggleTheme}
       aria-label="Switcher theme button."
       title="Switcher theme button."
-    ></Button>
+    />
   );
 };
 

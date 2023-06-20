@@ -6,12 +6,10 @@ interface ISectionProps {
   className?: string;
 }
 
-const Section: FC<ISectionProps> = ({ className, children }) => {
-  return (
-    <section className={classNames(css.Section, {}, [className])}>
-      {children}
-    </section>
-  );
-};
+const Section: FC<ISectionProps> = ({ className, children }) => (
+  <section className={classNames(css.Section, {}, [className])}>
+    {children}
+  </section>
+);
 
 export default Section;

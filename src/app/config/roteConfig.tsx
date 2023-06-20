@@ -27,7 +27,6 @@ export const routesApp: Array<TRouteObject> = [
   },
 ];
 
-
 export const navigationApp: Array<TRouteObject> = [
   {
     id: "1",

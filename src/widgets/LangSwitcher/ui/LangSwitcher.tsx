@@ -1,10 +1,9 @@
 import { FC } from "react";
 import { classNames } from "shared/lib/classNames";
-import { useTheme } from "app/providers/ThemeProvider";
 import { Theme } from "shared/types/common";
 import Button from "shared/ui/Button";
-import css from "./LangSwitcher.module.scss";
 import { useTranslation } from "react-i18next";
+import css from "./LangSwitcher.module.scss";
 
 interface ILangSwitcherProps {
   className?: string;
@@ -27,10 +26,14 @@ const LangSwitcher: FC<ILangSwitcherProps> = ({ className = "", theme }) => {
       {(i18n.options.fallbackLng as Array<string>).map((language) => (
         <li key={language}>
           <Button
-            className={classNames(css.LangSwitcher_button, {
-              [css.active]: i18n.language === language,
-              [css.dark]: theme === Theme.DARK,
-            }, [className])}
+            className={classNames(
+              css.LangSwitcher_button,
+              {
+                [css.active]: i18n.language === language,
+                [css.dark]: theme === Theme.DARK,
+              },
+              [className]
+            )}
             onClick={() => changeLanguage(language)}
           >
             {language}
