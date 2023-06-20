@@ -6,6 +6,7 @@ import Wrapper from "shared/ui/Wrapper";
 import { classNames } from "shared/lib/classNames";
 import { Theme } from "shared/types/common";
 import css from "./Header.module.scss";
+import LangSwitcher from "widgets/LangSwitcher/ui/LangSwitcher";
 
 const Header: FC<INavigationProps> = ({ navigationApp }) => {
   const { theme } = useTheme();
@@ -17,6 +18,7 @@ const Header: FC<INavigationProps> = ({ navigationApp }) => {
       <Wrapper className={css.wrapper}>
         <HeaderNavigation navigationApp={navigationApp} />
 
+        <LangSwitcher theme={theme} />
         <ThemeSwitcher />
       </Wrapper>
     </header>

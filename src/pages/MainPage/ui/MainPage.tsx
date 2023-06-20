@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import Section from "shared/ui/Section";
 
 const MainPage = () => {
-  return <Section>MainPage PAGE</Section>;
+  const { t } = useTranslation('main');
+
+  return <Section>{t('title')}</Section>;
 };
 
 export default MainPage;

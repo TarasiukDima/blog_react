@@ -1,0 +1,35 @@
+@import "shared/styles/variables";
+@import "shared/styles/mixins";
+
+.LangSwitcher {
+  @include dflex(center, center, row);
+
+  li {
+    margin: 3px;
+  }
+}
+
+.LangSwitcher_button {
+  display: block;
+  padding: 4px 8px;
+  font-weight: bold;
+  border: 1px solid $darkBlue;
+  border-radius: 5px;
+  color: $darkBlue;
+  background-color: $light;
+
+  &:not(.active):hover {
+    color: $light;
+    background-color: $green;
+  }
+}
+
+.dark {
+  border-color: $light;
+  background-color: $light;
+}
+
+.active {
+  color: $light;
+  background-color: $brown;
+}
