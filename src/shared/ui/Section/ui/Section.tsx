@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { classNames } from "shared/lib/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 import css from "./Section.module.scss";
 
 interface ISectionProps {
@@ -12,4 +12,4 @@ const Section: FC<ISectionProps> = ({ className, children }) => (
   </section>
 );
 
-export default Section;
+export { Section };

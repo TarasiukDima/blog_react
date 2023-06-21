@@ -1,7 +1,28 @@
 {
   "extends": "stylelint-config-standard-scss",
   "rules": {
-    "indentation": [2],
-    "selector-class-pattern": null
+    "block-no-empty": [true, {"ignore": ["comments"]}],
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "no-invalid-double-slash-comments": null,
+    "scss/percent-placeholder-pattern": null,
+    "scss/dollar-variable-pattern": null,
+    "scss/no-global-function-names": null,
+    "color-function-notation": ["legacy", { "ignore": ["with-var-inside"] }],
+    "alpha-value-notation": "number",
+    "selector-pseudo-element-colon-notation": "single",
+    "scss/at-mixin-argumentless-call-parentheses": "never",
+    "selector-no-vendor-prefix": true,
+    "selector-pseudo-class-no-unknown": true,
+    "value-list-comma-newline-after": "always-multi-line",
+    "function-url-quotes": "always",
+    "scss/double-slash-comment-empty-line-before": "never",
+    "comment-empty-line-before": [
+      "never",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment", "stylelint-commands"]
+      }
+    ]
   }
 }

@@ -1,1 +1,1 @@
-export { default } from "./ui/ThemeSwitcher";
+export { ThemeSwitcher } from "./ui/ThemeSwitcher";

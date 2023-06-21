@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useTheme } from "app/providers/ThemeProvider";
-import ThemeSwitcher from "shared/ui/ThemeSwitcher";
-import Wrapper from "shared/ui/Wrapper";
-import { classNames } from "shared/lib/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
+import { Wrapper } from "shared/ui/Wrapper";
+import { LangSwitcher } from "widgets/LangSwitcher";
+import { HeaderNavigation, INavigationProps } from "./HeaderNavigation";
 import { Theme } from "shared/types/common";
-import LangSwitcher from "widgets/LangSwitcher/ui/LangSwitcher";
 import css from "./Header.module.scss";
-import HeaderNavigation, { INavigationProps } from "./HeaderNavigation";
 
 const Header: FC<INavigationProps> = ({ navigationApp }) => {
   const { theme } = useTheme();
@@ -25,4 +25,4 @@ const Header: FC<INavigationProps> = ({ navigationApp }) => {
   );
 };
 
-export default Header;
+export { Header };

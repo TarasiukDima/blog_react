@@ -1,15 +1,15 @@
 type TClassesOptionsObject = Record<string, boolean | string>;
 
 export function classNames(
-  cls: string,
+  className: string,
   classesOptionsObject: TClassesOptionsObject = {},
   additional: string[] = []
 ): string {
   return [
-    cls,
+    className,
     ...additional.filter(Boolean),
     ...Object.entries(classesOptionsObject)
       .filter(([_, value]) => Boolean(value))
-      .map(([className]) => className),
+      .map(([classNameItem]) => classNameItem),
   ].join(" ");
 }

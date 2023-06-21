@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { classNames } from "shared/lib/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 import css from "./Wrapper.module.scss";
 
 interface IWrapperProps {
@@ -11,4 +11,4 @@ const Wrapper: FC<IWrapperProps> = ({ className, children }) => (
   <div className={classNames(css.Wrapper, {}, [className])}>{children}</div>
 );
 
-export default Wrapper;
+export { Wrapper };

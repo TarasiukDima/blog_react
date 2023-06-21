@@ -1,1 +1,1 @@
-export { default } from "./ui/Wrapper";
+export { Wrapper } from "./ui/Wrapper";

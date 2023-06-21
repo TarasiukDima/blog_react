@@ -1,13 +1,14 @@
 import { FC, Suspense } from "react";
 import { useOutlet } from "react-router-dom";
-import Header from "widgets/Header";
-import Footer from "widgets/Footer/";
-import Sidebar from "widgets/Sidebar/";
-import { classNames } from "shared/lib/classNames";
+import { Header } from "widgets/Header";
+import { Footer } from "widgets/Footer/";
+import { Sidebar } from "widgets/Sidebar/";
+import { classNames } from "shared/lib/classNames/classNames";
 import { navigationApp } from "app/config/roteConfig";
-import Wrapper from "shared/ui/Wrapper/ui/Wrapper";
-import css from "./Layout.module.scss";
-import { useTheme } from "../providers/ThemeProvider";
+import { Wrapper } from "shared/ui/Wrapper/ui/Wrapper";
+import { Spinner } from "shared/ui/Spinner";
+import { useTheme } from "../../../providers/ThemeProvider";
+import css from "./AppLayout.module.scss";
 
 const AppLayout: FC = () => {
   const { theme } = useTheme();
@@ -19,7 +20,7 @@ const AppLayout: FC = () => {
       <main className={css.main}>
         <Wrapper className={css.wrapper}>
           <Sidebar />
-          <Suspense fallback={<div>Loading...</div>}>{currentOutlet}</Suspense>
+          <Suspense fallback={<Spinner />}>{currentOutlet}</Suspense>
         </Wrapper>
       </main>
       <Footer />
@@ -27,4 +28,4 @@ const AppLayout: FC = () => {
   );
 };
 
-export default AppLayout;
+export { AppLayout };

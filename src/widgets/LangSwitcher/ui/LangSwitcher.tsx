@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { classNames } from "shared/lib/classNames";
-import { Theme } from "shared/types/common";
-import Button from "shared/ui/Button";
 import { useTranslation } from "react-i18next";
+import { classNames } from "shared/lib/classNames/classNames";
+import { Button } from "shared/ui/Button";
+import { Theme } from "shared/types/common";
 import css from "./LangSwitcher.module.scss";
 
 interface ILangSwitcherProps {
@@ -44,4 +44,4 @@ const LangSwitcher: FC<ILangSwitcherProps> = ({ className = "", theme }) => {
   );
 };
 
-export default LangSwitcher;
+export { LangSwitcher };

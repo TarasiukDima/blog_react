@@ -1,10 +1,8 @@
-@import "shared/styles/variables.scss";
+@import "shared/styles/variables";
 
 :root {
   --bg-color: #{$light};
-
   --primary-color: #{$black};
   --secondary-color: #{$brown};
-
   --invert-bg: #{$darkBlue};
 }

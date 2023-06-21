@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { classNames } from "shared/lib/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
 import { Theme } from "shared/types/common";
-import Button from "shared/ui/Button";
+import { Button } from "shared/ui/Button";
 import css from "./ThemeSwitcher.module.scss";
 
 interface IThemeSwitcherProps {
@@ -28,4 +28,4 @@ const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className = "" }) => {
   );
 };
 
-export default ThemeSwitcher;
+export { ThemeSwitcher };

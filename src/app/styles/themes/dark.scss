@@ -1,10 +1,8 @@
 @import "shared/styles/variables";
 
 .app.dark {
-    --bg-color: #{$darkBlue};
-
-    --primary-color: #{$whiteColor};
-    --secondary-color: #{$brown};
-
-    --invert-bg: #{$light};
+  --bg-color: #{$darkBlue};
+  --primary-color: #{$whiteColor};
+  --secondary-color: #{$brown};
+  --invert-bg: #{$light};
 }

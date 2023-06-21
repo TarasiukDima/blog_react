@@ -1,1 +1,6 @@
-{}
+{
+  "header": {
+    "home": "Home",
+    "about": "About"
+  }
+}

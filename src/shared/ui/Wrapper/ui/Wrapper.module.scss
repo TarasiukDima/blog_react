@@ -6,9 +6,8 @@
   max-width: $max-width-content;
   margin: 0 auto;
 }
-
 /* > 576px */
-@include small-tablet() {
+@include small-tablet {
   .Wrapper {
     width: calc(100% - 40px);
   }
@@ -16,7 +15,7 @@
 /* > 576px */
 
 /* > 1101px */
-@include desktop() {
+@include desktop {
   .Wrapper {
     width: calc(100% - 80px);
   }

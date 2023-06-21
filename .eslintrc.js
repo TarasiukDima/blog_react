@@ -32,6 +32,7 @@ module.exports = {
       { extensions: [".js", ".jsx", ".tsx"] },
     ],
     "comma-dangle": "off",
+    "react/destructuring-assignment": ["always", { "ignoreClassFields": true, "destructureInSignature": "ignore" }],
     "operator-linebreak": [1, "after"],
     "no-restricted-exports": "off",
     "react/button-has-type": "off",

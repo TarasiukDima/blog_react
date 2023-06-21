@@ -7,23 +7,22 @@
 
 .collapsed {
 }
-
 /* > 576px */
-@include small-tablet() {
+@include small-tablet {
 }
 /* > 576px */
 
 /* > 768px */
-@include tablet() {
+@include tablet {
 }
 /* > 768px */
 
 /* > 992px */
-@include small-desktop() {
+@include small-desktop {
 }
 /* > 992px */
 
 /* > 1101px */
-@include desktop() {
+@include desktop {
 }
 /* > 1101px */
