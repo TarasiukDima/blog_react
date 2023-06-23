@@ -1,4 +1,4 @@
-import { Theme } from "shared/types/common";
+import { Theme } from "shared/types";
 import { useContext } from "react";
 import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from "./ThemeContext";
 

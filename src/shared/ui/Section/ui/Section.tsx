@@ -1,9 +1,10 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import css from "./Section.module.scss";
 
 interface ISectionProps {
   className?: string;
+  children: ReactNode;
 }
 
 const Section: FC<ISectionProps> = ({ className, children }) => (

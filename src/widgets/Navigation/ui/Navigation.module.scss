@@ -1,17 +1,18 @@
 @import "shared/styles/mixins";
 @import "shared/styles/variables";
 
-.header {
-  padding: 10px 0;
-  box-shadow: 0 1px 0 transparentize($black, 0.8);
+.Navigation {
+}
 
-  .wrapper {
-    @include dflex(space-between, center, row, wrap);
+.Navigation_list {
+  @include dflex(space-between, center, row, wrap);
+
+  a {
+    color: var(--primary-color);
   }
 }
 
 .dark {
-  box-shadow: 0 1px 0 transparentize($light, 0.8);
 }
 /* > 576px */
 @include small-tablet {

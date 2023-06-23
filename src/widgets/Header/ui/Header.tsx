@@ -4,9 +4,9 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import { Wrapper } from "shared/ui/Wrapper";
 import { LangSwitcher } from "widgets/LangSwitcher";
-import { HeaderNavigation, INavigationProps } from "./HeaderNavigation";
-import { Theme } from "shared/types/common";
+import { Theme } from "shared/types";
 import css from "./Header.module.scss";
+import { INavigationProps, Navigation } from "widgets/Navigation";
 
 const Header: FC<INavigationProps> = ({ navigationApp }) => {
   const { theme } = useTheme();
@@ -16,7 +16,7 @@ const Header: FC<INavigationProps> = ({ navigationApp }) => {
       className={classNames(css.header, { [css.dark]: theme === Theme.DARK })}
     >
       <Wrapper className={css.wrapper}>
-        <HeaderNavigation navigationApp={navigationApp} />
+        <Navigation navigationApp={navigationApp} />
 
         <LangSwitcher theme={theme} />
         <ThemeSwitcher />

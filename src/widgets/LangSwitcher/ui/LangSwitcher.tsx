@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button } from "shared/ui/Button";
-import { Theme } from "shared/types/common";
+import { Theme } from "shared/types";
 import css from "./LangSwitcher.module.scss";
 
 interface ILangSwitcherProps {

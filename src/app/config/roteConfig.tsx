@@ -3,7 +3,7 @@ import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
 import { ErrorPage } from "pages/ErrorPage";
 import { NotFoundPage } from "pages/NotFoundPage/";
-import { TRouteObject } from "shared/types/common";
+import { TRouteObject } from "shared/types";
 
 export enum AppRoutes {
   MAIN = "main",
@@ -46,11 +46,11 @@ export const navigationApp: Array<TRouteObject> = [
   {
     id: "1",
     path: routesPath.main,
-    routeTextKey: "home",
+    routeTextKey: "header.home",
   },
   {
     id: "2",
     path: routesPath.about,
-    routeTextKey: "about",
+    routeTextKey: "header.about",
   },
 ];

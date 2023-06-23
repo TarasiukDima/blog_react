@@ -1,11 +1,12 @@
 import { Suspense } from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { App } from "./app";
 import "./shared/config/i18n/i18n";
 
-render(
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(
   <Suspense fallback={null}>
     <App />
-  </Suspense>,
-  document.querySelector("#root")
+  </Suspense>
 );
