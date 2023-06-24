@@ -4,6 +4,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import { Wrapper } from "shared/ui/Wrapper";
 import { LangSwitcher } from "widgets/LangSwitcher";
+import { LogIn } from "widgets/LogIn";
 import { Theme } from "shared/types";
 import { INavigationProps, Navigation } from "widgets/Navigation";
 import css from "./Header.module.scss";
@@ -20,6 +21,7 @@ const Header: FC<INavigationProps> = ({ navigationApp }) => {
 
         <LangSwitcher />
         <ThemeSwitcher />
+        <LogIn />
       </Wrapper>
     </header>
   );

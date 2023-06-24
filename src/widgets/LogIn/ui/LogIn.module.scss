@@ -1,0 +1,23 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+
+/* > 576px */
+@include small-tablet {
+}
+/* > 576px */
+
+/* > 768px */
+@include tablet {
+}
+/* > 768px */
+
+/* > 992px */
+@include small-desktop {
+}
+/* > 992px */
+
+/* > 1101px */
+@include desktop {
+}
+/* > 1101px */

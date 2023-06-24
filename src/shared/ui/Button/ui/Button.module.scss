@@ -46,6 +46,18 @@
   position: relative;
   padding: 0;
 
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--invert-cl);
+    transition: $transition;
+  }
+
+  &:hover svg {
+    fill: var(--primary-color);
+  }
+
   &.size_s {
     width: 20px;
     height: 20px;
