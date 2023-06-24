@@ -1,5 +1,5 @@
-import { screen } from "@testing-library/react";
-import { renderWithTranslation } from "shared/lib/tests/renderWithTranslations/renderWithTranslation";
+import { fireEvent, screen, waitFor } from "@testing-library/react";
+import { renderComponent } from "shared/lib/tests/renderComponent";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 describe("ThemeSwitcher", () => {
@@ -10,19 +10,19 @@ describe("ThemeSwitcher", () => {
   const enTitleText = "Switcher theme button.";
 
   test("ThemeSwitcher exist", () => {
-    renderWithTranslation(<ThemeSwitcher className={classNameMock} />);
+    renderComponent(<ThemeSwitcher className={classNameMock} />);
 
     expect(screen.getByRole("button")).toBeInTheDocument();
   });
 
   test("with class", () => {
-    renderWithTranslation(<ThemeSwitcher className={classNameMock} />);
+    renderComponent(<ThemeSwitcher className={classNameMock} />);
 
     expect(screen.getByRole("button")).toHaveClass(classNameMock);
   });
 
   // test("with attributes", () => {
-  //   renderWithTranslation(<ThemeSwitcher className={classNameMock} />);
+  //   renderComponent(<ThemeSwitcher className={classNameMock} />);
 
   //   const themeSwitcher = screen.getByRole("button");
 
@@ -30,15 +30,18 @@ describe("ThemeSwitcher", () => {
   // });
 
   // test("change language", async () => {
-  //   renderWithTranslation(<ThemeSwitcher className={classNameMock} />);
+  //   renderComponent(<ThemeSwitcher className={classNameMock} />);
 
   //   const themeSwitcher = screen.getByRole("button");
   //   screen.debug();
 
   //   fireEvent.click(themeSwitcher);
-  //   await waitFor(() => expect(themeSwitcher).toHaveClass(classNameDark))
+  //   screen.debug();
+  //   expect(themeSwitcher).toHaveClass(classNameDark);
 
   //   fireEvent.click(themeSwitcher);
-  //   await waitFor(() => expect(themeSwitcher).not.toHaveClass(classNameDark))
+  //   expect(themeSwitcher).not.toHaveClass(classNameDark);
+  //   expect(themeSwitcher).toHaveAttribute("aria-label", enTitleText);
+  //   // await waitFor(() => expect(themeSwitcher).not.toHaveClass(classNameDark))
   // });
 });
