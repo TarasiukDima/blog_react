@@ -25,12 +25,10 @@ jobs:
 
       - name: build production project
         run: npm run build:prod
-
         if: always()
 
       - name: linting typescript
         run: npm run lint:ts
-
         if: always()
 
       - name: linting css
@@ -38,13 +36,12 @@ jobs:
 
       - name: unit testing
         run: npm run test:unit
-
         if: always()
 
       - name: build storybook
         run: npm run storybook:build
-
         if: always()
 
-      # - name: screenshot testing
-      #   run: npm i -D concurrently deelay --legacy-peer-deps && npm run test:ui:ci
+      - name: screenshot testing
+        run: npm run test:ui:ci
+        if: always()
