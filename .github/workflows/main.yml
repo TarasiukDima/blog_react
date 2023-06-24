@@ -47,6 +47,8 @@ jobs:
         if: always()
 
       - name: screenshot testing
+        run: npm i -D concurrently
+        run: npm i -D deelay
         run: npm run test:ui:ci
 
         if: always()
