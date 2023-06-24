@@ -1,6 +1,6 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import { screen } from "@testing-library/react";
 import { renderWithTranslation } from "shared/lib/tests/renderWithTranslations/renderWithTranslation";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 describe("ThemeSwitcher", () => {
   const classNameMock = "class";

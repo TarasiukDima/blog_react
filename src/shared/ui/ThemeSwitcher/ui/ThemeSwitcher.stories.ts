@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "shared/types";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import css from "./ThemeSwitcher.module.scss";
 
 const meta: Meta<typeof ThemeSwitcher> = {
@@ -16,8 +16,6 @@ type Story = StoryObj<typeof ThemeSwitcher>;
 export const LightTheme: Story = {};
 
 export const DarkThemeActiveSwitcher: Story = {
-  args: {
-    className: css.dark,
-  },
+  args: { className: css.dark, },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

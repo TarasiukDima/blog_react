@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Title } from "./Title";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "shared/types";
+import { Title } from "./Title";
 
 const meta: Meta<typeof Title> = {
   title: "shared/Title",
@@ -32,4 +32,3 @@ export const TitleDarkTheme: Story = {
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
-

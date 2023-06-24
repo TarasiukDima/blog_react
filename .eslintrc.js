@@ -4,7 +4,11 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended", "plugin:storybook/recommended"],
+  extends: [
+    "plugin:react/recommended",
+    "airbnb", "plugin:i18next/recommended",
+    "plugin:storybook/recommended"
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -23,10 +27,11 @@ module.exports = {
       extensions: [".js", ".jsx", ".tsx"]
     }],
     "comma-dangle": "off",
-    "react/destructuring-assignment": ["always", {
-      "ignoreClassFields": true,
-      "destructureInSignature": "ignore"
-    }],
+    "react/destructuring-assignment": [
+      1,
+      "always",
+      { ignoreClassFields: true, destructureInSignature: "ignore" }
+    ],
     "operator-linebreak": [1, "after"],
     "no-restricted-exports": "off",
     "react/button-has-type": "off",
@@ -43,19 +48,21 @@ module.exports = {
     "no-underscore-dangle": "off",
     "i18next/no-literal-string": [1, {
       markupOnly: true,
-      ignoreAttribute: ['to']
+      ignoreAttribute: ["to"]
     }],
-    "max-len": ["error", {
-      ignoreComments: true
-    }]
+    "object-curly-newline": [
+      1,
+      { multiline: true, minProperties: 3 }
+    ],
+    "max-len": ["error", { ignoreComments: true, code: 120 }]
   },
   globals: {
     __IS_DEV__: true
   },
   overrides: [{
-    files: ['**/src/**/*.test.{ts,tsx}'],
+    files: ["**/src/**/*.test.{ts,tsx}"],
     rules: {
-      'i18next/no-literal-string': 'off'
+      "i18next/no-literal-string": "off"
     }
   }]
 };

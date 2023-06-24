@@ -1,8 +1,8 @@
 import path from "path";
 import webpack, { RuleSetRule } from "webpack";
+import type { StorybookConfig } from "@storybook/react-webpack5";
 import { BuildPaths } from "../build/types/config";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
-import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
   stories: ["../../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -17,9 +17,7 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ["../../public"],
-  docs: {
-    autodocs: "tag",
-  },
+  docs: { autodocs: "tag" },
   webpackFinal: async (config: webpack.Configuration) => {
     const paths: BuildPaths = {
       build: "",
@@ -35,8 +33,13 @@ const config: StorybookConfig = {
     if (config?.resolve?.extensions) {
       config.resolve.extensions.push(".ts", ".tsx");
     }
+
     if (config?.resolve?.fallback) {
-      config.resolve.fallback["fs"] = false;
+      // eslint-disable-next-line no-param-reassign
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
     }
 
     if (config?.module?.rules) {

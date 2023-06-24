@@ -4,7 +4,9 @@ import css from "./Button.module.scss";
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-const Button: FC<IButtonProps> = ({ className, children, ...others }) => (
+const Button: FC<IButtonProps> = ({
+  className, children, ...others
+}) => (
   <button className={classNames(css.Button, {}, [className])} {...others}>
     {children}
   </button>

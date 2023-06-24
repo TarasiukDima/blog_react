@@ -5,8 +5,8 @@ import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import { Wrapper } from "shared/ui/Wrapper";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { Theme } from "shared/types";
-import css from "./Header.module.scss";
 import { INavigationProps, Navigation } from "widgets/Navigation";
+import css from "./Header.module.scss";
 
 const Header: FC<INavigationProps> = ({ navigationApp }) => {
   const { theme } = useTheme();

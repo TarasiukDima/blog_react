@@ -16,7 +16,9 @@ const Navigation: FC<INavigationProps> = ({ navigationApp }) => {
   return (
     <nav className={css.Navigation}>
       <ul className={css.Navigation__list}>
-        {navigationApp.map(({ path, id, routeTextKey }) => (
+        {navigationApp.map(({
+          path, id, routeTextKey
+        }) => (
           <li key={id}>
             <AppLink to={path}>{t(routeTextKey)}</AppLink>
           </li>

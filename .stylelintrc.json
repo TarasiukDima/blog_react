@@ -1,7 +1,7 @@
 {
   "extends": "stylelint-config-standard-scss",
   "rules": {
-    "block-no-empty": [true, {"ignore": ["comments"]}],
+    "block-no-empty": null,
     "selector-class-pattern": null,
     "no-descending-specificity": null,
     "no-invalid-double-slash-comments": null,
