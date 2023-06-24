@@ -18,7 +18,7 @@ const Header: FC<INavigationProps> = ({ navigationApp }) => {
       <Wrapper className={css.wrapper}>
         <Navigation navigationApp={navigationApp} />
 
-        <LangSwitcher theme={theme} />
+        <LangSwitcher />
         <ThemeSwitcher />
       </Wrapper>
     </header>
