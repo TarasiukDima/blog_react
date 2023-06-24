@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "app/providers/ThemeProvider";
 import { Theme } from "shared/types";
 import { Button } from "shared/ui/Button";
+import { VariantButton } from "shared/ui/Button/ui/Button";
 import css from "./ThemeSwitcher.module.scss";
 
 interface IThemeSwitcherProps {
@@ -19,9 +20,10 @@ const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className = "" }) => {
     <Button
       className={classNames(
         css.ThemeSwitcher,
-        { [css.dark]: theme === Theme.DARK, },
+        { [css.dark]: theme === Theme.DARK },
         [className]
       )}
+      variant={VariantButton.CLEAR}
       onClick={toggleTheme}
       aria-label={buttonTitleText}
       title={buttonTitleText}

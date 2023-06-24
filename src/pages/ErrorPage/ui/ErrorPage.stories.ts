@@ -1,23 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
-import { ErrorPage } from "./ErrorPage";
+import { ErrorPage as ErrorPageComponent } from "./ErrorPage";
 
-const meta: Meta<typeof ErrorPage> = {
+const meta: Meta<typeof ErrorPageComponent> = {
   title: "pages/ErrorPage",
-  component: ErrorPage,
+  component: ErrorPageComponent,
   tags: ["pages"],
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
 };
 
 export default meta;
-type Story = StoryObj<typeof ErrorPage>;
+type Story = StoryObj<typeof ErrorPageComponent>;
 
-export const ErrorPageLightTheme: Story = { args: {}, };
-
-export const ErrorPageDarkTheme: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
+export const ErrorPage: Story = { args: {} };

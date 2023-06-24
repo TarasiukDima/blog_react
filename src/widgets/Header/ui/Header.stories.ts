@@ -1,22 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
 import { navigationApp } from "app/config/roteConfig";
-import { Header } from "./Header";
+import { Header as HeaderComponent } from "./Header";
 
-const meta: Meta<typeof Header> = {
+const meta: Meta<typeof HeaderComponent> = {
   title: "widgets/Header",
-  component: Header,
+  component: HeaderComponent,
   tags: ["widgets"],
   args: { navigationApp },
 };
 
 export default meta;
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof HeaderComponent>;
 
-export const HeaderLightTheme: Story = { args: {}, };
-
-export const HeaderDarkTheme: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
+export const Header: Story = { args: {} };

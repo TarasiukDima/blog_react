@@ -6,10 +6,6 @@
 
 .Navigation_list {
   @include dflex(space-between, center, row, wrap);
-
-  a {
-    color: var(--primary-color);
-  }
 }
 
 .dark {

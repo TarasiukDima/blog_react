@@ -2,15 +2,14 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button } from "shared/ui/Button";
-import { Theme } from "shared/types";
+import { VariantButton } from "shared/ui/Button/ui/Button";
 import css from "./LangSwitcher.module.scss";
 
 interface ILangSwitcherProps {
   className?: string;
-  theme: Theme;
 }
 
-const LangSwitcher: FC<ILangSwitcherProps> = ({ className = "", theme }) => {
+const LangSwitcher: FC<ILangSwitcherProps> = ({ className = "" }) => {
   const { i18n } = useTranslation();
 
   if (!(i18n?.options?.fallbackLng as Array<string>)?.length) return null;
@@ -30,10 +29,10 @@ const LangSwitcher: FC<ILangSwitcherProps> = ({ className = "", theme }) => {
               css.LangSwitcher_button,
               {
                 [css.active]: i18n.language === language,
-                [css.dark]: theme === Theme.DARK,
               },
               [className]
             )}
+            variant={VariantButton.CLEAR}
             onClick={() => changeLanguage(language)}
           >
             {language}

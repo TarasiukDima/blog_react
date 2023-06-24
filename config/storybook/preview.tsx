@@ -1,7 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "../../src/shared/types";
 import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { LanguageDecorator } from "../../src/shared/config/storybook/LanguageDecorator/LanguageDecorator";
 
@@ -20,6 +19,8 @@ const preview: Preview = {
       name: "Locale",
       description: "Internationalization locale",
       toolbar: {
+        title: "Locale",
+        dynamicTitle: true,
         icon: "globe",
         items: [
           { value: "ru", title: "Русский" },
@@ -28,11 +29,26 @@ const preview: Preview = {
         showName: true,
       },
     },
+    theme: {
+      name: "Theme",
+      description: "Theme for the components",
+      defaultValue: "light",
+      toolbar: {
+        title: "Theme",
+        dynamicTitle: true,
+        icon: "circlehollow",
+        items: [
+          { value: "light", icon: "circlehollow", title: "Light" },
+          { value: "dark", icon: "circle", title: "Dark" },
+        ],
+        showName: true,
+      },
+    },
   },
   decorators: [
     LanguageDecorator,
     StyleDecorator,
-    ThemeDecorator(Theme.LIGHT),
+    ThemeDecorator,
     RouterDecorator,
   ],
 };

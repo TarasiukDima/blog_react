@@ -1,63 +1,68 @@
 @import "shared/styles/variables";
 @import "shared/styles/mixins";
 
-$blueSwitcher: #13b3ff;
-$blackSwitcher: #000;
-$size: 20px;
+.Button {
+  width: fit-content;
+  max-width: 100%;
+}
 
-.ThemeSwitcher {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 50px;
-  height: $size;
-  border-radius: $size;
-  box-shadow: 0 0 0 3px #353535,
-    0 0 0 2px #3e3e3e,
-    inset 0 0 5px $blackSwitcher,
-    0 5px 10px rgba(0, 0, 0, 0.5),
-    inset 0 0 15px rgba(0, 0, 0, 0.2);
-  background-color: $light;
+.rounded {
+  border-radius: 8px;
+}
 
-  &:before {
-    @include psevdo(0, -1);
+.standard,
+.rounded,
+.icon_button {
+  color: var(--invert-cl);
+  border: 1px solid var(--invert-bg);
+  background-color: var(--invert-bg);
+  transition: $transition;
 
-    left: 0;
-    width: 30px;
-    height: $size;
-    border-radius: $size;
-    box-shadow: 0 0 0 1px #232323;
-    background: linear-gradient(0deg, $blackSwitcher, #6b6b6b);
-    transition: $transition;
-  }
-
-  &:after {
-    @include psevdo(calc(50% - 3px), 1);
-
-    left: calc($size - 2px);
-    width: 6px;
-    height: 6px;
-    background: linear-gradient(0deg, #6b6b6b, $blackSwitcher);
-    border-radius: $size;
-    transition: $transition;
+  &:hover {
+    color: var(--primary-color);
+    background-color: var(--bg-color);
   }
 }
 
-.dark {
-  box-shadow: 0 0 1px $blueSwitcher,
-    0 0 0 3px #585858,
-    0 0 0 3px #3e3e3e,
-    inset 0 0 2px $blackSwitcher,
-    0 5px 2px rgba(0, 0, 0, 0.5),
-    inset 0 0 10px rgba(0, 0, 0, 0.2);
-
-  &:before {
-    left: $size;
+.rounded,
+.standard {
+  &.size_s {
+    padding: 5px 10px;
+    font-size: $fontSizeTextS;
   }
 
-  &:after {
-    left: 38px;
-    background: $blueSwitcher;
-    box-shadow: 0 0 5px $blueSwitcher, 0 0 15px $blueSwitcher;
+  &.size_m {
+    padding: 10px 20px;
+    font-size: $fontSizeTextM;
   }
+
+  &.size_l {
+    padding: 12px 40px;
+    font-size: $fontSizeTextL;
+  }
+}
+
+.icon_button {
+  position: relative;
+  padding: 0;
+
+  &.size_s {
+    width: 20px;
+    height: 20px;
+  }
+  &.size_m {
+    width: 30px;
+    height: 30px;
+  }
+  &.size_l {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.clear {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
 }

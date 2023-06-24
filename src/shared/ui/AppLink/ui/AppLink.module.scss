@@ -1,4 +1,54 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
 .AppLink {
   display: block;
-  padding: 5px;
+  width: fit-content;
+  max-width: 100%;
+  transition: $transition;
+}
+
+.text_link {
+  display: inline;
+  text-decoration: underline;
+  color: var(--secondary-color);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.button_link {
+  color: var(--invert-cl);
+  border: 1px solid var(--invert-bg);
+  background-color: var(--invert-bg);
+  transition: $transition;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+  }
+
+  &.size_s {
+    padding: 5px 10px;
+    font-size: $fontSizeTextS;
+  }
+
+  &.size_m {
+    padding: 6px 10px;
+    font-size: $fontSizeTextM;
+  }
+
+  &.size_l {
+    padding: 8px 15px;
+    font-size: $fontSizeTextL;
+  }
+}
+
+.clear {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
 }

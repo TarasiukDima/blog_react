@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
-import AboutPage from "./AboutPage";
+import AboutPageComponent from "./AboutPage";
 
-const meta: Meta<typeof AboutPage> = {
+const meta: Meta<typeof AboutPageComponent> = {
   title: "pages/AboutPage",
-  component: AboutPage,
+  component: AboutPageComponent,
   tags: ["pages"],
   // argTypes: {
   //   backgroundColor: { control: "color" },
@@ -13,11 +11,6 @@ const meta: Meta<typeof AboutPage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AboutPage>;
+type Story = StoryObj<typeof AboutPageComponent>;
 
-export const AboutPageLightTheme: Story = { args: {}, };
-
-export const AboutPageDarkTheme: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
+export const AboutPage: Story = { args: {} };

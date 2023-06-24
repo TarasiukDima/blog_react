@@ -1,34 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Title as TitleComponent } from "./Title";
 
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
-import { Title } from "./Title";
-
-const meta: Meta<typeof Title> = {
+const meta: Meta<typeof TitleComponent> = {
   title: "shared/Title",
-  component: Title,
+  component: TitleComponent,
   tags: ["shared"],
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
 };
 
 export default meta;
-type Story = StoryObj<typeof Title>;
+type Story = StoryObj<typeof TitleComponent>;
 
-export const TitleLightTheme: Story = {
+export const Title: Story = {
   args: {
     Tag: "h1",
     className: "",
-    children: "Text title with light background.",
+    children: "Text title.",
   },
-};
-
-export const TitleDarkTheme: Story = {
-  args: {
-    Tag: "h1",
-    className: "",
-    children: "Text title with dark background.",
-  },
-  decorators: [ThemeDecorator(Theme.DARK)],
 };

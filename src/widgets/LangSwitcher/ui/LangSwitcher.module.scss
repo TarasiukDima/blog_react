@@ -13,20 +13,15 @@
   display: block;
   padding: 4px 8px;
   font-weight: bold;
-  border: 1px solid $darkBlue;
+  border: 1px solid var(--invert-bg);
   border-radius: 5px;
   color: $darkBlue;
-  background-color: $light;
+  background-color: $whiteColor;
 
   &:not(.active):hover {
-    color: $light;
-    background-color: $green;
+    color: $whiteColor;
+    background-color: var(--green);
   }
-}
-
-.dark {
-  border-color: $light;
-  background-color: $light;
 }
 
 .active {

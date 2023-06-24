@@ -1,23 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
-import { Footer } from "./Footer";
+import { Footer as FooterComponent } from "./Footer";
 
-const meta: Meta<typeof Footer> = {
+const meta: Meta<typeof FooterComponent> = {
   title: "widgets/Footer",
-  component: Footer,
+  component: FooterComponent,
   tags: ["widgets"],
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
 };
 
 export default meta;
-type Story = StoryObj<typeof Footer>;
+type Story = StoryObj<typeof FooterComponent>;
 
-export const FooterLightTheme: Story = { args: {}, };
-
-export const FooterDarkTheme: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
+export const Footer: Story = { args: {} };

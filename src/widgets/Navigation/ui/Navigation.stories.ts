@@ -1,22 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
 import { navigationApp } from "app/config/roteConfig";
-import { Navigation } from "./Navigation";
+import { Navigation as NavigationComponent } from "./Navigation";
 
-const meta: Meta<typeof Navigation> = {
+const meta: Meta<typeof NavigationComponent> = {
   title: "widgets/Navigation",
-  component: Navigation,
+  component: NavigationComponent,
   tags: ["widgets"],
   args: { navigationApp },
 };
 
 export default meta;
-type Story = StoryObj<typeof Navigation>;
+type Story = StoryObj<typeof NavigationComponent>;
 
-export const NavigationLightTheme: Story = { args: {}, };
-
-export const NavigationDarkTheme: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
+export const Navigation: Story = { args: {} };

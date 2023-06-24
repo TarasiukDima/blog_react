@@ -1,23 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
-import { Sidebar } from "./Sidebar";
+import { Sidebar as SidebarComponent } from "./Sidebar";
 
-const meta: Meta<typeof Sidebar> = {
+const meta: Meta<typeof SidebarComponent> = {
   title: "widgets/Sidebar",
-  component: Sidebar,
+  component: SidebarComponent,
   tags: ["widgets"],
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
 };
 
 export default meta;
-type Story = StoryObj<typeof Sidebar>;
+type Story = StoryObj<typeof SidebarComponent>;
 
-export const SidebarLightTheme: Story = { args: {}, };
-
-export const SidebarDarkTheme: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
+export const Sidebar: Story = { args: {} };

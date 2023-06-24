@@ -1,31 +1,36 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
-import { AppLink } from "./AppLink";
+import { ButtonSize, Theme } from "shared/types";
+import { AppLink as AppLinkComponent, VariantLink } from "./AppLink";
 import css from "./AppLink.module.scss";
 
-const meta: Meta<typeof AppLink> = {
+const meta: Meta<typeof AppLinkComponent> = {
   title: "shared/AppLink",
-  component: AppLink,
+  component: AppLinkComponent,
   tags: ["shared"],
-  args: { to: "/" }
+  args: { to: "/" },
 };
 
 export default meta;
-type Story = StoryObj<typeof AppLink>;
+type Story = StoryObj<typeof AppLinkComponent>;
 
-export const LightTheme: Story = {
+export const AppLinkWithoutStyles: Story = {
   args: {
-    className: css.dark,
-    children: "Link 1"
+    children: "Link without styles",
+    variant: VariantLink.CLEAR
   },
 };
-
-export const DarkTheme: Story = {
+export const AppLinkText: Story = {
   args: {
-    className: "",
-    children: "Link 2"
+    children: "Link in text",
+    variant: VariantLink.TEXT_LINK
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+};
+export const AppLinkLikeButton: Story = {
+  args: {
+    children: "Link button",
+    variant: VariantLink.BUTTON_LINK,
+    size: ButtonSize.M
+  },
 };

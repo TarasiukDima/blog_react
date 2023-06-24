@@ -1,29 +1,41 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { ButtonSize } from "shared/types";
+import { Button as ButtonComponent, VariantButton } from "./Button";
 
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "shared/types";
-import { Button } from "./Button";
-
-const meta: Meta<typeof Button> = {
+const meta: Meta<typeof ButtonComponent> = {
   title: "shared/Button",
-  component: Button,
+  component: ButtonComponent,
   tags: ["shared"],
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof ButtonComponent>;
 
-export const LightTheme: Story = {
+export const ButtonWithoutStyles: Story = {
   args: {
-    className: "Button",
-    children: "Button1",
+    children: "Link without styles",
+    variant: VariantButton.CLEAR,
+    size: ButtonSize.M,
   },
 };
-
-export const DarkTheme: Story = {
+export const ButtonStandart: Story = {
   args: {
-    className: "Button2",
-    children: "Button2",
+    children: "Link in text",
+    variant: VariantButton.STANDARD,
+    size: ButtonSize.M,
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+};
+export const ButtonRounded: Story = {
+  args: {
+    children: "Link in text",
+    variant: VariantButton.ROUNDED,
+    size: ButtonSize.M,
+  },
+};
+export const ButtonForIcons: Story = {
+  args: {
+    children: "",
+    variant: VariantButton.ICON_BUTTON,
+    size: ButtonSize.M,
+  },
 };
