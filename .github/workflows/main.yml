@@ -47,6 +47,6 @@ jobs:
         if: always()
 
       - name: screenshot testing
-        run: npm i -D concurrently deelay && npm run test:ui:ci
+        run: npm i -D concurrently deelay --legacy-peer-deps && npm run test:ui:ci
 
         if: always()
