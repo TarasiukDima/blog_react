@@ -1,7 +1,6 @@
 import path from "path";
-import webpack, { RuleSetRule } from "webpack";
+import webpack, { DefinePlugin, RuleSetRule } from "webpack";
 import type { StorybookConfig } from "@storybook/react-webpack5";
-import { BuildPaths } from "../build/types/config";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
 
 const config: StorybookConfig = {
@@ -14,28 +13,22 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: "@storybook/react-webpack5",
+    // name: "@storybook/react-webpack5",
     options: {},
   },
   staticDirs: ["../../public"],
   docs: { autodocs: "tag" },
   webpackFinal: async (config: webpack.Configuration) => {
-    const paths: BuildPaths = {
-      build: "",
-      html: "",
-      entry: "",
-      src: path.resolve(__dirname, "..", "..", "src"),
-    };
+    if (config?.resolve) {
+      // to check the src folder first
+      config.resolve.modules = [
+        path.resolve(__dirname, "..", "..", "src"),
+        "node_modules",
+      ];
 
-    if (config?.resolve?.modules) {
-      config.resolve.modules.push(paths.src);
-    }
-
-    if (config?.resolve?.extensions) {
-      config.resolve.extensions.push(".ts", ".tsx");
-    }
-
-    if (config?.resolve?.fallback) {
-      // eslint-disable-next-line no-param-reassign
+      if (config.resolve.extensions) {
+        config.resolve.extensions.push(".ts", ".tsx");
+      }
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
@@ -58,7 +51,16 @@ const config: StorybookConfig = {
         test: /\.svg$/,
         use: ["@svgr/webpack"],
       });
+
       config.module.rules.push(buildCssLoader(true));
+    }
+
+    if (config?.plugins) {
+      config.plugins.push(
+        new DefinePlugin({
+          __IS_DEV__: true,
+        })
+      );
     }
 
     return config;

@@ -1,19 +1,22 @@
 import { FC, useCallback, useState } from "react";
-import { ButtonSize } from "shared/types";
-import { Button } from "shared/ui/Button";
-import { VariantButton } from "shared/ui/Button/ui/Button";
 import { useTranslation } from "react-i18next";
-import { Modal } from "shared/ui/Modal";
+import { LoginModal } from "features/AuthByUsername";
+import { Button } from "shared/ui/Button";
+import { ButtonSize } from "shared/types";
+import { VariantButton } from "shared/ui/Button/ui/Button";
 import LoginIcon from "../assets/login.svg";
-import css from "./LogIn.module.scss";
 
 interface ILogInProps {}
 const LogIn: FC<ILogInProps> = ({}) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const onToggleModal = useCallback(() => {
-    setIsOpen((prev) => !prev);
+  const onShowModal = useCallback(() => {
+    setIsOpen(true);
+  }, []);
+
+  const onCloseModal = useCallback(() => {
+    setIsOpen(false);
   }, []);
 
   return (
@@ -22,16 +25,12 @@ const LogIn: FC<ILogInProps> = ({}) => {
         variant={VariantButton.ICON_BUTTON}
         size={ButtonSize.L}
         aria-label={t("Кнопка войти в личный кабинет")}
-        onClick={onToggleModal}
+        onClick={onShowModal}
       >
         <LoginIcon />
       </Button>
 
-      {isOpen && (
-        <Modal isOpen={isOpen} closeModalHandler={onToggleModal}>
-          This text for modal
-        </Modal>
-      )}
+      {isOpen && <LoginModal isOpen={isOpen} onClose={onCloseModal} />}
     </>
   );
 };

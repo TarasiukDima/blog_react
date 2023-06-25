@@ -1,4 +1,4 @@
-import { fireEvent, screen, waitFor } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { renderComponent } from "shared/lib/tests/renderComponent";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 

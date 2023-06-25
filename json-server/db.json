@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Very interesting post 1.",
+      "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo aliquid quisquam animi dicta, facere dolorum architecto commodi qui sunt magnam inventore illum earum fugit? Natus inventore sequi consequuntur sed quibusdam! \nAt, sequi! Magni neque mollitia commodi debitis corporis, reprehenderit exercitationem consequuntur alias ab quibusdam numquam. Quo iusto quas nulla temporibus quod asperiores recusandae sit totam quam officiis? Alias, optio assumenda?\nQuisquam, enim id qui mollitia quidem similique ipsum hic totam doloremque quia iure, accusamus eum dolore. Doloremque, atque. Quibusdam quisquam labore consequatur non vel? Id quisquam quis sapiente molestiae veritatis? \nEum earum iure accusantium nihil porro voluptatibus itaque quos culpa voluptas tempora! Cum eveniet aliquam ipsa rem, molestiae soluta earum porro quo nihil voluptates necessitatibus sint ea ut recusandae temporibus. \nQuis deleniti necessitatibus laudantium labore excepturi accusamus quod perspiciatis cumque, ea atque ipsum dolores itaque eaque id delectus sed accusantium beatae natus non, quasi sapiente amet! Repellat corrupti eligendi cum.",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Very interesting post 2.",
+      "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo aliquid quisquam animi dicta, facere dolorum architecto commodi qui sunt magnam inventore illum earum fugit? Natus inventore sequi consequuntur sed quibusdam! \nAt, sequi! Magni neque mollitia commodi debitis corporis, reprehenderit exercitationem consequuntur alias ab quibusdam numquam. Quo iusto quas nulla temporibus quod asperiores recusandae sit totam quam officiis? Alias, optio assumenda?\nQuisquam, enim id qui mollitia quidem similique ipsum hic totam doloremque quia iure, accusamus eum dolore. Doloremque, atque. Quibusdam quisquam labore consequatur non vel? Id quisquam quis sapiente molestiae veritatis? \nEum earum iure accusantium nihil porro voluptatibus itaque quos culpa voluptas tempora! Cum eveniet aliquam ipsa rem, molestiae soluta earum porro quo nihil voluptates necessitatibus sint ea ut recusandae temporibus. \nQuis deleniti necessitatibus laudantium labore excepturi accusamus quod perspiciatis cumque, ea atque ipsum dolores itaque eaque id delectus sed accusantium beatae natus non, quasi sapiente amet! Repellat corrupti eligendi cum.",
+      "userId": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment3",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": { "name": "typicode" }
+}

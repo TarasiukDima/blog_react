@@ -13,13 +13,13 @@ body,
 html {
   padding: 0;
   margin: 0;
+  font: var(--font);
 }
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font: var(--font);
   color: var(--primary-color);
   background: var(--bg-color);
 }

@@ -1,0 +1,27 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.InputWrapper {
+  @include dflex(flex-start, flex-end, row);
+
+  margin-top: 15px;
+}
+
+.placeholder {
+  flex-shrink: 0;
+  width: 45%;
+  padding: 5px;
+  font-size: 14px;
+  color: var(--invert-cl);
+  background-color: var(--invert-bg);
+}
+
+.input {
+  flex-grow: 1;
+  width: 55%;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid var(--invert-bg);
+  color: var(--primary-color);
+  background: $withoutColor;
+}

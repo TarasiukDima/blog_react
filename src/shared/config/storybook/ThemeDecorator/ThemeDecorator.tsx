@@ -16,7 +16,8 @@ const ComponentWrap = ({
     if (th !== theme) {
       toggleTheme();
     }
-  }, [th]);
+  }, [th, theme, toggleTheme]);
+  // }, [th]);
 
   return <div className={`app ${theme}`}>{children}</div>;
 };

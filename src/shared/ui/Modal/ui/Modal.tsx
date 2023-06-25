@@ -11,6 +11,8 @@ import {
 import { Portal } from "shared/ui/Portal/ui/Portal";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
+import { Button, VariantButton } from "shared/ui/Button";
+import { Theme } from "shared/types";
 import css from "./Modal.module.scss";
 
 interface IModalProps {
@@ -74,6 +76,7 @@ const Modal: FC<IModalProps> = ({
 
   const mods: Record<string, boolean> = {
     [css.opened]: isOpen,
+    [css.dark]: theme === Theme.DARK,
     [css.isClosing]: isClosing,
   };
 
@@ -88,14 +91,18 @@ const Modal: FC<IModalProps> = ({
   return (
     <Portal>
       <div
-        className={classNames(css.Modal, mods, [className, theme])}
+        className={classNames(css.Modal, mods, [className])}
         onClick={closeHandler}
         onKeyDown={onKeyDownHandler}
       >
         <div className={css.Modal_wrap} onClick={onContentClick}>
-          <button className={css.close_modal} onClick={closeHandler}>
+          <Button
+            variant={VariantButton.CLEAR}
+            className={css.close_modal}
+            onClick={closeHandler}
+          >
             &times;
-          </button>
+          </Button>
 
           {children}
         </div>

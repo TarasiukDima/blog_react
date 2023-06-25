@@ -18,6 +18,7 @@ export const ButtonWithoutStyles: Story = {
     size: ButtonSize.M,
   },
 };
+
 export const ButtonStandart: Story = {
   args: {
     children: "Link in text",
@@ -25,6 +26,7 @@ export const ButtonStandart: Story = {
     size: ButtonSize.M,
   },
 };
+
 export const ButtonRounded: Story = {
   args: {
     children: "Link in text",
@@ -32,6 +34,7 @@ export const ButtonRounded: Story = {
     size: ButtonSize.M,
   },
 };
+
 export const ButtonForIcons: Story = {
   args: {
     children: "",

@@ -52,15 +52,20 @@
     animation: closing $transition linear ;
   }
 
+  &.dark .Modal_wrap {
+    background-color: $darkBlue;
+  }
+
   .Modal_wrap {
     position: relative;
     z-index: 1;
-    width: 100%;
-    max-width: 800px;
+    width: fit-content;
+    max-width: 95%;
     margin: auto;
     padding: 60px;
     background-color: $whiteColor;
   }
+
 
   .close_modal {
     position: absolute;

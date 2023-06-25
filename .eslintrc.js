@@ -37,6 +37,7 @@ module.exports = {
     "operator-linebreak": [1, "after"],
     "no-restricted-exports": "off",
     "react/button-has-type": "off",
+    "jsx-a11y/label-has-associated-control": 1,
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "no-unused-vars": "warn",
@@ -50,6 +51,7 @@ module.exports = {
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
     "i18next/no-literal-string": [1, {
       markupOnly: true,
       ignoreAttribute: ["to"]
