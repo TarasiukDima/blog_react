@@ -2,12 +2,12 @@
 @import "shared/styles/variables";
 
 .title {
-  font: var(--font-l);
+  font-size: var(--font-l);
   color: var(--primary-color);
 }
 
 .text {
-  font: var(--font-m);
+  font-size: var(--font-m);
   color: var(--secondary-color);
 }
 

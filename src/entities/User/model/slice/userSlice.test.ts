@@ -1,5 +1,9 @@
+import { mockLocalStorage } from "shared/lib/tests/mocks/localstorageMock/localstorageMock";
+import { USER_LOCALSTORAGE_KEY } from "shared/const/localstorage";
 import { userReducer, userActions } from "./userSlice";
 import { IUserSchema } from "../types/user";
+
+const { getItemMock, removeItemMock } = mockLocalStorage();
 
 describe("userSlice.test", () => {
   const state: IUserSchema = {
@@ -9,20 +13,23 @@ describe("userSlice.test", () => {
     },
   };
 
-  test("decrement", () => {
-    expect(userReducer(state, userActions.setAuthData())).toEqual({
-      value: 9,
-    });
+  test("setAuthData", () => {
+    expect(userReducer({}, userActions.setAuthData(state.authData))).toEqual(
+      state
+    );
   });
-  test("increment", () => {
-    expect(userReducer(state, userActions.initAuthData())).toEqual({
-      value: 11,
-    });
+
+  test("initAuthData", () => {
+    expect(userReducer(state, userActions.initAuthData())).toEqual(state);
+    expect(getItemMock).toHaveBeenCalled();
+    expect(getItemMock).toHaveBeenCalledWith(USER_LOCALSTORAGE_KEY);
   });
 
   test("logout user", () => {
-    expect(userReducer(undefined, userActions.logout())).toEqual({
-      value: 1,
+    expect(userReducer(state, userActions.logout())).toEqual({
+      authData: undefined,
     });
+    expect(removeItemMock).toHaveBeenCalled();
+    expect(removeItemMock).toHaveBeenCalledWith(USER_LOCALSTORAGE_KEY);
   });
 });

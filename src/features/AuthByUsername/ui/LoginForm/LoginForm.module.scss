@@ -1,3 +1,6 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
 .LoginForm {
   width: 100%;
   max-width: 400px;
@@ -9,6 +12,24 @@
 }
 
 .loginBtn {
+  display: block;
+  width: 60%;
   margin-top: 15px;
   margin-left: auto;
+  background-color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--secondary-color);
+
+    input {
+      color: $whiteColor;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: var(--invert-cl);
+  }
 }

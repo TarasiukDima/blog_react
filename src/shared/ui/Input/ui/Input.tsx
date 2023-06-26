@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes, memo, useEffect, useRef } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
 import css from "./Input.module.scss";
 
 type THTMLInputProps = Omit<
@@ -24,6 +25,7 @@ export const Input = memo((props: IInputProps) => {
     ...otherProps
   } = props;
   const ref = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
     if (autofocus) {
       ref.current?.focus();
@@ -35,7 +37,7 @@ export const Input = memo((props: IInputProps) => {
   };
 
   return (
-    <label className={css.InputWrapper}>
+    <label className={classNames(css.InputWrapper, {}, [className])}>
       {placeholder && <span className={css.placeholder}>{placeholder}</span>}
 
       <input

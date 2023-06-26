@@ -27,9 +27,7 @@ const LangSwitcher: FC<ILangSwitcherProps> = ({ className = "" }) => {
           <Button
             className={classNames(
               css.LangSwitcher_button,
-              {
-                [css.active]: i18n.language === language,
-              },
+              { [css.active]: i18n.language === language },
               [className]
             )}
             variant={VariantButton.CLEAR}

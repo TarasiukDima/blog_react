@@ -8,9 +8,7 @@ interface ITitleProps {
   children: ReactNode;
 }
 
-const Title: FC<ITitleProps> = ({
-  Tag = "h1", className, children
-}) => (
+const Title: FC<ITitleProps> = ({ Tag = "h1", className, children }) => (
   <Tag className={classNames(css.Title, {}, [className])}>{children}</Tag>
 );
 

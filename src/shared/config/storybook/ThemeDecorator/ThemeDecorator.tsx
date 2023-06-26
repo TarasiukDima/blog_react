@@ -12,14 +12,22 @@ const ComponentWrap = ({
   children: ReactNode;
 }) => {
   const { theme, toggleTheme } = useTheme();
+
   useEffect(() => {
     if (th !== theme) {
+      if (th === Theme.DARK) {
+        document.body.classList.toggle(Theme.DARK);
+      } else {
+        document.body.classList.remove(Theme.DARK);
+      }
+
       toggleTheme();
     }
-  }, [th, theme, toggleTheme]);
-  // }, [th]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [th, theme]);
+  // }, [th, theme, toggleTheme]);
 
-  return <div className={`app ${theme}`}>{children}</div>;
+  return children;
 };
 
 export const ThemeDecorator = (StoryComponent: StoryFn, context: any) => {

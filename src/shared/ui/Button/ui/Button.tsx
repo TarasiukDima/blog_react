@@ -18,12 +18,18 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: FC<IButtonProps> = ({
   className,
   children,
+  disabled,
   size = ButtonSize.L,
   variant = VariantButton.STANDARD,
   ...others
 }) => (
   <button
-    className={classNames(css.Button, {}, [className, css[size], css[variant]])}
+    className={classNames(css.Button, { [css.disabled]: disabled }, [
+      className,
+      css[size],
+      css[variant],
+    ])}
+    disabled={disabled}
     {...others}
   >
     {children}

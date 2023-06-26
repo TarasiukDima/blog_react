@@ -1,6 +1,6 @@
 @import "shared/styles/variables";
 
-.app.dark {
+body.dark {
   --bg-color: #{$darkBlue};
   --primary-color: #{$whiteColor};
   --secondary-color: #{$brown};

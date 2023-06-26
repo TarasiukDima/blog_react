@@ -1,9 +1,26 @@
+import { DeepPartial } from "@reduxjs/toolkit";
 import { IStateSchema } from "app/providers/StoreProvider";
 import { getUserAuthData } from "./getUserAuthData";
 
 describe("getCounter", () => {
-  test("should return counter value", () => {
-    // const state: DeepPartial<IStateSchema> = { counter: { value: 10 } };
-    // expect(getUserAuthData(state as IStateSchema)).toEqual({ value: 10 });
+  test("should return current state user data", () => {
+    const state: DeepPartial<IStateSchema> = {
+      user: {
+        authData: {
+          id: "1",
+          username: "admin",
+        },
+      },
+    };
+    expect(getUserAuthData(state as IStateSchema)).toEqual(state.user.authData);
+  });
+
+  test("should return undefined", () => {
+    const state: DeepPartial<IStateSchema> = {
+      user: {
+        authData: undefined,
+      },
+    };
+    expect(getUserAuthData(state as IStateSchema)).toEqual(undefined);
   });
 });

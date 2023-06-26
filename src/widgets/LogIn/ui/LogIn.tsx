@@ -4,12 +4,16 @@ import { LoginModal } from "features/AuthByUsername";
 import { Button } from "shared/ui/Button";
 import { ButtonSize } from "shared/types";
 import { VariantButton } from "shared/ui/Button/ui/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserAuthData, userActions } from "../../../entities/User";
 import LoginIcon from "../assets/login.svg";
+import LogoutIcon from "../assets/logout.svg";
 
-interface ILogInProps {}
-const LogIn: FC<ILogInProps> = ({}) => {
+const LogIn: FC = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const authData = useSelector(getUserAuthData);
+  const dispatch = useDispatch();
 
   const onShowModal = useCallback(() => {
     setIsOpen(true);
@@ -18,6 +22,23 @@ const LogIn: FC<ILogInProps> = ({}) => {
   const onCloseModal = useCallback(() => {
     setIsOpen(false);
   }, []);
+
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout());
+  }, [dispatch]);
+
+  if (authData) {
+    return (
+      <Button
+        variant={VariantButton.ICON_BUTTON}
+        size={ButtonSize.L}
+        aria-label={t("Кнопка выйти из личного кабинета")}
+        onClick={onLogout}
+      >
+        <LogoutIcon />
+      </Button>
+    );
+  }
 
   return (
     <>

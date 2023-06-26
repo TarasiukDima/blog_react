@@ -1,6 +1,5 @@
 @import "shared/styles/mixins";
 @import "shared/styles/variables";
-
 @include font-face("Roboto", "../fonts/RobotoRegular");
 @include font-face("Roboto", "../fonts/RobotoMedium", 600);
 @include font-face("Roboto", "../fonts/RobotoBold", bold);
@@ -9,6 +8,9 @@
   --font-size: 16px;
   --font: var(--font-size) / 1.4 "Roboto", sans-serif;
   --green: #{$green};
-  --red-light: #{$green};
-  --red-dark: #{$green};
+  --red-light: #{$redLight};
+  --red-dark: #{$redDark};
+
+  --font-m: 18px;
+  --font-l: 26px;
 }

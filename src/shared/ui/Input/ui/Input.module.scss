@@ -5,6 +5,7 @@
   @include dflex(flex-start, flex-end, row);
 
   margin-top: 15px;
+  transition: background-color $transition, color $transition;
 }
 
 .placeholder {
@@ -24,4 +25,13 @@
   border-bottom: 1px solid var(--invert-bg);
   color: var(--primary-color);
   background: $withoutColor;
+
+  &[type=submit] {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
 }

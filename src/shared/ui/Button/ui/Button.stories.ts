@@ -42,3 +42,12 @@ export const ButtonForIcons: Story = {
     size: ButtonSize.M,
   },
 };
+
+export const ButtonDisabled: Story = {
+  args: {
+    children: "",
+    disabled: true,
+    variant: VariantButton.STANDARD,
+    size: ButtonSize.M,
+  },
+};

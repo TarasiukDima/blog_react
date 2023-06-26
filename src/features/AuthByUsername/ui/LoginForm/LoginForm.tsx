@@ -1,21 +1,19 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
-import { Button } from "shared/ui/Button";
-import { Input } from "shared/ui/Input";
+import React, { memo, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { memo, useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import { classNames } from "shared/lib/classNames/classNames";
+import { Input } from "shared/ui/Input";
 import { Text, TextTheme } from "shared/ui/Text";
-import { VariantButton } from "shared/ui/Button/ui/Button";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import { loginActions } from "../../model/slice/loginSlice";
 import { getLoginState } from "../../model/selectors/getLoginState/getLoginState";
-import cls from "./LoginForm.module.scss";
+import css from "./LoginForm.module.scss";
 
-interface LoginFormProps {
+interface ILoginFormProps {
   className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+export const LoginForm = memo(({ className }: ILoginFormProps) => {
   const { t } = useTranslation("forms");
   const dispatch = useDispatch();
   const { username, password, error, isLoading } = useSelector(getLoginState);
@@ -34,12 +32,21 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     [dispatch]
   );
 
-  // const onLoginClick = useCallback(() => {
-  //   // dispatch(loginByUsername({ username, password }));
-  // }, [dispatch, password, username]);
+  const onLoginSubmit = useCallback(
+    (event: React.FormEvent) => {
+      event.preventDefault();
+
+      // @ts-ignore
+      dispatch(loginByUsername({ username, password }));
+    },
+    [dispatch, password, username]
+  );
 
   return (
-    <div className={classNames(cls.LoginForm, {}, [className])}>
+    <form
+      className={classNames(css.LoginForm, {}, [className])}
+      onSubmit={onLoginSubmit}
+    >
       <Text title={t("Форма авторизации")} />
       {error && (
         <Text
@@ -50,27 +57,24 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
       <Input
         autofocus
         type="text"
-        className={cls.input}
+        className={css.input}
         placeholder={t("Введите username")}
         onChange={onChangeUsername}
         value={username}
       />
       <Input
         type="text"
-        className={cls.input}
+        className={css.input}
         placeholder={t("Введите пароль")}
         onChange={onChangePassword}
         value={password}
       />
-      <Button
+      <Input
         type="submit"
-        variant={VariantButton.STANDARD}
-        className={cls.loginBtn}
-        // onClick={onLoginClick}
+        className={css.loginBtn}
         disabled={isLoading}
-      >
-        {t("Войти")}
-      </Button>
-    </div>
+        value={t("Войти")}
+      />
+    </form>
   );
 });

@@ -1,6 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import jsonServer from 'json-server';
+const fs = require('fs');
+const path = require('path');
+const jsonServer = require('json-server');
 
 const server = jsonServer.create();
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));

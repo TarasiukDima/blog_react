@@ -56,10 +56,7 @@ module.exports = {
       markupOnly: true,
       ignoreAttribute: ["to"]
     }],
-    "object-curly-newline": [
-      1,
-      { multiline: true, minProperties: 3 }
-    ],
+    "object-curly-newline": "off",
     "max-len": ["error", { ignoreComments: true, code: 120 }]
   },
   globals: {
