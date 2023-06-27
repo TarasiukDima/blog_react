@@ -7,6 +7,7 @@ describe("getLoginState", () => {
     const state: DeepPartial<IStateSchema> = {
       loginForm: { isLoading: false, username: "", password: "" },
     };
+
     expect(getLoginState(state as IStateSchema)).toEqual(state.loginForm);
   });
 
@@ -14,6 +15,7 @@ describe("getLoginState", () => {
     const state: DeepPartial<IStateSchema> = {
       loginForm: { isLoading: false, username: "admin", password: "123" },
     };
+
     expect(getLoginState(state as IStateSchema)).toEqual(state.loginForm);
   });
 
@@ -26,18 +28,22 @@ describe("getLoginState", () => {
         error: "Error",
       },
     };
+
     expect(getLoginState(state as IStateSchema)).toHaveProperty(
       "isLoading",
       false
     );
+
     expect(getLoginState(state as IStateSchema)).toHaveProperty(
       "username",
       state.loginForm.username
     );
+
     expect(getLoginState(state as IStateSchema)).toHaveProperty(
       "error",
       state.loginForm.error
     );
+
     expect(getLoginState(state as IStateSchema)).toHaveProperty(
       "password",
       state.loginForm.password

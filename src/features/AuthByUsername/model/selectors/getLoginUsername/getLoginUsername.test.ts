@@ -9,10 +9,11 @@ describe("getLoginUsername.test", () => {
         username: "123123",
       },
     };
+
     expect(getLoginUsername(state as IStateSchema)).toEqual("123123");
   });
+
   test("should work with empty state", () => {
-    const state: DeepPartial<IStateSchema> = {};
-    expect(getLoginUsername(state as IStateSchema)).toEqual("");
+    expect(getLoginUsername({} as IStateSchema)).toEqual("");
   });
 });
