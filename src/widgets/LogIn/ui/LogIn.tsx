@@ -51,7 +51,7 @@ const LogIn: FC = () => {
         <LoginIcon />
       </Button>
 
-      {isOpen && <LoginModal isOpen={isOpen} onClose={onCloseModal} />}
+      {authData && <LoginModal isOpen={isOpen} onClose={onCloseModal} />}
     </>
   );
 };
