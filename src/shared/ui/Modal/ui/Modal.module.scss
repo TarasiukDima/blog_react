@@ -52,10 +52,6 @@
     animation: closing $transition linear;
   }
 
-  &.dark .Modal_wrap {
-    background-color: $darkBlue;
-  }
-
   .Modal_wrap {
     position: relative;
     z-index: 1;
@@ -63,7 +59,7 @@
     max-width: 95%;
     margin: auto;
     padding: 60px;
-    background-color: $whiteColor;
+    background-color: var(--bg-color);
   }
 
   .close_modal {
@@ -73,9 +69,11 @@
     width: 30px;
     height: 30px;
     padding: 0;
+    font-weight: normal;
     font-size: 50px;
     line-height: 30px;
     border: none;
+    color: var(--invert-bg);
     background-color: $withoutColor;
   }
 }

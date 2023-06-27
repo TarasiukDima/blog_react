@@ -1,6 +1,6 @@
 import { StoryFn } from "@storybook/react";
 import { ThemeProvider, useTheme } from "app/providers/ThemeProvider";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useLayoutEffect } from "react";
 import { Theme } from "shared/types";
 
 // for update state button on change global option  in storybook's tools
@@ -15,19 +15,20 @@ const ComponentWrap = ({
 
   useEffect(() => {
     if (th !== theme) {
-      if (th === Theme.DARK) {
-        document.body.classList.toggle(Theme.DARK);
-      } else {
-        document.body.classList.remove(Theme.DARK);
-      }
-
       toggleTheme();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [th, theme]);
-  // }, [th, theme, toggleTheme]);
+  }, [th]);
 
-  return children;
+  useLayoutEffect(() => {
+    if (theme === Theme.DARK) {
+      document.body.classList.add(Theme.DARK);
+    } else {
+      document.body.classList.remove(Theme.DARK);
+    }
+  }, [theme]);
+
+  return <div>{children}</div>;
 };
 
 export const ThemeDecorator = (StoryComponent: StoryFn, context: any) => {
