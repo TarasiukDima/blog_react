@@ -20,7 +20,7 @@ const Navigation: FC<INavigationProps> = ({ navigationApp }) => {
         {navigationApp.map(({ path, id, routeTextKey }) => (
           <li key={id}>
             <AppLink
-              to={path}
+              to={path || ''}
               variant={VariantLink.BUTTON_LINK}
               size={ButtonSize.M}
             >

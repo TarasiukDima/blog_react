@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { IStateSchema } from "app/providers/StoreProvider";
 import { getLoginState } from "./getLoginState";
 
@@ -31,22 +30,22 @@ describe("getLoginState", () => {
 
     expect(getLoginState(state as IStateSchema)).toHaveProperty(
       "isLoading",
-      false
+      state!.loginForm!.isLoading
     );
 
     expect(getLoginState(state as IStateSchema)).toHaveProperty(
       "username",
-      state.loginForm.username
+      state!.loginForm!.username
     );
 
     expect(getLoginState(state as IStateSchema)).toHaveProperty(
       "error",
-      state.loginForm.error
+      state!.loginForm!.error
     );
 
     expect(getLoginState(state as IStateSchema)).toHaveProperty(
       "password",
-      state.loginForm.password
+      state!.loginForm!.password
     );
   });
 });

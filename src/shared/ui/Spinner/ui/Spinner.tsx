@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import css from "./Spinner.module.scss";
 
-const Spinner: FC = () => (
+const Spinner: FC = memo(() => (
   <div className={css.spinner}>
     <div className={css.spinnerInner}>
       <div className={css.spinner__child} />
@@ -10,6 +10,6 @@ const Spinner: FC = () => (
       <div className={css.spinner__child} />
     </div>
   </div>
-);
+));
 
 export { Spinner };

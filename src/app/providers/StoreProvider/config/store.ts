@@ -1,6 +1,13 @@
-import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
+import { CurriedGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
+import {
+  CombinedState,
+  configureStore,
+  Reducer,
+  ReducersMapObject,
+} from "@reduxjs/toolkit";
+import { $api } from "shared/api/api";
 import { userReducer } from "../../../../entities/User";
-import { IStateSchema } from "../type/stateSchema";
+import { IStateSchema, IThunkExtraArg } from "../type";
 import { createReducerManager } from "./reducerManager";
 
 export function createReduxStore(
@@ -14,10 +21,21 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducers);
 
-  const store = configureStore<IStateSchema>({
-    reducer: reducerManager.reduce,
+  const extraArg: IThunkExtraArg = {
+    api: $api,
+  };
+  const store = configureStore({
+    reducer: reducerManager.reduce as Reducer<CombinedState<IStateSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
+    // @ts-ignore
+    middleware: (getDefaultMiddleware) =>
+      // eslint-disable-next-line implicit-arrow-linebreak
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: extraArg,
+        },
+      }),
   });
 
   // @ts-ignore
@@ -25,3 +43,5 @@ export function createReduxStore(
 
   return store;
 }
+
+export type TAppDispatch = ReturnType<typeof createReduxStore>["dispatch"];

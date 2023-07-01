@@ -4,7 +4,7 @@ import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from "../lib/ThemeContext";
 
 const getDefaultTheme = (startTheme: Theme) => {
   try {
-    const themeInLocalStorage = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
+    const themeInLocalStorage = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || "";
 
     return (Object.values(Theme) as Array<string>).includes(themeInLocalStorage) ?
       (themeInLocalStorage as Theme) :

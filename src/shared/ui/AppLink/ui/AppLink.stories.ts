@@ -19,16 +19,25 @@ export const AppLinkWithoutStyles: Story = {
     variant: VariantLink.CLEAR,
   },
 };
+
 export const AppLinkText: Story = {
   args: {
     children: "Link in text",
     variant: VariantLink.TEXT_LINK,
   },
 };
+
 export const AppLinkLikeButton: Story = {
   args: {
     children: "Link button",
     variant: VariantLink.BUTTON_LINK,
     size: ButtonSize.M,
+  },
+};
+
+export const AppLinkLikeIcon: Story = {
+  args: {
+    children: "Link button",
+    variant: VariantLink.ICON_LINK,
   },
 };

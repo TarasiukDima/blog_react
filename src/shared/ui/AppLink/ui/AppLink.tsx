@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, memo } from "react";
 import { Link, LinkProps } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ButtonSize } from "shared/types";
@@ -8,6 +8,7 @@ export enum VariantLink {
   CLEAR = "clear",
   TEXT_LINK = "text_link",
   BUTTON_LINK = "button_link",
+  ICON_LINK = "icon_link",
 }
 
 export interface IAppLinkProps extends LinkProps {
@@ -17,25 +18,27 @@ export interface IAppLinkProps extends LinkProps {
   size?: ButtonSize;
 }
 
-const AppLink: FC<IAppLinkProps> = ({
-  className,
-  to,
-  children,
-  variant = VariantLink.CLEAR,
-  size = ButtonSize.S,
-  ...othersProps
-}) => (
-  <Link
-    className={classNames(css.AppLink, {}, [
-      className,
-      css[variant],
-      css[size],
-    ])}
-    to={to}
-    {...othersProps}
-  >
-    {children}
-  </Link>
+const AppLink: FC<IAppLinkProps> = memo(
+  ({
+    className,
+    to,
+    children,
+    variant = VariantLink.CLEAR,
+    size = ButtonSize.S,
+    ...othersProps
+  }: IAppLinkProps) => (
+    <Link
+      className={classNames(css.AppLink, {}, [
+        className,
+        css[variant],
+        css[size],
+      ])}
+      to={to}
+      {...othersProps}
+    >
+      {children}
+    </Link>
+  )
 );
 
 export { AppLink };

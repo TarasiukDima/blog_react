@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { IStateSchema } from "app/providers/StoreProvider";
 import { getLoginUsername } from "./getLoginUsername";
 
@@ -9,7 +8,6 @@ describe("getLoginUsername.test", () => {
         username: "123123",
       },
     };
-
     expect(getLoginUsername(state as IStateSchema)).toEqual("123123");
   });
 

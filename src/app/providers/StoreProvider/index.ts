@@ -1,5 +1,18 @@
 import { StoreProvider } from "./ui/StoreProvider";
-import { createReduxStore } from "./config/store";
-import type { IStateSchema } from "./type/stateSchema";
+import { createReduxStore, TAppDispatch } from "./config/store";
+import type {
+  IStateSchema,
+  IReduxStoreWithManager,
+  IThunkExtraArg,
+  IThunkConfig,
+  TStateSchemaKey,
+} from "./type";
 
-export { StoreProvider, createReduxStore, IStateSchema };
+export {
+  StoreProvider,
+  createReduxStore,
+  IStateSchema,
+  TAppDispatch,
+  IReduxStoreWithManager,
+  TStateSchemaKey,
+};

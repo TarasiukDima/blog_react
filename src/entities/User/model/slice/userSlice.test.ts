@@ -1,7 +1,7 @@
 import { mockLocalStorage } from "shared/lib/tests/mocks/localstorageMock/localstorageMock";
 import { USER_LOCALSTORAGE_KEY } from "shared/const/localstorage";
 import { userReducer, userActions } from "./userSlice";
-import { IUserSchema } from "../types/user";
+import { IUser, IUserSchema } from "../types/user";
 
 const { getItemMock, removeItemMock } = mockLocalStorage();
 
@@ -14,9 +14,9 @@ describe("userSlice.test", () => {
   };
 
   test("setAuthData", () => {
-    expect(userReducer({}, userActions.setAuthData(state.authData))).toEqual(
-      state
-    );
+    expect(
+      userReducer({}, userActions.setAuthData(state.authData as IUser))
+    ).toEqual(state);
   });
 
   test("initAuthData", () => {

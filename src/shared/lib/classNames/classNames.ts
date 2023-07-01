@@ -1,9 +1,12 @@
-type TClassesOptionsObject = Record<string, boolean | string>;
+export type TClassesOptionsObject = Record<
+  string,
+  boolean | string | undefined
+>;
 
 export function classNames(
   className: string,
   classesOptionsObject: TClassesOptionsObject = {},
-  additional: string[] = []
+  additional: Array<string | undefined> = []
 ): string {
   return [
     className,

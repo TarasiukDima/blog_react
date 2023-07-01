@@ -1,5 +1,4 @@
 import { FC, Suspense, useEffect, useLayoutEffect } from "react";
-import { useDispatch } from "react-redux";
 import { useOutlet } from "react-router-dom";
 import { Header } from "widgets/Header";
 import { Footer } from "widgets/Footer/";
@@ -7,6 +6,7 @@ import { Sidebar } from "widgets/Sidebar/";
 import { Wrapper } from "shared/ui/Wrapper/ui/Wrapper";
 import { Spinner } from "shared/ui/Spinner";
 import { navigationApp } from "app/config/roteConfig";
+import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
 import { Theme } from "shared/types";
 import { userActions } from "../../../../entities/User";
 import { useTheme } from "../../../providers/ThemeProvider";
@@ -15,7 +15,7 @@ import css from "./AppLayout.module.scss";
 const AppLayout: FC = () => {
   const { theme } = useTheme();
   const currentOutlet = useOutlet();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useLayoutEffect(() => {
     if (theme === Theme.DARK) {

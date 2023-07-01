@@ -4,5 +4,5 @@ export interface IUser {
 }
 
 export interface IUserSchema {
-  authData?: IUser;
+  authData?: IUser | null;
 }

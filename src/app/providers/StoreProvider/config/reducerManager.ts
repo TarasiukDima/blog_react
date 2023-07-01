@@ -4,15 +4,11 @@ import {
   combineReducers,
   Reducer,
 } from "@reduxjs/toolkit";
-import {
-  IStateSchema,
-  TStateSchemaKey,
-  IReducerManager,
-} from "../type/stateSchema";
+import { IStateSchema, TStateSchemaKey, IReducerManager } from "../type";
 
-export function createReducerManager(
+export const createReducerManager = (
   initialReducers: ReducersMapObject<IStateSchema>
-): IReducerManager {
+): IReducerManager => {
   const reducers = { ...initialReducers };
   let combinedReducer = combineReducers(reducers);
   let keysToRemove: Array<TStateSchemaKey> = [];
@@ -50,4 +46,4 @@ export function createReducerManager(
       combinedReducer = combineReducers(reducers);
     },
   };
-}
+};

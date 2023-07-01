@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { IStateSchema } from "app/providers/StoreProvider";
 import { getUserAuthData } from "./getUserAuthData";
 
@@ -12,7 +11,7 @@ describe("getCounter", () => {
         },
       },
     };
-    expect(getUserAuthData(state as IStateSchema)).toEqual(state.user.authData);
+    expect(getUserAuthData(state as IStateSchema)).toEqual(state!.user!.authData);
   });
 
   test("should return undefined", () => {

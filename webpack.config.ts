@@ -6,14 +6,15 @@ import { BuildEnv, BuildPaths } from "./config/build/types/config";
 export default (env: BuildEnv) => {
   const paths: BuildPaths = {
     entry: path.resolve(__dirname, "src", "index.tsx"),
-    build: path.resolve(__dirname, "build"),
+    src: path.resolve(__dirname, "src"),
     public: "/",
     html: path.resolve(__dirname, "public", "index.html"),
-    src: path.resolve(__dirname, "src"),
+    build: path.resolve(__dirname, "build"),
   };
 
   const mode = env.mode || "development";
   const PORT = env.port || 3000;
+  const BASE_URL = env.apiUrl || "http://localhost:8000";
 
   const isDev = mode === "development";
 
@@ -22,6 +23,7 @@ export default (env: BuildEnv) => {
     paths,
     isDev,
     port: PORT,
+    apiUrl: BASE_URL,
   });
 
   return config;

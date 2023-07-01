@@ -2,22 +2,27 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true
+    jest: true,
   },
   extends: [
     "plugin:react/recommended",
-    "airbnb", "plugin:i18next/recommended",
-    "plugin:storybook/recommended"
+    "airbnb",
+    "plugin:i18next/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: "latest",
-    sourceType: "module"
+    sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+  ],
   rules: {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
@@ -26,8 +31,11 @@ module.exports = {
     "react/jsx-indent-props": [2, 2],
     indent: [2, 2],
     "react/jsx-filename-extension": [2, {
-      extensions: [".js", ".jsx", ".tsx"]
+      extensions: [".js", ".jsx", ".tsx"],
     }],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "off",
     "comma-dangle": "off",
     "react/destructuring-assignment": [
       1,
@@ -38,9 +46,6 @@ module.exports = {
     "no-restricted-exports": "off",
     "react/button-has-type": "off",
     "jsx-a11y/label-has-associated-control": 1,
-    "import/no-unresolved": "off",
-    "import/prefer-default-export": "off",
-    "no-unused-vars": "warn",
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "jsx-a11y/no-static-element-interactions": 1,
@@ -57,16 +62,20 @@ module.exports = {
       ignoreAttribute: ["to"]
     }],
     "object-curly-newline": "off",
-    "max-len": ["error", { ignoreComments: true, code: 120 }]
+    "max-len": ["error", { ignoreComments: true, code: 120 }],
+    "no-undef": "off",
   },
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: true,
   },
-  overrides: [{
-    files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
-    rules: {
-      "i18next/no-literal-string": "off",
-      "max-len": "off"
-    }
-  }]
+  overrides: [
+    {
+      files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+        "max-len": "off",
+      },
+    },
+  ],
 };

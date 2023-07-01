@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "app/providers/ThemeProvider";
@@ -11,24 +11,26 @@ interface IThemeSwitcherProps {
   className?: string;
 }
 
-const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className = "" }) => {
-  const { theme, toggleTheme } = useTheme();
-  const { t } = useTranslation();
-  const buttonTitleText = t("Кнопка для переключения темы");
+const ThemeSwitcher: FC<IThemeSwitcherProps> = memo(
+  ({ className = "" }: IThemeSwitcherProps) => {
+    const { theme, toggleTheme } = useTheme();
+    const { t } = useTranslation();
+    const buttonTitleText = t("Кнопка для переключения темы");
 
-  return (
-    <Button
-      className={classNames(
-        css.ThemeSwitcher,
-        { [css.dark]: theme === Theme.DARK },
-        [className]
-      )}
-      variant={VariantButton.CLEAR}
-      onClick={toggleTheme}
-      aria-label={buttonTitleText}
-      title={buttonTitleText}
-    />
-  );
-};
+    return (
+      <Button
+        className={classNames(
+          css.ThemeSwitcher,
+          { [css.dark]: theme === Theme.DARK },
+          [className]
+        )}
+        variant={VariantButton.CLEAR}
+        onClick={toggleTheme}
+        aria-label={buttonTitleText}
+        title={buttonTitleText}
+      />
+    );
+  }
+);
 
 export { ThemeSwitcher };

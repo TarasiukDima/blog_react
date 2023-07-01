@@ -27,5 +27,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "User",
+    "lastname": "Userov",
+    "age": 91,
+    "currency": "RUB",
+    "country": "Belarus",
+    "city": "Brest",
+    "username": "admin",
+    "avatar": "https://cdn1.iconfinder.com/data/icons/people-49/512/_formal_mustache_man-01-1024.png"
+   }
 }

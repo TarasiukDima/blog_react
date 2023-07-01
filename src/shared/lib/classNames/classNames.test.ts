@@ -1,8 +1,8 @@
-import { classNames } from "./classNames";
+import { TClassesOptionsObject, classNames } from "./classNames";
 
 describe("classNames", () => {
   const testClassName = "test1";
-  const optionsArg: { [key: string]: boolean | undefined } = {
+  const optionsArg: TClassesOptionsObject = {
     test2: true,
     test5: false,
     test6: undefined,

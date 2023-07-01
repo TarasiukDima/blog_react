@@ -9,7 +9,10 @@ import {
   useState,
 } from "react";
 import { Portal } from "shared/ui/Portal/ui/Portal";
-import { classNames } from "shared/lib/classNames/classNames";
+import {
+  TClassesOptionsObject,
+  classNames,
+} from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
 import { Button, VariantButton } from "shared/ui/Button";
 import { Theme } from "shared/types";
@@ -35,7 +38,7 @@ const Modal: FC<IModalProps> = ({
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -52,6 +55,11 @@ const Modal: FC<IModalProps> = ({
         setIsClosing(false);
       }, ANIMATION_DELAY);
     }
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
   }, [closeModalHandler]);
 
   const onKeyDownHandler = useCallback(
@@ -63,18 +71,7 @@ const Modal: FC<IModalProps> = ({
     [closeHandler]
   );
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     window.addEventListener("keydown", onKeyDownHandler);
-  //   }
-
-  //   return () => {
-  //     clearTimeout(timerRef.current);
-  //     window.removeEventListener("keydown", onKeyDownHandler);
-  //   };
-  // }, [isOpen, onKeyDownHandler]);
-
-  const mods: Record<string, boolean> = {
+  const optionalsClasses: TClassesOptionsObject = {
     [css.opened]: isOpen,
     [css.dark]: theme === Theme.DARK,
     [css.isClosing]: isClosing,
@@ -91,7 +88,7 @@ const Modal: FC<IModalProps> = ({
   return (
     <Portal>
       <div
-        className={classNames(css.Modal, mods, [className])}
+        className={classNames(css.Modal, optionalsClasses, [className])}
         onClick={closeHandler}
         onKeyDown={onKeyDownHandler}
       >

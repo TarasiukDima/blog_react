@@ -1,4 +1,4 @@
-import { FC, ButtonHTMLAttributes } from "react";
+import { FC, ButtonHTMLAttributes, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ButtonSize } from "shared/types";
 import css from "./Button.module.scss";
@@ -15,25 +15,27 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: VariantButton;
 }
 
-const Button: FC<IButtonProps> = ({
-  className,
-  children,
-  disabled,
-  size = ButtonSize.L,
-  variant = VariantButton.STANDARD,
-  ...others
-}) => (
-  <button
-    className={classNames(css.Button, { [css.disabled]: disabled }, [
-      className,
-      css[size],
-      css[variant],
-    ])}
-    disabled={disabled}
-    {...others}
-  >
-    {children}
-  </button>
+const Button: FC<IButtonProps> = memo(
+  ({
+    className,
+    children,
+    disabled = false,
+    size = ButtonSize.L,
+    variant = VariantButton.STANDARD,
+    ...others
+  }: IButtonProps) => (
+    <button
+      className={classNames(css.Button, { [css.disabled]: disabled }, [
+        className,
+        css[size],
+        css[variant],
+      ])}
+      disabled={disabled}
+      {...others}
+    >
+      {children}
+    </button>
+  )
 );
 
 export { Button };

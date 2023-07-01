@@ -1,5 +1,6 @@
+import { memo } from "react";
 import css from "./Footer.module.scss";
 
-const Footer = () => <footer className={css.footer}>Footer</footer>;
+const Footer = memo(() => <footer className={css.footer}>Footer</footer>);
 
 export { Footer };
