@@ -12,6 +12,12 @@
   "Ваш город": "Your city",
   "Валюта": "Currency",
   "Ваш аватар (ссылка)": "Your avatar (link)",
+  "Некорректный возраст": "Incorrect age",
+  "Некорректный город": "Incorrect city",
+  "Некорректная страна": "Incorrect country",
+  "Некорректная валюта": "Incorrect currency",
+  "Некорректные данные имени, логина или фамилии": "Incorrect name, login or surname data",
+  "Данные не найдены": "Data not found",
+  "Ошибка сервера": "Server error",
   "Сохранить": "Save"
-
 }

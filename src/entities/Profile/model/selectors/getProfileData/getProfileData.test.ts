@@ -15,8 +15,7 @@ describe("getCounter", () => {
           country: "Belarus" as Countries,
           city: "Brest",
           username: "admin",
-          avatar:
-            "https://cdn1.iconfinder.com/data/icons/people-49/512/_formal_mustache_man-01-1024.png",
+          avatar: 'avatar_url',
         },
       },
     };

@@ -33,6 +33,12 @@
   }
 }
 
+.option {
+  border: 1px solid var(--invert-bg);
+  color: var(--primary-color);
+  background-color: var(--invert-cl);
+}
+
 .readonly {
   opacity: 0.8;
   cursor: not-allowed;

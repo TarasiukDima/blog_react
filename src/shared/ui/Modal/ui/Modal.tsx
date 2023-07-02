@@ -21,7 +21,7 @@ import css from "./Modal.module.scss";
 interface IModalProps {
   className?: string;
   children?: ReactNode;
-  isOpen: boolean;
+  isOpen?: boolean;
   closeModalHandler: () => void;
   lazy?: boolean;
 }
@@ -31,7 +31,7 @@ const ANIMATION_DELAY = 250;
 const Modal: FC<IModalProps> = ({
   className,
   children,
-  isOpen = true,
+  isOpen = false,
   closeModalHandler,
   lazy,
 }) => {

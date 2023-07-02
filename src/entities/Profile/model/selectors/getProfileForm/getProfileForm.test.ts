@@ -1,7 +1,7 @@
 import { IStateSchema } from "app/providers/StoreProvider";
 import { getProfileForm } from "./getProfileForm";
 
-describe("getCounter", () => {
+describe("getProfileForm", () => {
   test("should return current state user data", () => {
     const state: DeepPartial<IStateSchema> = {
       profile: {
