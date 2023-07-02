@@ -16,7 +16,7 @@ export const ProfilePage: Story = {
   decorators: [
     StoreDecorator({
       profile: {
-        canEdit: false,
+        readonly: false,
         isLoading: false,
         data: null,
         error: "",

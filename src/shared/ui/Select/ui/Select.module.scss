@@ -1,7 +1,7 @@
 @import "shared/styles/mixins";
 @import "shared/styles/variables";
 
-.InputWrapper {
+.SelectWrapper {
   @include dflex(flex-start, flex-end, row);
 
   margin-top: 15px;
@@ -18,7 +18,7 @@
   background-color: var(--invert-bg);
 }
 
-.input {
+.Select {
   flex-grow: 1;
   width: 55%;
   padding: 5px;
@@ -26,17 +26,6 @@
   border-bottom: 1px solid var(--invert-bg);
   color: var(--primary-color);
   background: $withoutColor;
-
-  &[type="submit"] {
-    padding: 10px;
-    color: var(--invert-cl);
-    background-color: var(--invert-bg);
-    cursor: pointer;
-
-    &:not(:disabled):hover {
-      background-color: var(--secondary-color);
-    }
-  }
 
   &:disabled {
     opacity: 0.8;
@@ -46,4 +35,5 @@
 
 .readonly {
   opacity: 0.8;
+  cursor: not-allowed;
 }

@@ -1,0 +1,8 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.ProfilePageHeader {
+  @include dflex(space-between, center, row);
+
+  margin-bottom: 20px;
+}

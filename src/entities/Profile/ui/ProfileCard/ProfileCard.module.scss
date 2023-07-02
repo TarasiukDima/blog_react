@@ -3,4 +3,10 @@
 
 .ProfileCard {
   display: block;
+  border: 1px solid var(--invert-bg);
+  padding: 20px;
+}
+
+.edited {
+  border-color: var(--secondary-color);
 }

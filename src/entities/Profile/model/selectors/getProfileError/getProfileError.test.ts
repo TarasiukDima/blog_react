@@ -1,12 +1,13 @@
 import { IStateSchema } from "app/providers/StoreProvider";
-import { Countries, Currency } from "shared/const/config";
+import { Currency } from "../../../../../entities/Currency";
+import { Countries } from "../../../../../entities/Countries";
 import { getProfileError } from "./getProfileError";
 
 describe("getCounter", () => {
   test("should return current state user data", () => {
     const state: DeepPartial<IStateSchema> = {
       profile: {
-        canEdit: false,
+        readonly: false,
         isLoading: false,
         error: "",
         data: null,
@@ -20,7 +21,7 @@ describe("getCounter", () => {
   test("should return error text", () => {
     const state: DeepPartial<IStateSchema> = {
       profile: {
-        canEdit: false,
+        readonly: false,
         isLoading: false,
         error: "Text error",
         data: null,

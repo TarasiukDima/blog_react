@@ -4,14 +4,16 @@ import css from "./Input.module.scss";
 
 type THTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  "value" | "onChange"
+  "value" | "onChange" | "readonly" | "disabled"
 >;
 
 interface IInputProps extends THTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  readonly?: boolean;
+  disabled?: boolean;
 }
 
 export const Input = memo((props: IInputProps) => {
@@ -20,8 +22,10 @@ export const Input = memo((props: IInputProps) => {
     value,
     onChange,
     type = "text",
-    placeholder,
+    placeholder = "",
     autofocus,
+    readonly = false,
+    disabled = false,
     ...otherProps
   } = props;
   const ref = useRef<HTMLInputElement>(null);
@@ -37,7 +41,16 @@ export const Input = memo((props: IInputProps) => {
   };
 
   return (
-    <label className={classNames(css.InputWrapper, {}, [className])}>
+    <label
+      className={classNames(
+        css.InputWrapper,
+        {
+          [css.submit]: type === "submit",
+          [css.readonly]: readonly,
+        },
+        [className]
+      )}
+    >
       {placeholder && <span className={css.placeholder}>{placeholder}</span>}
 
       <input
@@ -45,7 +58,10 @@ export const Input = memo((props: IInputProps) => {
         type={type}
         value={value}
         onChange={onChangeHandler}
+        readOnly={readonly}
+        disabled={disabled || readonly}
         className={css.input}
+        placeholder={placeholder}
         {...otherProps}
       />
     </label>

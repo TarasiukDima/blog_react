@@ -1,12 +1,13 @@
 import { IStateSchema } from "app/providers/StoreProvider";
-import { Countries, Currency } from "shared/const/config";
 import { getProfileLoading } from "./getProfileLoading";
+import { Currency } from "../../../../../entities/Currency";
+import { Countries } from "../../../../../entities/Countries";
 
 describe("getProfileLoading", () => {
   test("should return false", () => {
     const state: DeepPartial<IStateSchema> = {
       profile: {
-        canEdit: false,
+        readonly: false,
         isLoading: false,
         error: "",
         data: null,
@@ -20,7 +21,7 @@ describe("getProfileLoading", () => {
   test("should return true", () => {
     const state: DeepPartial<IStateSchema> = {
       profile: {
-        canEdit: false,
+        readonly: false,
         isLoading: true,
         error: "",
         data: null,

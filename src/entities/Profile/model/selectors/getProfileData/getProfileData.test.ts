@@ -1,5 +1,6 @@
 import { IStateSchema } from "app/providers/StoreProvider";
-import { Countries, Currency } from "shared/const/config";
+import { Countries } from "../../../../../entities/Countries";
+import { Currency } from "../../../../../entities/Currency";
 import { getProfileData } from "./getProfileData";
 
 describe("getCounter", () => {

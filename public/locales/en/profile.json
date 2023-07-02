@@ -1,5 +1,17 @@
 {
-  "title": "Profile",
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "Ошибка загрузки данных профиля": "Error loading profile data",
+  "Попробуйте обновить страницу": "Try refreshing the page",
+  "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Ваше имя": "Your name",
+  "Ваша фамилия": "Your last name",
+  "Ваш ник": "Your nickname",
+  "Ваш возраст": "Your age",
+  "Ваша страна": "Your country",
+  "Ваш город": "Your city",
+  "Валюта": "Currency",
+  "Ваш аватар (ссылка)": "Your avatar (link)",
+  "Сохранить": "Save"
 
 }
