@@ -13,13 +13,13 @@ const Sidebar: FC<ISidebarProps> = ({ className }) => {
     setCollapsed((prev) => !prev);
   };
   return (
-    <div
+    <aside
       className={classNames(css.Sidebar, { [css.collapsed]: collapsed }, [
         className,
       ])}
     >
       <button onClick={toggleSidebar}>Component</button>
-    </div>
+    </aside>
   );
 };
 

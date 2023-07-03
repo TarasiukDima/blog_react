@@ -3,10 +3,12 @@ import { IStateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { TReducersList } from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
 import { profileReducer } from "../../../../entities/Profile";
+import { articleReducer } from "../../../../entities/Article/model/slice/articleSlice";
 
 const defaultReducers: TReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
+  article: articleReducer,
 };
 export const StoreDecorator =
   (

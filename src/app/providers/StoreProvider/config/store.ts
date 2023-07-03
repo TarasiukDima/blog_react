@@ -1,4 +1,3 @@
-import { CurriedGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
 import {
   CombinedState,
   configureStore,

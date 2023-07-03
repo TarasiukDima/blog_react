@@ -1,0 +1,30 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.ArticleDetails {
+  &__avatar {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__sybTitle {
+    margin-bottom: 30px;
+  }
+
+  &__views,
+  &__date {
+    font-size: 90%;
+    margin-bottom: 5px;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 40px;
+  }
+}

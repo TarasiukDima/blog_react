@@ -6,9 +6,10 @@ import {
   ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
-import { IProfileSchema } from "entities/Profile";
-import { IUserSchema } from "entities/User";
 import { ILoginSchema } from "features/AuthByUsername";
+import { IArticleDetailsSchema } from "../../../../entities/Article";
+import { IProfileSchema } from "../../../../entities/Profile";
+import { IUserSchema } from "../../../../entities/User";
 
 export interface IStateSchema {
   user: IUserSchema;
@@ -16,6 +17,7 @@ export interface IStateSchema {
   // async reducers
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
+  article?: IArticleDetailsSchema;
 }
 
 export type TStateSchemaKey = keyof IStateSchema;

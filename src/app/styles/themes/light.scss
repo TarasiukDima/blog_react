@@ -2,8 +2,12 @@
 
 :root {
   --bg-color: #{$light};
-  --primary-color: #{$black};
+  --primary-color: #1c252c;
   --secondary-color: #{$brown};
   --invert-bg: #{$darkBlue};
   --invert-cl: #{$light};
+  // skeleton
+  --skeleton-shadow: rgba(0, 0, 0, 0.2);
+  // code
+  --code-bg: rgb(236, 236, 236);
 }

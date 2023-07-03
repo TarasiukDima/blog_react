@@ -13,8 +13,6 @@ const ComponentWrap = ({
 }) => {
   const { theme, toggleTheme } = useTheme();
 
-  console.log(th, theme);
-
   useEffect(() => {
     if (th !== theme) {
       toggleTheme();
@@ -36,7 +34,6 @@ const ComponentWrap = ({
 export const ThemeDecorator = (StoryComponent: StoryFn, context: any) => {
   const theme = context.parameters.theme || context.globals.theme;
 
-  console.log('context', context);
   return (
     <ThemeProvider startTheme={Theme.LIGHT}>
       <ComponentWrap th={theme}>

@@ -3,7 +3,7 @@
 
 .header {
   padding: 10px 0;
-  box-shadow: 0 1px 0 transparentize($black, 0.8);
+  box-shadow: 0 1px 0 (0, 0, 0, 0.2);
 
   .wrapper {
     @include dflex(space-between, center, row, wrap);
@@ -11,7 +11,7 @@
 }
 
 .dark {
-  box-shadow: 0 1px 0 transparentize($light, 0.8);
+  box-shadow: 0 1px 0 (255, 255, 255, 0.2);
 }
 /* > 576px */
 @include small-tablet {

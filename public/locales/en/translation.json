@@ -1,10 +1,12 @@
 {
   "header": {
     "home": "Home",
+    "articles": "Articles",
     "about": "About"
   },
   "Кнопка для переключения темы": "Switcher theme button.",
   "Кнопка войти в личный кабинет": "Login.",
   "Кнопка выйти из личного кабинета": "Logout.",
-  "Вы ввели не верный пароль": "You entered the wrong password or login."
+  "Вы ввели не верный пароль": "You entered the wrong password or login.",
+  "Копировать": "Copy"
 }

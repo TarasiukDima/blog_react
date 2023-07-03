@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { Section } from "shared/ui/Section";
 
@@ -7,4 +8,4 @@ const AboutPage = () => {
   return <Section>{t("title")}</Section>;
 };
 
-export default AboutPage;
+export default memo(AboutPage);

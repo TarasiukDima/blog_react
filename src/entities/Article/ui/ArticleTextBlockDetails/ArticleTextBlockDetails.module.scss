@@ -1,0 +1,15 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.ArticleTextBlockDetails {
+  margin-bottom: 20px;
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__text ~ .ArticleTextBlockDetails__text {
+    margin-top: 10px;
+  }
+}
+

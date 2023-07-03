@@ -1,0 +1,24 @@
+@import "shared/styles/variables";
+@import "shared/styles/mixins";
+
+.Code {
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--primary-color);
+  background-color: var(--code-bg);
+
+  .Code__pre {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+  }
+
+  .Code_copyBtn {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+  }
+}

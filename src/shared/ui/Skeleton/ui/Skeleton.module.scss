@@ -1,0 +1,40 @@
+@import "shared/styles/variables";
+@import "shared/styles/mixins";
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200deg, 20%, 80%);
+  }
+
+  100% {
+    background-color: hsl(200deg, 20%, 95%);
+  }
+}
+
+.Skeleton {
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px var(--skeleton-shadow);
+  background: #e5e4e2;
+  animation: skeleton-loading 2s infinite linear;
+}
+
+.square {
+  border-radius: 10px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  margin-left: 0;
+}
+
+.right {
+  margin-left: auto;
+}

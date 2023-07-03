@@ -4,6 +4,14 @@ main {
   flex-grow: 1;
 
   .wrapper {
-    @include dflex(space-between, center, row, wrap);
+    @include dflex(space-between, stretch, row, wrap);
+
+    aside {
+      width: 20%;
+    }
+
+    section {
+      width: 78%;
+    }
   }
 }

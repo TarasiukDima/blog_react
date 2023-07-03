@@ -4,6 +4,8 @@ import { AboutPage } from "pages/AboutPage";
 import { ProfilePage } from "pages/ProfilePage";
 import { ErrorPage } from "pages/ErrorPage";
 import { NotFoundPage } from "pages/NotFoundPage";
+import { ArticlesPage } from "pages/ArticlesPage";
+import { ArticleDetailsPage } from "pages/ArticleDetailsPage";
 import { routesPath } from "../../../config/roteConfig";
 import { AppLayout } from "../../../ui/AppLayout";
 import { ErrorBoundaryRoute } from "./ErrorBoundaryRoute";
@@ -29,6 +31,25 @@ export const routesApp: Array<RouteObject> = [
       </RequireAuth>
     ),
   },
+  {
+    id: "4",
+    path: routesPath.articles,
+    element: (
+      <RequireAuth>
+        <ArticlesPage />
+      </RequireAuth>
+    ),
+  },
+  {
+    id: "5",
+    path: routesPath.one_article,
+    element: (
+      <RequireAuth>
+        <ArticleDetailsPage />
+      </RequireAuth>
+    ),
+  },
+
   {
     id: "9",
     path: routesPath.error,
