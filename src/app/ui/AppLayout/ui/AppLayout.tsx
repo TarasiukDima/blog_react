@@ -1,5 +1,6 @@
 import { FC, Suspense, useEffect, useLayoutEffect } from "react";
 import { useOutlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Header } from "widgets/Header";
 import { Footer } from "widgets/Footer/";
 import { Sidebar } from "widgets/Sidebar/";
@@ -8,7 +9,7 @@ import { Spinner } from "shared/ui/Spinner";
 import { navigationApp } from "app/config/roteConfig";
 import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
 import { Theme } from "shared/types";
-import { userActions } from "../../../../entities/User";
+import { getUserInited, userActions } from "../../../../entities/User";
 import { useTheme } from "../../../providers/ThemeProvider";
 import css from "./AppLayout.module.scss";
 
@@ -16,6 +17,7 @@ const AppLayout: FC = () => {
   const { theme } = useTheme();
   const currentOutlet = useOutlet();
   const dispatch = useAppDispatch();
+  const inited = useSelector(getUserInited);
 
   useLayoutEffect(() => {
     if (theme === Theme.DARK) {
@@ -34,10 +36,12 @@ const AppLayout: FC = () => {
       <Header navigationApp={navigationApp} />
 
       <main className={css.main}>
-        <Wrapper className={css.wrapper}>
-          <Sidebar />
-          <Suspense fallback={<Spinner />}>{currentOutlet}</Suspense>
-        </Wrapper>
+        {inited && (
+          <Wrapper className={css.wrapper}>
+            <Sidebar />
+            <Suspense fallback={<Spinner />}>{currentOutlet}</Suspense>
+          </Wrapper>
+        )}
       </main>
 
       <Footer />

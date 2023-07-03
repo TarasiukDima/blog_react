@@ -8,11 +8,17 @@ export const fetchProfileData = createAsyncThunk<
   IThunkConfig<string>
 >("profile/fetchProfileData", async (_, { extra, rejectWithValue }) => {
   try {
+    console.log('123');
     const response = await extra.api.get<IProfile>("/profile");
+
+    console.log('response', response);
+    console.log('.data', response.data);
 
     if (!response.data) {
       throw new Error("Error");
     }
+
+    console.log('.data', response.data);
 
     return response.data;
   } catch (e) {

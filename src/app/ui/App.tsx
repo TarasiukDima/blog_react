@@ -3,7 +3,7 @@ import { RouterProvider } from "react-router-dom";
 import { ErrorBoundary } from "../providers/ErrorBoundary";
 import { StoreProvider } from "../providers/StoreProvider";
 import { ThemeProvider } from "../providers/ThemeProvider";
-import { appRouter } from "./AppRouter";
+import { appRouter } from "../providers/router/ui/AppRouter";
 import "./index.scss";
 
 const App = () => (

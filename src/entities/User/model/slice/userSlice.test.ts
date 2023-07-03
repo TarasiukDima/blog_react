@@ -6,7 +6,7 @@ import { IUser, IUserSchema } from "../types/user";
 const { getItemMock, removeItemMock } = mockLocalStorage();
 
 describe("userSlice.test", () => {
-  const state: IUserSchema = {
+  const state: DeepPartial<IUserSchema> = {
     authData: {
       id: "1",
       username: "admin",
@@ -15,18 +15,18 @@ describe("userSlice.test", () => {
 
   test("setAuthData", () => {
     expect(
-      userReducer({}, userActions.setAuthData(state.authData as IUser))
+      userReducer({} as IUserSchema, userActions.setAuthData(state.authData as IUser))
     ).toEqual(state);
   });
 
   test("initAuthData", () => {
-    expect(userReducer(state, userActions.initAuthData())).toEqual(state);
+    expect(userReducer(state as IUserSchema, userActions.initAuthData())).toEqual(state);
     expect(getItemMock).toHaveBeenCalled();
     expect(getItemMock).toHaveBeenCalledWith(USER_LOCALSTORAGE_KEY);
   });
 
   test("logout user", () => {
-    expect(userReducer(state, userActions.logout())).toEqual({
+    expect(userReducer(state as IUserSchema, userActions.logout())).toEqual({
       authData: undefined,
     });
     expect(removeItemMock).toHaveBeenCalled();
