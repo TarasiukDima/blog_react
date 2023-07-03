@@ -32,14 +32,14 @@ const preview: Preview = {
     theme: {
       name: "Theme",
       description: "Theme for the components",
-      defaultValue: "light",
+      defaultValue: "light_theme",
       toolbar: {
         title: "Theme",
         dynamicTitle: true,
         icon: "circlehollow",
         items: [
-          { value: "light", icon: "circlehollow", title: "Light" },
-          { value: "dark", icon: "circle", title: "Dark" },
+          { value: "light_theme", icon: "circlehollow", title: "Light" },
+          { value: "dark_theme", icon: "circle", title: "Dark" },
         ],
         showName: true,
       },
