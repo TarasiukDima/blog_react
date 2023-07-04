@@ -8,6 +8,7 @@ interface ISkeletonProps {
   width?: string | number;
   height?: string | number;
   place?: "center" | "left" | "right";
+  noMargin?: boolean;
 }
 
 const Skeleton: FC<ISkeletonProps> = ({
@@ -16,6 +17,7 @@ const Skeleton: FC<ISkeletonProps> = ({
   width = "100%",
   height = "100px",
   place = "left",
+  noMargin = false,
 }) => {
   const styles: CSSProperties = {
     width,
@@ -24,7 +26,9 @@ const Skeleton: FC<ISkeletonProps> = ({
 
   return (
     <div
-      className={classNames(css.Skeleton, {}, [
+      className={classNames(css.Skeleton, {
+        [css.noneMargin]: noMargin,
+      }, [
         className,
         css[type],
         css[place],

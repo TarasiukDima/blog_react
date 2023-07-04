@@ -1,5 +1,8 @@
 @import "shared/styles/variables";
 
+$shadowColor: rgba(247, 247, 247, 0.842);
+$infoColor: #777;
+
 body.dark_theme {
   --bg-color: #{$darkBlue};
   --primary-color: #{$whiteColor};
@@ -7,9 +10,12 @@ body.dark_theme {
   --invert-bg: #{$light};
   --invert-cl: #{$darkBlue};
   // skeleton
-  --skeleton-shadow: rgba(247, 247, 247, 0.842);
+  --skeleton-shadow: #{$shadowColor};
   // code
   --code-bg: rgba(34, 34, 34, 1);
   // comments
-  --comment-color: #777;
+  --comment-color: #{$infoColor};
+    // articles
+    --article-info: #{$infoColor};
+    --article-shadow: #{$shadowColor};
 }

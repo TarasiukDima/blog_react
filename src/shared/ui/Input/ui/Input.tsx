@@ -19,7 +19,7 @@ interface IInputProps extends THTMLInputProps {
 export const Input = memo((props: IInputProps) => {
   const {
     className,
-    value,
+    value = "",
     onChange,
     type = "text",
     placeholder = "",

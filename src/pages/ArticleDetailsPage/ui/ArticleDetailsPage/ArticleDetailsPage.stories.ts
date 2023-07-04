@@ -23,7 +23,11 @@ const articleContent: IArticle = {
   img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   views: 1022,
   createdAt: "26.02.2022",
-  userId: "1",
+  user: {
+    id: "1",
+    username: "admin",
+    avatar: "https://cdn1.iconfinder.com/data/icons/people-49/512/_formal_mustache_man-01-1024.png",
+  },
   type: [ArticleType.IT],
   blocks: [
     {

@@ -7,12 +7,15 @@ import { Section } from "shared/ui/Section";
 import { Title } from "shared/ui/Title";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { AddCommentForm } from "features/addCommentForm";
+import { Button } from "shared/ui/Button";
 import {
   DynamicModulesLoader,
   TReducersList,
 } from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
-import { ArticleDetails } from "../../../../entities/Article";
-import { CommentList } from "../../../../entities/Comment";
+import { AppLink, VariantLink } from "shared/ui/AppLink";
+import { routesPath } from "app/config/roteConfig";
+import { ArticleDetails } from "entities/Article";
+import { CommentList } from "entities/Comment";
 import {
   articleDetailsCommentsReducer,
   getArticleComments,
@@ -53,6 +56,9 @@ const ArticleDetailsPage = () => {
   return (
     <DynamicModulesLoader reducers={reducers} removeAfterUnmount>
       <Section>
+        <AppLink variant={VariantLink.BUTTON_LINK} to={routesPath.articles}>
+          {t("Назад к статьям")}
+        </AppLink>
         <ArticleDetails id={id} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoadingComments} />

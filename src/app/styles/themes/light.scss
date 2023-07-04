@@ -1,5 +1,8 @@
 @import "shared/styles/variables";
 
+$shadowColor: rgba(0, 0, 0, 0.2);
+$infoColor: #bebebe;
+
 :root {
   --bg-color: #{$light};
   --primary-color: #1c252c;
@@ -7,9 +10,12 @@
   --invert-bg: #{$darkBlue};
   --invert-cl: #{$light};
   // skeleton
-  --skeleton-shadow: rgba(0, 0, 0, 0.2);
+  --skeleton-shadow: #{$shadowColor};
   // code
   --code-bg: #ececec;
   // comments
-  --comment-color: #bebebe;
+  --comment-color:#{ $infoColor};
+  // articles
+  --article-info:#{ $infoColor};
+  --article-shadow: #{$shadowColor};
 }
