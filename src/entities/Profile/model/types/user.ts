@@ -11,6 +11,7 @@ export enum ValidateProfileErrors {
   SERVER_ERROR = "SERVER_ERROR",
 }
 export interface IProfile {
+  id?: string;
   first?: string;
   lastname?: string;
   username?: string;

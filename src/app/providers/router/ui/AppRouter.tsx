@@ -24,7 +24,7 @@ export const routesApp: Array<RouteObject> = [
   },
   {
     id: "3",
-    path: routesPath.profile,
+    path: `${routesPath.profile}/:id`,
     element: (
       <RequireAuth>
         <ProfilePage />
@@ -42,7 +42,7 @@ export const routesApp: Array<RouteObject> = [
   },
   {
     id: "5",
-    path: routesPath.one_article,
+    path: `${routesPath.one_article}/:id`,
     element: (
       <RequireAuth>
         <ArticleDetailsPage />

@@ -1,6 +1,7 @@
 import { ReactNode, memo, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
   DynamicModulesLoader,
@@ -33,7 +34,7 @@ interface IProfileCardProps {
 }
 
 const reducers: TReducersList = {
-  article: articleReducer,
+  articleDetails: articleReducer,
 };
 
 export const ArticleDetails = memo(
@@ -44,11 +45,9 @@ export const ArticleDetails = memo(
     const error = useSelector(getArticleError);
     const articleData = useSelector(getArticleData);
 
-    useEffect(() => {
-      if (__PROJECT__ !== "storybook") {
-        dispatch(fetchArticleById(id));
-      }
-    }, [id, dispatch]);
+    useInitialEffect(() => {
+      dispatch(fetchArticleById(id));
+    });
 
     const renderBlock = useCallback((block: TArticleBlock) => {
       switch (block.type) {

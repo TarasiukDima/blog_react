@@ -10,6 +10,7 @@ describe("userSlice.test", () => {
     authData: {
       id: "1",
       username: "admin",
+      avatar: "image",
     },
     _inited: true,
   };

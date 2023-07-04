@@ -4,23 +4,23 @@ import { getArticleLoading } from "./getArticleLoading";
 describe("getArticleLoading", () => {
   test("should return false", () => {
     const state: DeepPartial<IStateSchema> = {
-      article: {
+      articleDetails: {
         isLoading: false,
       },
     };
     expect(getArticleLoading(state as IStateSchema)).toEqual(
-      state.article?.isLoading
+      state.articleDetails?.isLoading
     );
   });
 
   test("should return true", () => {
     const state: DeepPartial<IStateSchema> = {
-      article: {
+      articleDetails: {
         isLoading: true,
       },
     };
     expect(getArticleLoading(state as IStateSchema)).toEqual(
-      state.article?.isLoading
+      state.articleDetails?.isLoading
     );
   });
 });

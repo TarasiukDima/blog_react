@@ -4,7 +4,7 @@ import { fetchArticleById } from "./fetchArticleById";
 
 describe("fetchArticleById.test", () => {
   const data: DeepPartial<IStateSchema> = {
-    article: {
+    articleDetails: {
       data: null,
       error: null,
       isLoading: false,

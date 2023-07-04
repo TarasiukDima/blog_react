@@ -4,21 +4,15 @@ import { IProfile } from "../../../model/types/user";
 
 export const fetchProfileData = createAsyncThunk<
   IProfile,
-  void,
+  string,
   IThunkConfig<string>
->("profile/fetchProfileData", async (_, { extra, rejectWithValue }) => {
+>("profile/fetchProfileData", async (profileId, { extra, rejectWithValue }) => {
   try {
-    console.log('123');
-    const response = await extra.api.get<IProfile>("/profile");
-
-    console.log('response', response);
-    console.log('.data', response.data);
+    const response = await extra.api.get<IProfile>(`/profile/${profileId}`);
 
     if (!response.data) {
       throw new Error("Error");
     }
-
-    console.log('.data', response.data);
 
     return response.data;
   } catch (e) {

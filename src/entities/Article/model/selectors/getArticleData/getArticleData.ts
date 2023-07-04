@@ -1,3 +1,3 @@
 import { IStateSchema } from "app/providers/StoreProvider";
 
-export const getArticleData = (state: IStateSchema) => state.article?.data || null;
+export const getArticleData = (state: IStateSchema) => state.articleDetails?.data || null;

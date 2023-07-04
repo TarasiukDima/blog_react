@@ -1,3 +1,33 @@
 .Section {
   flex-grow: 1;
 }
+
+.h1 {
+  font-size: var(--fz-h1);
+  margin-bottom: 30px;
+}
+
+.h2 {
+  font-size: var(--fz-h2);
+  margin-bottom: 26px;
+}
+
+.h3 {
+  font-size: var(--fz-h3);
+  margin-bottom: 20px;
+}
+
+.h4 {
+  font-size: var(--fz-h4);
+  margin-bottom: 15px;
+}
+
+.h5 {
+  font-size: var(--fz-h5);
+  margin-bottom: 10px;
+}
+
+.h6 {
+  font-size: var(--fz-h6);
+  margin-bottom: 10px;
+}

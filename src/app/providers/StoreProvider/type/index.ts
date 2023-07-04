@@ -7,6 +7,8 @@ import {
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { ILoginSchema } from "features/AuthByUsername";
+import { IAddCommentFormSchema } from "features/addCommentForm";
+import { IArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { IArticleDetailsSchema } from "../../../../entities/Article";
 import { IProfileSchema } from "../../../../entities/Profile";
 import { IUserSchema } from "../../../../entities/User";
@@ -17,7 +19,9 @@ export interface IStateSchema {
   // async reducers
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
-  article?: IArticleDetailsSchema;
+  articleDetails?: IArticleDetailsSchema;
+  articleDetailsComments?: IArticleDetailsCommentsSchema;
+  addCommentForm?: IAddCommentFormSchema;
 }
 
 export type TStateSchemaKey = keyof IStateSchema;

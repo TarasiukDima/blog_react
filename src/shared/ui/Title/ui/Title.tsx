@@ -9,7 +9,7 @@ interface ITitleProps {
 }
 
 const Title: FC<ITitleProps> = ({ Tag = "h1", className, children }) => (
-  <Tag className={classNames(css.Title, {}, [className])}>{children}</Tag>
+  <Tag className={classNames(css.Title, {}, [className, css[Tag]])}>{children}</Tag>
 );
 
 export { Title };

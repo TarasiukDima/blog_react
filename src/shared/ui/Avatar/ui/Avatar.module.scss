@@ -1,6 +1,18 @@
 .Avatar_img {
   display: block;
   border-radius: 50%;
+}
+
+.center {
   margin-left: auto;
   margin-right: auto;
+}
+
+.none,
+.left {
+  margin-left: 0;
+}
+
+.right {
+  margin-left: auto;
 }

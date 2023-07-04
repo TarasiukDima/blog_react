@@ -1,0 +1,10 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.CommentList {
+  width: 100%;
+}
+
+.CommentList__title {
+  margin: 30px 0 20px;
+}

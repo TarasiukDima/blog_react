@@ -37,7 +37,7 @@ export const AppLinkLikeButton: Story = {
 
 export const AppLinkLikeIcon: Story = {
   args: {
-    children: "Link button",
+    children: "",
     variant: VariantLink.ICON_LINK,
   },
 };

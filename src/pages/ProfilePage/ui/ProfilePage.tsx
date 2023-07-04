@@ -1,7 +1,9 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {
   DynamicModulesLoader,
   TReducersList,
@@ -36,6 +38,7 @@ const ProfilePage = () => {
   const isLoading = useSelector(getProfileLoading);
   const readOnly = useSelector(getProfileReadOnly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("profile");
 
   const validateErrorsTranslate = {
@@ -50,11 +53,11 @@ const ProfilePage = () => {
     [ValidateProfileErrors.SERVER_ERROR]: t("Ошибка сервера"),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstName = useCallback(
     (firstName: string) => {

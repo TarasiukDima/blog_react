@@ -18,7 +18,7 @@ const Code = memo(({ className, text }: IButtonProps) => {
   }, [text]);
 
   return (
-    <div className={css.Code}>
+    <div className={classNames(css.Code, {}, [className])}>
       <Button
         className={css.Code_copyBtn}
         onClick={onClickHandler}
@@ -27,7 +27,7 @@ const Code = memo(({ className, text }: IButtonProps) => {
       >
         <Icon Svg={CopyIcon} />
       </Button>
-      <pre className={classNames(css.Code__pre, {}, [className])}>
+      <pre className={css.Code__pre}>
         <code>{text}</code>
       </pre>
     </div>

@@ -37,7 +37,7 @@ const LogIn: FC = memo(() => {
       <div className={css.button__wrapper}>
         <AppLink
           className={css.user__button}
-          to={routesPath.profile}
+          to={`${routesPath.profile}/${authData.id}`}
           variant={VariantLink.ICON_LINK}
           size={ButtonSize.L}
         >

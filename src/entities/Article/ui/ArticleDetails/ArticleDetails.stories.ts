@@ -91,7 +91,7 @@ export const ArticleDetails: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      article: {
+      articleDetails: {
         isLoading: false,
         data: articleContent,
         error: null,
@@ -104,7 +104,7 @@ export const ArticleDetailsLoading: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      article: {
+      articleDetails: {
         isLoading: true,
         data: null,
         error: null,
@@ -117,7 +117,7 @@ export const ArticleDetailsWithError: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      article: {
+      articleDetails: {
         isLoading: false,
         data: null,
         error: "Error",

@@ -1,0 +1,25 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.CommentCard {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--invert-bg);
+
+  &__header {
+    @include dflex(flex-start, center, row);
+
+    margin-bottom: 10px;
+
+    &_name {
+      font-weight: bold;
+      margin-left: 10px;
+      color: var(--secondary-color);
+    }
+  }
+
+  &__content {
+    color: var(--comment-color);
+  }
+}

@@ -91,7 +91,7 @@ export const ArticleDetailsPage: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      article: {
+      articleDetails: {
         isLoading: false,
         data: articleContent,
         error: null,
