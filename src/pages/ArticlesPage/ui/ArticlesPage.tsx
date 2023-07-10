@@ -1,4 +1,4 @@
-import { memo, useCallback, useRef } from "react";
+import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
@@ -19,15 +19,13 @@ import {
   articlesPageReducer,
   getArticles,
 } from "../model/slices/articlesPageSlice";
-import { fetchArticlesList } from "../model/services/fetchArticlesList/fetchArticlesList";
 import {
-  getArticlesCurrentPage,
   getArticlesPageError,
-  getArticlesPageHasMore,
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from "../model/selectors/articles";
 import { fetchNextArticlesPage } from "../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { initArticlesPage } from "../model/services/initArticlesPage/initArticlesPage";
 
 const reducers: TReducersList = {
   articlesPage: articlesPageReducer,
@@ -40,12 +38,9 @@ const ArticlesPage = () => {
   const isLoadingArticles = useSelector(getArticlesPageIsLoading);
   const errorArticles = useSelector(getArticlesPageError);
   const viewArticles = useSelector(getArticlesPageView);
-  const page = useSelector(getArticlesCurrentPage);
-  const hasMore = useSelector(getArticlesPageHasMore);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   const onChangeView = useCallback(
@@ -60,7 +55,7 @@ const ArticlesPage = () => {
   }, [dispatch]);
 
   return (
-    <DynamicModulesLoader reducers={reducers}>
+    <DynamicModulesLoader reducers={reducers} removeAfterUnmount={false}>
       <Section onScrollEnd={onLoadNextPage}>
         <Title Tag="h1">{t("Статьи")}</Title>
 

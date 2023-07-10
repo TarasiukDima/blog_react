@@ -3,11 +3,11 @@ import {
   createEntityAdapter,
   createSlice,
 } from "@reduxjs/toolkit";
-import { ArticleView, IArticle } from "entities/Article";
 import { IStateSchema } from "app/providers/StoreProvider";
 import {
   ARTICLES_VIEW_LOCALSTORAGE_KEY,
 } from "shared/const/localstorage";
+import { ArticleView, IArticle } from "../../../../entities/Article";
 import { IArticlesPageSchema } from "../types/articlesPageSchema";
 import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
 
@@ -30,6 +30,7 @@ const articlesPageSlice = createSlice({
     page: 1,
     limit: 4,
     hasMore: true,
+    _inited: false,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -46,6 +47,7 @@ const articlesPageSlice = createSlice({
       state.view = view;
       state.limit = view === ArticleView.GRID ? 12 : 4;
       state.page = 1;
+      state._inited = true;
     },
   },
   extraReducers: (builder) => {
