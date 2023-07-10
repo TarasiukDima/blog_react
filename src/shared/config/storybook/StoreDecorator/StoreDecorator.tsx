@@ -4,9 +4,10 @@ import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { TReducersList } from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
 import { addCommentFormReducer } from "features/addCommentForm/model/slices/addCommentFormSlice";
 import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice";
-import { userReducer } from "../../../../entities/User";
-import { profileReducer } from "../../../../entities/Profile";
-import { articleReducer } from "../../../../entities/Article/model/slice/articleSlice";
+import { articlesPageReducer } from "pages/ArticlesPage/model/slices/articlesPageSlice";
+import { profileReducer } from "entities/Profile";
+import { userReducer } from "entities/User";
+import { articleReducer } from "entities/Article/model/slice/articleSlice";
 
 const defaultReducers: TReducersList = {
   loginForm: loginReducer,
@@ -15,6 +16,7 @@ const defaultReducers: TReducersList = {
   addCommentForm: addCommentFormReducer,
   articleDetailsComments: articleDetailsCommentsReducer,
   user: userReducer,
+  articlesPage: articlesPageReducer,
 };
 
 export const StoreDecorator =
