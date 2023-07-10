@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { IArticle } from "entities/Article";
+// import { IArticle } from "entities/Article";
 import ArticlesPageComponent from "./ArticlesPage";
 
 const meta: Meta<typeof ArticlesPageComponent> = {

@@ -4,8 +4,6 @@
 .ArticleViewSelector {
   @include dflex(flex-start, stretch, row);
 
-  margin-bottom: 20px;
-
   .active {
     background-color: var(--green);
   }

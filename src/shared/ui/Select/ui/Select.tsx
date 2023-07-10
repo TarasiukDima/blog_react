@@ -7,21 +7,21 @@ type THTMLSelectProps = Omit<
   "value" | "onChange" | "readonly" | "disabled"
 >;
 
-interface SelectOptions {
-  value: string;
+export interface SelectOptions<T extends string> {
+  value: T;
   content: string;
 }
 
-interface ISelectProps extends THTMLSelectProps {
+interface ISelectProps<T extends string> extends THTMLSelectProps {
   className?: string;
   placeholder?: string;
-  value?: string;
-  options?: Array<SelectOptions>;
+  value?: T;
+  options?: Array<SelectOptions<T>>;
   disabled?: boolean;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
 }
 
-export const Select = memo((props: ISelectProps) => {
+export const Select = <T extends string>(props: ISelectProps<T>) => {
   const {
     className,
     options,
@@ -34,11 +34,11 @@ export const Select = memo((props: ISelectProps) => {
   const ref = useRef<HTMLSelectElement>(null);
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(event.target.value);
+    onChange?.(event.target.value as T);
   };
 
   const listOptions = useMemo(
-    () => options?.map(({ content, value }) => (
+    () => (options as Array<SelectOptions<T>>)?.map(({ content, value }) => (
       <option className={css.option} key={value} value={value}>
         {content}
       </option>
@@ -70,4 +70,4 @@ export const Select = memo((props: ISelectProps) => {
       </select>
     </label>
   );
-});
+};

@@ -1,0 +1,15 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+
+.ArticleSortSelector {
+  @include dflex(flex-start, stretch, row, wrap);
+
+  flex-grow: 1;
+
+  .ArticleSortSelector__item{
+    flex-grow: 1;
+    width: 30%;
+    margin-right: 10px;
+  }
+}

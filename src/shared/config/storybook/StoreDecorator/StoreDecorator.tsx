@@ -8,6 +8,7 @@ import { articlesPageReducer } from "pages/ArticlesPage/model/slices/articlesPag
 import { profileReducer } from "entities/Profile";
 import { userReducer } from "entities/User";
 import { articleReducer } from "entities/Article/model/slice/articleSlice";
+import { scrollReducer } from "features/scrollSave";
 
 const defaultReducers: TReducersList = {
   loginForm: loginReducer,
@@ -17,6 +18,7 @@ const defaultReducers: TReducersList = {
   articleDetailsComments: articleDetailsCommentsReducer,
   user: userReducer,
   articlesPage: articlesPageReducer,
+  scroll: scrollReducer,
 };
 
 export const StoreDecorator =

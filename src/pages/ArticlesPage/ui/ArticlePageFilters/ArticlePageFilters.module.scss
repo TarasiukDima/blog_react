@@ -1,0 +1,14 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+
+.ArticlePageFilters {
+  @include dflex(space-between, center, row, wrap);
+
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.ArticlePageFilters__search {
+  width: 100%;
+}

@@ -12,3 +12,10 @@ export enum ButtonSize {
   M = "size_m",
   L = "size_l",
 }
+
+export enum OrderVariants {
+  ASC = "asc",
+  DESC = "desc",
+}
+
+export type TArticleOrder = OrderVariants;

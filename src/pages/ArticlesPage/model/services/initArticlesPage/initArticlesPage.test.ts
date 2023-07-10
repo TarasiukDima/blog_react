@@ -11,10 +11,9 @@ describe("initArticlesPage.test", () => {
         _inited: false,
       },
     });
-    await thunk.callThunk();
-
+    await thunk.callThunk({} as URLSearchParams);
     expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
+    expect(fetchArticlesList).toHaveBeenCalled();
   });
 
   test("initArticlesPage not called", async () => {
@@ -23,7 +22,7 @@ describe("initArticlesPage.test", () => {
         _inited: true,
       },
     });
-    await thunk.callThunk();
+    await thunk.callThunk({} as URLSearchParams);
 
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(fetchArticlesList).not.toHaveBeenCalled();

@@ -3,5 +3,12 @@
   "Ошибка загрузки данных статьи": "Error loading article data",
   "Читать дальше": "Read more",
   "Назад к статьям": "Back to articles",
+  "Сортировать по": "Sorting by",
+  "Поиск": "Search",
+  "возрастанию": "ascending",
+  "убыванию": "descending",
+  "дате создания": "creation date",
+  "названию": "title",
+  "просмотрам": "views",
   "Статья не найдена": "Article not found"
 }
