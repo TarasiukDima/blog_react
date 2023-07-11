@@ -26,7 +26,8 @@ const articleContent: IArticle = {
   user: {
     id: "1",
     username: "admin",
-    avatar: "https://cdn1.iconfinder.com/data/icons/people-49/512/_formal_mustache_man-01-1024.png",
+    avatar:
+      "https://cdn1.iconfinder.com/data/icons/people-49/512/_formal_mustache_man-01-1024.png",
   },
   type: [ArticleType.IT],
   blocks: [
@@ -43,7 +44,7 @@ const articleContent: IArticle = {
     {
       id: "4",
       type: ArticleBlockType.CODE,
-      code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
+      code: "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;",
     },
     {
       id: "5",

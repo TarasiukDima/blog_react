@@ -3,7 +3,8 @@ import { IStateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { TReducersList } from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
 import { addCommentFormReducer } from "features/addCommentForm/model/slices/addCommentFormSlice";
-import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice";
+// import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice";
+import { articleDetailsPageReducer } from "pages/ArticleDetailsPage/model/slices";
 import { articlesPageReducer } from "pages/ArticlesPage/model/slices/articlesPageSlice";
 import { profileReducer } from "entities/Profile";
 import { userReducer } from "entities/User";
@@ -14,8 +15,8 @@ const defaultReducers: TReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleReducer,
+  articleDetailsPage: articleDetailsPageReducer,
   addCommentForm: addCommentFormReducer,
-  articleDetailsComments: articleDetailsCommentsReducer,
   user: userReducer,
   articlesPage: articlesPageReducer,
   scroll: scrollReducer,

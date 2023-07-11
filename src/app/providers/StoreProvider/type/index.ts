@@ -8,7 +8,11 @@ import {
 import { AxiosInstance } from "axios";
 import { ILoginSchema } from "features/AuthByUsername";
 import { IAddCommentFormSchema } from "features/addCommentForm";
-import { IArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
+import {
+  IArticleDetailsPageRecommendationsSchema,
+  IArticleDetailsCommentsSchema,
+  IArticleDetailsPageSchema,
+} from "pages/ArticleDetailsPage";
 import { IArticleDetailsSchema } from "entities/Article";
 import { IArticlesPageSchema } from "pages/ArticlesPage";
 import { IProfileSchema } from "entities/Profile";
@@ -23,9 +27,12 @@ export interface IStateSchema {
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
   articleDetails?: IArticleDetailsSchema;
-  articleDetailsComments?: IArticleDetailsCommentsSchema;
   addCommentForm?: IAddCommentFormSchema;
   articlesPage?: IArticlesPageSchema;
+
+  articleDetailsPage?: IArticleDetailsPageSchema;
+  // articleDetailsPage: IArticleDetailsPageSchema;
+  // articleDetailsComments?: IArticleDetailsCommentsSchema;
 }
 
 export type TStateSchemaKey = keyof IStateSchema;

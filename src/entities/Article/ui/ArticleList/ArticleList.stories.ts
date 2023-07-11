@@ -233,3 +233,11 @@ export const BigItemSkeleton: Story = {
     view: ArticleView.LIST,
   },
 };
+
+export const WithOutContent: Story = {
+  args: {
+    isLoading: false,
+    articles: [],
+    view: ArticleView.GRID,
+  },
+};

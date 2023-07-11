@@ -1,9 +1,7 @@
 import { memo, useCallback, useMemo } from "react";
-import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { getArticlesType } from "pages/ArticlesPage/model/selectors/articles";
 import { ITabItem, Tabs } from "shared/ui/Tabs";
-import { ArticleType } from "entities/Article/model/types/article";
+import { ArticleType } from "../../../../entities/Article/model/types/article";
 
 interface IArticleTypeTabsProps {
   className?: string;

@@ -7,7 +7,6 @@ import { Section } from "shared/ui/Section";
 import { Title } from "shared/ui/Title";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { AddCommentForm } from "features/addCommentForm";
-import { Button } from "shared/ui/Button";
 import {
   DynamicModulesLoader,
   TReducersList,
@@ -23,15 +22,29 @@ import {
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
+import { articleDetailsPageRecommendationsReducer } from "../../model/slices/articleDetailsPageRecommendationsSlice";
+import {
+  getArticleRecommendationsError,
+  getArticleRecommendationsIsLoading,
+} from "../../model/selectors/recommendations";
+import { ArticleDetailsRecommendations } from "../ArticleDetailsRecommendations/ArticleDetailsRecommendations";
+import { articleDetailsPageReducer } from "../../model/slices";
 
 const reducers: TReducersList = {
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 };
+
 const ArticleDetailsPage = () => {
   const { t } = useTranslation("articles");
   const { id } = useParams<{ id: string }>();
   const comments = useSelector(getArticleComments.selectAll);
   const isLoadingComments = useSelector(getArticleCommentsIsLoading);
+
+  const isLoadingRecommendations = useSelector(
+    getArticleRecommendationsIsLoading
+  );
+  const errorRecommendations = useSelector(getArticleRecommendationsError);
+
   const dispatch = useAppDispatch();
 
   useInitialEffect(() => {
@@ -62,6 +75,7 @@ const ArticleDetailsPage = () => {
         <ArticleDetails id={id} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoadingComments} />
+        <ArticleDetailsRecommendations />
       </Section>
     </DynamicModulesLoader>
   );

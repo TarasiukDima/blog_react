@@ -57,6 +57,7 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
+    "arrow-body-style": "off",
     "i18next/no-literal-string": [1, {
       markupOnly: true,
       ignoreAttribute: ["to"]

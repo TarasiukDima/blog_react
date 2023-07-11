@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, VariantLink } from "shared/ui/AppLink";
@@ -19,10 +19,11 @@ import css from "./ArticleListItem.module.scss";
 interface IArticleListItemBigProps {
   className?: string;
   article: IArticle;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItemBig = memo(
-  ({ className = "", article }: IArticleListItemBigProps) => {
+  ({ className = "", article, target }: IArticleListItemBigProps) => {
     const { t } = useTranslation("articles");
 
     const textBlock = article.blocks.find(
@@ -79,6 +80,7 @@ export const ArticleListItemBig = memo(
             className={css.ArticleListItem__bottom_link}
             to={`${routesPath.articles}/${article.id}`}
             variant={VariantLink.BUTTON_LINK}
+            target={target}
           >
             {t("Читать дальше")}
             ...
