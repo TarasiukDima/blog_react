@@ -1,6 +1,7 @@
 import { IUser } from "entities/User";
 
 export enum ArticleType {
+  ALL = "ALL",
   IT = "IT",
   SCIENCE = "SCIENCE",
   ECONOMICS = "ECONOMICS",

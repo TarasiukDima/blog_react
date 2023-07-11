@@ -212,7 +212,7 @@ export const SmallItem: Story = {
 
 export const SmallItemSkeleton: Story = {
   args: {
-    articles: articlesContent,
+    articles: [],
     isLoading: true,
     view: ArticleView.GRID,
   },
@@ -228,8 +228,8 @@ export const BigItem: Story = {
 
 export const BigItemSkeleton: Story = {
   args: {
-    articles: articlesContent,
     isLoading: true,
+    articles: [],
     view: ArticleView.LIST,
   },
 };

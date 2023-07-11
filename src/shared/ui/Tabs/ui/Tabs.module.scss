@@ -1,5 +1,15 @@
+@import "shared/styles/variables";
+@import "shared/styles/mixins";
+
 .Tabs {
-  flex-grow: 1;
-  padding: 30px;
+  @include dflex(flex-start, stretch, row, wrap);
+
+  .Tabs__item {
+    border-color: var(--comment-color)
+  }
+
+  .activeTab {
+    background-color: var(--green);
+  }
 }
 

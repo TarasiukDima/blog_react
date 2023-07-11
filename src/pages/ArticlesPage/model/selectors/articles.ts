@@ -1,6 +1,6 @@
 import { IStateSchema } from "app/providers/StoreProvider";
 import { OrderVariants } from "shared/types";
-import { ArticleView } from "../../../../entities/Article";
+import { ArticleType, ArticleView } from "../../../../entities/Article";
 import { ArticleSortField } from "../types/articlesPageSchema";
 
 export const getArticlesPageIsLoading = (state: IStateSchema) => state.articlesPage?.isLoading || false;
@@ -13,3 +13,4 @@ export const getArticlesInitedState = (state: IStateSchema) => state.articlesPag
 export const getArticlesSort = (state: IStateSchema) => state.articlesPage?.sort ?? ArticleSortField.TITLE;
 export const getArticlesOrder = (state: IStateSchema) => state.articlesPage?.order ?? OrderVariants.ASC;
 export const getArticlesSearch = (state: IStateSchema) => state.articlesPage?.search ?? "";
+export const getArticlesType = (state: IStateSchema) => state.articlesPage?.type ?? ArticleType.ALL;

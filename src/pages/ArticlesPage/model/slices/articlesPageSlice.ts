@@ -6,7 +6,7 @@ import {
 import { IStateSchema } from "app/providers/StoreProvider";
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "shared/const/localstorage";
 import { OrderVariants, TArticleOrder } from "shared/types";
-import { ArticleView, IArticle } from "../../../../entities/Article";
+import { ArticleType, ArticleView, IArticle } from "../../../../entities/Article";
 import {
   ArticleSortField,
   IArticlesPageSchema,
@@ -36,6 +36,7 @@ const articlesPageSlice = createSlice({
     order: OrderVariants.ASC,
     sort: ArticleSortField.CREATED,
     search: "",
+    type: ArticleType.ALL,
 
     _inited: false,
   }),
@@ -49,6 +50,9 @@ const articlesPageSlice = createSlice({
     },
     setOrder: (state, action: PayloadAction<TArticleOrder>) => {
       state.order = action.payload;
+    },
+    setType: (state, action: PayloadAction<ArticleType>) => {
+      state.type = action.payload;
     },
     setSort: (state, action: PayloadAction<ArticleSortField>) => {
       state.sort = action.payload;

@@ -1,13 +1,22 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { IThunkConfig } from "app/providers/StoreProvider/type";
+import {
+  ActionCreator,
+  AnyAction,
+  ThunkDispatch,
+  createAsyncThunk,
+} from "@reduxjs/toolkit";
+import {
+  IStateSchema,
+  IThunkConfig,
+  IThunkExtraArg,
+} from "app/providers/StoreProvider/type";
 import { getArticlesInitedState } from "../../selectors/articles";
 import { articlesPageActions } from "../../slices/articlesPageSlice";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 
 const checkUrlStringExist = (
   strFromUrl: string | null,
-  dispatch: any,
-  action: any
+  dispatch: ThunkDispatch<IStateSchema, IThunkExtraArg, AnyAction>,
+  action: ActionCreator<AnyAction>
 ) => {
   if (strFromUrl) {
     dispatch(action(strFromUrl));
@@ -23,10 +32,6 @@ export const initArticlesPage = createAsyncThunk<
   const inited = getArticlesInitedState(getState());
 
   if (!inited) {
-    // const orderFromUrl = searchParams.get("order");
-    // const sortFromUrl = searchParams.get("sort");
-    // const searchFromUrl = searchParams.get("search");
-
     checkUrlStringExist(
       searchParams.get("order"),
       dispatch,
@@ -43,6 +48,12 @@ export const initArticlesPage = createAsyncThunk<
       searchParams.get("search"),
       dispatch,
       articlesPageActions.setSearch
+    );
+
+    checkUrlStringExist(
+      searchParams.get("type"),
+      dispatch,
+      articlesPageActions.setType
     );
 
     dispatch(articlesPageActions.initState());

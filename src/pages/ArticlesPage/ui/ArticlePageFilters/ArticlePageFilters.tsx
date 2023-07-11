@@ -1,19 +1,26 @@
-import { memo, useCallback } from "react";
+import { memo, useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Input } from "shared/ui/Input";
-import { ArticleView, ArticleViewSelector } from "entities/Article";
+import {
+  ArticleType,
+  ArticleTypeTabs,
+  ArticleView,
+  ArticleViewSelector,
+} from "entities/Article";
 import { ArticleSortSelector } from "entities/Article/ui/ArticleSortSelector/ArticleSortSelector";
 import { TArticleOrder } from "shared/types";
+import { Tabs, ITabItem } from "shared/ui/Tabs";
 import { fetchArticlesList } from "pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
 import {
   getArticlesOrder,
   getArticlesPageView,
   getArticlesSearch,
   getArticlesSort,
+  getArticlesType,
 } from "../../model/selectors/articles";
 import { articlesPageActions } from "../../model/slices/articlesPageSlice";
 import { ArticleSortField } from "../../model/types/articlesPageSchema";
@@ -32,6 +39,7 @@ export const ArticlePageFilters = memo(
     const sort = useSelector(getArticlesSort);
     const order = useSelector(getArticlesOrder);
     const search = useSelector(getArticlesSearch);
+    const articleType = useSelector(getArticlesType);
 
     const fetchData = useCallback(() => {
       dispatch(fetchArticlesList({ replace: true }));
@@ -73,7 +81,14 @@ export const ArticlePageFilters = memo(
       [dispatch, debaunce]
     );
 
-    // const onChange
+    const onChangeTab = useCallback(
+      (tab: ITabItem) => {
+        dispatch(articlesPageActions.setType(tab.value as ArticleType));
+        dispatch(articlesPageActions.setPage(1));
+        dispatch(fetchArticlesList({ replace: true }));
+      },
+      [dispatch]
+    );
 
     return (
       <div className={classNames(css.ArticlePageFilters, {}, [className])}>
@@ -86,13 +101,15 @@ export const ArticlePageFilters = memo(
 
         <ArticleViewSelector view={viewArticles} onViewClick={onChangeView} />
 
-        <form className={css.ArticlePageFilters__search}>
+        <div className={css.ArticlePageFilters__search}>
           <Input
             value={search}
             placeholder={t("Поиск")}
             onChange={onChangeSearch}
           />
-        </form>
+        </div>
+
+        <ArticleTypeTabs onChangeTab={onChangeTab} articleType={articleType} />
       </div>
     );
   }

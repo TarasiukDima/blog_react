@@ -1,4 +1,6 @@
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
+import { Paragraph } from "shared/ui/Paragraph";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleView, IArticle } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
@@ -32,13 +34,29 @@ export const ArticleList = memo(
     articles,
     isLoading = false,
     view = ArticleView.GRID,
-  }: IArticleListProps) => (
-    <ul className={classNames(css.ArticleList, {}, [className])}>
-      {articles.map((oneArticle) => (
-        <ArticleListItem key={oneArticle.id} article={oneArticle} view={view} />
-      ))}
+  }: IArticleListProps) => {
+    const { t } = useTranslation("articles");
 
-      {isLoading && getSkeletons(view, className)}
-    </ul>
-  )
+    if (!isLoading && articles.length === 0) {
+      return (
+        <Paragraph className={classNames(css.ArticleList, {}, [className])}>
+          {t("Статьи не найдены!")}
+        </Paragraph>
+      );
+    }
+
+    return (
+      <ul className={classNames(css.ArticleList, {}, [className])}>
+        {articles.map((oneArticle) => (
+          <ArticleListItem
+            key={oneArticle.id}
+            article={oneArticle}
+            view={view}
+          />
+        ))}
+
+        {isLoading && getSkeletons(view, className)}
+      </ul>
+    );
+  }
 );

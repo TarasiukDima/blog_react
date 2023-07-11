@@ -1,5 +1,4 @@
 import { memo } from "react";
-import { useTranslation } from "react-i18next";
 import { ArticleView, IArticle } from "../../model/types/article";
 import { ArticleListItemBig } from "./ArticleListItemBig";
 import { ArticleListItemSmall } from "./ArticleListItemSmall";
@@ -16,8 +15,6 @@ export const ArticleListItem = memo(
     article,
     view = ArticleView.GRID,
   }: IArticleListItemProps) => {
-    const { t } = useTranslation("articles");
-
     if (view === ArticleView.GRID) {
       return <ArticleListItemSmall className={className} article={article} />;
     }
