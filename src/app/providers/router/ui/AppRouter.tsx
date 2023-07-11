@@ -6,6 +6,7 @@ import { ErrorPage } from "pages/ErrorPage";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { ArticlesPage } from "pages/ArticlesPage";
 import { ArticleDetailsPage } from "pages/ArticleDetailsPage";
+import { ArticleEditPage } from "pages/ArticleEditPage";
 import { routesPath } from "../../../config/roteConfig";
 import { AppLayout } from "../../../ui/AppLayout";
 import { ErrorBoundaryRoute } from "./ErrorBoundaryRoute";
@@ -46,6 +47,24 @@ export const routesApp: Array<RouteObject> = [
     element: (
       <RequireAuth>
         <ArticleDetailsPage />
+      </RequireAuth>
+    ),
+  },
+  {
+    id: "6",
+    path: `${routesPath.article_edit}`,
+    element: (
+      <RequireAuth>
+        <ArticleEditPage />
+      </RequireAuth>
+    ),
+  },
+  {
+    id: "7",
+    path: `${routesPath.article_create}`,
+    element: (
+      <RequireAuth>
+        <ArticleEditPage />
       </RequireAuth>
     ),
   },

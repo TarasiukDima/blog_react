@@ -6,6 +6,8 @@ export enum AppRoutes {
   PROFILE = "profile",
   ARTICLES = "articles",
   ONE_ARTICLE = "one_article",
+  ARTICLE_CREATE = "article_create",
+  ARTICLE_EDIT = "article_edit",
 
   ERROR_PAGE = "error",
   NOT_FOUND = "not_found",
@@ -17,6 +19,8 @@ export const routesPath: Record<AppRoutes, string> = {
   [AppRoutes.PROFILE]: "/profile", // /:id
   [AppRoutes.ARTICLES]: "/articles",
   [AppRoutes.ONE_ARTICLE]: "/articles", // /:id
+  [AppRoutes.ARTICLE_CREATE]: "/articles/new",
+  [AppRoutes.ARTICLE_EDIT]: "/articles/:id/edit",
 
   [AppRoutes.ERROR_PAGE]: "/error",
   [AppRoutes.NOT_FOUND]: "*",
@@ -37,5 +41,10 @@ export const navigationApp: Array<TRouteObject> = [
     id: "3",
     path: routesPath.articles,
     routeTextKey: "header.articles",
+  },
+  {
+    id: "4",
+    path: routesPath.article_create,
+    routeTextKey: "header.new_article",
   },
 ];

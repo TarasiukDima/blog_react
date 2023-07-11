@@ -2,6 +2,7 @@
   "header": {
     "home": "Home",
     "articles": "Articles",
+    "new_article": "Create article",
     "about": "About"
   },
   "Кнопка для переключения темы": "Switcher theme button.",
@@ -12,5 +13,6 @@
   "Комментариев нет": "No Comments",
   "Введите текст комментария": "Enter the comment text",
   "Отправить": "Send",
+  "Редактировать": "Edit",
   "Копировать": "Copy"
 }

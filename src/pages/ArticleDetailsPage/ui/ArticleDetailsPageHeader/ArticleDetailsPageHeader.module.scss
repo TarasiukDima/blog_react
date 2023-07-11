@@ -1,0 +1,9 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+
+.ArticleDetailsPageHeader {
+  @include dflex(space-between, center, row, wrap);
+
+  width: 100%;
+}
