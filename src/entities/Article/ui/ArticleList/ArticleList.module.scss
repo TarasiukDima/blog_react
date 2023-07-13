@@ -5,4 +5,10 @@
   @include dflex(flex-start, stretch, row, wrap);
 
   width: 100%;
+
+  .row {
+    @include dflex(flex-start, stretch, row);
+
+  }
 }
+

@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, memo } from "react";
+import { CSSProperties, HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, VariantLink } from "shared/ui/AppLink";
@@ -31,7 +31,7 @@ export const ArticleListItemBig = memo(
     ) as IArticleTextBlock;
 
     return (
-      <li
+      <div
         className={classNames(css.ArticleListItem, {}, [
           className,
           css.big_item,
@@ -91,7 +91,7 @@ export const ArticleListItemBig = memo(
             <Icon Svg={EyeIcon} />
           </Paragraph>
         </div>
-      </li>
+      </div>
     );
   }
 );

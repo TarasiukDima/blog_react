@@ -1,5 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
+import { List, ListRowProps, WindowScroller } from "react-virtualized";
 import { Paragraph } from "shared/ui/Paragraph";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleView, IArticle } from "../../model/types/article";
@@ -38,6 +39,34 @@ export const ArticleList = memo(
     view = ArticleView.GRID,
   }: IArticleListProps) => {
     const { t } = useTranslation("articles");
+    const isBig = view === ArticleView.LIST;
+    const itemsPerRow = isBig ? 1 : 4;
+    const rowCount = isBig ?
+      articles.length :
+      Math.ceil(articles.length / itemsPerRow);
+
+    const rowRender = ({ index, isScrolling, key, style }: ListRowProps) => {
+      const items = [];
+      const fromIndex = index * itemsPerRow;
+      const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
+
+      for (let i = fromIndex; i < toIndex; i += 1) {
+        items.push(
+          <ArticleListItem
+            key={articles[i].id}
+            article={articles[i]}
+            view={view}
+            target={target}
+          />
+        );
+      }
+
+      return (
+        <div key={key} style={style} className={css.row}>
+          {items}
+        </div>
+      );
+    };
 
     if (!isLoading && articles.length === 0) {
       return (
@@ -48,18 +77,26 @@ export const ArticleList = memo(
     }
 
     return (
-      <ul className={classNames(css.ArticleList, {}, [className])}>
-        {articles.map((oneArticle) => (
-          <ArticleListItem
-            key={oneArticle.id}
-            article={oneArticle}
-            view={view}
-            target={target}
-          />
-        ))}
-
-        {isLoading && getSkeletons(view, className)}
-      </ul>
+      <WindowScroller>
+        {({ width, height, onChildScroll, isScrolling, scrollTop }) => (
+          <div
+            className={classNames(css.ArticleList, {}, [className, css[view]])}
+          >
+            <List
+              width={width ?? 700}
+              height={height ?? 700}
+              rowHeight={isBig ? height : 350}
+              rowCount={rowCount}
+              rowRenderer={rowRender}
+              autoHeight
+              onScroll={onChildScroll}
+              isScrolling={isScrolling}
+              scrollTop={scrollTop}
+            />
+            {isLoading && getSkeletons(view)}
+          </div>
+        )}
+      </WindowScroller>
     );
   }
 );

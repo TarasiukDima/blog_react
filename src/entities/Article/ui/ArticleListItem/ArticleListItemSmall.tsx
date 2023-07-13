@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, memo } from "react";
+import { CSSProperties, HTMLAttributeAnchorTarget, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink } from "shared/ui/AppLink";
 import { Span, SpanVariants } from "shared/ui/Span";
@@ -16,12 +16,8 @@ interface IArticleListItemSmallProps {
 }
 
 export const ArticleListItemSmall = memo(
-  ({
-    className = "",
-    article,
-    target,
-  }: IArticleListItemSmallProps) => (
-    <li
+  ({ className = "", article, target }: IArticleListItemSmallProps) => (
+    <div
       className={classNames(css.ArticleListItem, {}, [
         className,
         css.small_item,
@@ -62,6 +58,6 @@ export const ArticleListItemSmall = memo(
 
         <Span className={css.ArticleListItem__link_title}>{article.title}</Span>
       </AppLink>
-    </li>
+    </div>
   )
 );

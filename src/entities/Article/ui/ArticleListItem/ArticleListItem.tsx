@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, memo } from "react";
+import { CSSProperties, HTMLAttributeAnchorTarget, memo } from "react";
 import { ArticleView, IArticle } from "../../model/types/article";
 import { ArticleListItemBig } from "./ArticleListItemBig";
 import { ArticleListItemSmall } from "./ArticleListItemSmall";
