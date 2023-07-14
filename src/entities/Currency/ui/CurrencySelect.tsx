@@ -1,6 +1,6 @@
-import { FC, memo, useCallback } from "react";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Select } from "shared/ui/Select";
+import { Listbox } from "shared/ui/Listbox";
 import { Currency } from "../model/types/currency";
 
 interface ICurrencySelectProps {
@@ -12,14 +12,17 @@ interface ICurrencySelectProps {
 
 const listCurrencies = [
   {
+    id: 1,
     content: Currency.EUR,
     value: Currency.EUR,
   },
   {
+    id: 2,
     content: Currency.RUB,
     value: Currency.RUB,
   },
   {
+    id: 3,
     content: Currency.USD,
     value: Currency.USD,
   },
@@ -36,13 +39,15 @@ export const CurrencySelect = memo(
     );
 
     return (
-      <Select
+      <Listbox
         className={className}
-        value={value}
+        value={value ?? ""}
         onChange={onChangeHandler}
-        disabled={disabled}
-        options={listCurrencies}
-        placeholder={t("Валюта")}
+        readonly={disabled}
+        items={listCurrencies}
+        defaultValue={t("Выберите валюту")}
+        label={t("Валюта")}
+        direction="top left"
       />
     );
   }

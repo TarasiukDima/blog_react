@@ -103,8 +103,6 @@
   }
 
   .ArticleListItem__top {
-    @include dflex(flex-start, center, row);
-
     color: var(--article-info);
 
     .ArticleListItem__top_user {
@@ -139,8 +137,6 @@
   }
 
   .ArticleListItem__bottom {
-    @include dflex(space-between, center, row);
-
     margin-top: 30px;
   }
 }
@@ -170,8 +166,6 @@
   padding: 10px;
 
   .ArticleListItem__top {
-    @include dflex(flex-start, center, row);
-
     .ArticleListItem__top_user {
       margin: 0 10px;
     }
@@ -195,8 +189,6 @@
   }
 
   .ArticleListItem__bottom {
-    @include dflex(space-between, center, row);
-
     margin-top: 30px;
   }
 }

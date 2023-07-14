@@ -13,20 +13,31 @@ const meta: Meta<typeof ProfileCardComponent> = {
 export default meta;
 type Story = StoryObj<typeof ProfileCardComponent>;
 
+const userData = {
+  first: "User",
+  lastname: "Userov",
+  age: 91,
+  currency: Currency.RUB,
+  country: Countries.Belarus,
+  city: "Brest",
+  username: "admin",
+  avatar: AvatarIcon as string,
+};
+
 export const ProfileCardWithData: Story = {
   args: {
     readonly: false,
     isLoading: false,
-    data: {
-      first: "User",
-      lastname: "Userov",
-      age: 91,
-      currency: Currency.RUB,
-      country: Countries.Belarus,
-      city: "Brest",
-      username: "admin",
-      avatar: AvatarIcon as string,
-    },
+    data: userData,
+    error: "",
+  },
+};
+
+export const ProfileCardReadonly: Story = {
+  args: {
+    readonly: true,
+    isLoading: false,
+    data: userData,
     error: "",
   },
 };

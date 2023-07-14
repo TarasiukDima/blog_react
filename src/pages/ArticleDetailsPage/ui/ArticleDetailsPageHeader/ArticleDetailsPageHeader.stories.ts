@@ -3,7 +3,7 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import { ArticleDetailsPageHeader as ArticleDetailsPageHeaderComponent } from "./ArticleDetailsPageHeader";
 
 const meta: Meta<typeof ArticleDetailsPageHeaderComponent> = {
-  title: "pages/ArticleDetailsPageHeader",
+  title: "pages/Article/ArticleDetailsPageHeader",
   component: ArticleDetailsPageHeaderComponent,
   tags: ["pages"],
 };

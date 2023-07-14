@@ -2,10 +2,7 @@
 @import "shared/styles/variables";
 
 .ArticleViewSelector {
-  @include dflex(flex-start, stretch, row);
-
   .active {
     background-color: var(--green);
   }
 }
-

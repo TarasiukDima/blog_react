@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Select, SelectOptions } from "shared/ui/Select";
 import { OrderVariants, TArticleOrder } from "shared/types";
+import { VStack } from "shared/ui/Stack";
 import { ArticleSortField } from "pages/ArticlesPage/model/types/articlesPageSchema";
 import css from "./ArticleSortSelector.module.scss";
 
@@ -57,7 +58,12 @@ export const ArticleSortSelector = memo(
     );
 
     return (
-      <div className={classNames(css.ArticleSortSelector, {}, [className])}>
+      <VStack
+        wrap="wrap"
+        justify="start"
+        align="stretch"
+        className={classNames(css.ArticleSortSelector, {}, [className])}
+      >
         <Select
           className={css.ArticleSortSelector__item}
           options={optionsSort}
@@ -73,7 +79,7 @@ export const ArticleSortSelector = memo(
           value={order}
           onChange={onChangeOrder}
         />
-      </div>
+      </VStack>
     );
   }
 );

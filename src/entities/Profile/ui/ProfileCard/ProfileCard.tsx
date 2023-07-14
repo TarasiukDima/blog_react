@@ -110,12 +110,6 @@ export const ProfileCard: FC<IProfileCardProps> = ({
           type="number"
         />
 
-        <CountriesSelect
-          value={data?.country}
-          disabled={readonly}
-          onChange={onChangeCountry}
-        />
-
         <Input
           value={data?.city}
           readonly={readonly}
@@ -124,18 +118,26 @@ export const ProfileCard: FC<IProfileCardProps> = ({
           type="text"
         />
 
-        <CurrencySelect
-          value={data?.currency}
-          onChange={onChangeCurrency}
-          disabled={readonly}
-        />
-
         <Input
           value={data?.avatar}
           readonly={readonly}
           onChange={onChangeAvatar}
           placeholder={t("Ваш аватар (ссылка)")}
           type="text"
+        />
+
+        <CountriesSelect
+          className={css.select}
+          value={data?.country}
+          disabled={readonly}
+          onChange={onChangeCountry}
+        />
+
+        <CurrencySelect
+          className={css.select}
+          value={data?.currency}
+          onChange={onChangeCurrency}
+          disabled={readonly}
         />
 
         {!readonly && (

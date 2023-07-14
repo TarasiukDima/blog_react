@@ -1,0 +1,57 @@
+@import "shared/styles/variables";
+@import "shared/styles/mixins";
+
+.Flex {
+  display: flex;
+}
+
+.allWidth {
+  width: 100%;
+}
+
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+
+.aStart {
+  align-items: flex-start;
+}
+
+.aStretch {
+  align-items: stretch;
+}
+
+.aCenter {
+  align-items: center;
+}
+
+.aEnd {
+  align-items: flex-end;
+}
+
+.jStart {
+  justify-content: flex-start;
+}
+
+.jCenter {
+  justify-content: center;
+}
+
+.jEnd {
+  justify-content: flex-end;
+}
+
+.jBetween {
+  justify-content: space-between;
+}
+
+.jAround {
+  justify-content: space-around;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}

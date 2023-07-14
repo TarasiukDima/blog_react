@@ -14,8 +14,14 @@ $infoColor: #bebebe;
   // code
   --code-bg: #ececec;
   // comments
-  --comment-color:#{ $infoColor};
+  --comment-color: #{$infoColor};
   // articles
-  --article-info:#{ $infoColor};
+  --article-info: #{$infoColor};
   --article-shadow: #{$shadowColor};
+  // listbox
+  --listbox-shadow: #{$shadowColor};
+  --listbox-color: #{$infoColor};
+  // --dropdown
+  --dropdown-shadow: #{$shadowColor};
+  --dropdown-color: #{$infoColor};
 }

@@ -4,7 +4,7 @@ import { ArticleDetailsRecommendations as ArticleDetailsRecommendationsComponent
 import { ArticleType, IArticle } from "../../../../entities/Article";
 
 const meta: Meta<typeof ArticleDetailsRecommendationsComponent> = {
-  title: "pages/ArticleDetailsRecommendations",
+  title: "pages/Article/ArticleDetailsRecommendations",
   component: ArticleDetailsRecommendationsComponent,
   tags: ["pages"],
 };

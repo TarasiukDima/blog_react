@@ -8,6 +8,13 @@ const meta: Meta<typeof LogInComponent> = {
   component: LogInComponent,
   tags: ["widgets"],
   args: { navigationApp },
+  render: (args) => {
+    return (
+      <div style={{ padding: "50px" }}>
+        <LogInComponent {...args} />
+      </div>
+    );
+  },
 };
 
 export default meta;
@@ -32,6 +39,8 @@ export const LogInWithUserExist: Story = {
         authData: {
           id: "1",
           username: "admin",
+          avatar:
+            "https://e7.pngegg.com/pngimages/139/726/png-clipart-graphics-computer-icons-user-illustration-man-at-computer-blue-electric-blue.png",
         },
       },
     }),

@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Skeleton } from "shared/ui/Skeleton";
+import { HStack, VStack } from "shared/ui/Stack";
 import css from "./ArticleListItem.module.scss";
 
 interface IArticleListItemBigSkeletonProps {
@@ -10,9 +11,12 @@ interface IArticleListItemBigSkeletonProps {
 export const ArticleListItemBigSkeleton = memo(
   ({ className = "" }: IArticleListItemBigSkeletonProps) => (
     <li
-      className={classNames(css.ArticleListItem, {}, [className, css.big_item_skeleton])}
+      className={classNames(css.ArticleListItem, {}, [
+        className,
+        css.big_item_skeleton,
+      ])}
     >
-      <div className={css.ArticleListItem__top}>
+      <VStack align="center" className={css.ArticleListItem__top}>
         <Skeleton width={40} height={40} type="circle" />
 
         <Skeleton
@@ -30,7 +34,7 @@ export const ArticleListItemBigSkeleton = memo(
           type="square"
           place="left"
         />
-      </div>
+      </VStack>
 
       <Skeleton
         className={css.ArticleListItem__title}
@@ -54,12 +58,14 @@ export const ArticleListItemBigSkeleton = memo(
         />
       </div>
 
-      <Skeleton
-        height={200}
-        type="square"
-      />
+      <Skeleton height={200} type="square" />
 
-      <div className={css.ArticleListItem__bottom}>
+      <VStack
+        allWidth
+        justify="between"
+        align="center"
+        className={css.ArticleListItem__bottom}
+      >
         <Skeleton
           className={css.ArticleListItem__bottom_link}
           width="20%"
@@ -75,7 +81,7 @@ export const ArticleListItemBigSkeleton = memo(
           type="square"
           place="left"
         />
-      </div>
+      </VStack>
     </li>
   )
 );

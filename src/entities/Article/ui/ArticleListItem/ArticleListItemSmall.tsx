@@ -13,15 +13,17 @@ interface IArticleListItemSmallProps {
   className?: string;
   article: IArticle;
   target?: HTMLAttributeAnchorTarget;
+  style?: CSSProperties;
 }
 
 export const ArticleListItemSmall = memo(
-  ({ className = "", article, target }: IArticleListItemSmallProps) => (
-    <div
+  ({ className = "", article, style, target }: IArticleListItemSmallProps) => (
+    <li
       className={classNames(css.ArticleListItem, {}, [
         className,
         css.small_item,
       ])}
+      style={style}
     >
       <AppLink
         className={css.ArticleListItem__link}
@@ -58,6 +60,6 @@ export const ArticleListItemSmall = memo(
 
         <Span className={css.ArticleListItem__link_title}>{article.title}</Span>
       </AppLink>
-    </div>
+    </li>
   )
 );

@@ -33,6 +33,7 @@ export const HeaderWithLoginUser: Story = {
           id: "1",
           username: "admin",
         },
+
       },
     }),
   ],

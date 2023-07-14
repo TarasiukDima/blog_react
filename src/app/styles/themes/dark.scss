@@ -15,7 +15,13 @@ body.dark_theme {
   --code-bg: rgba(34, 34, 34, 1);
   // comments
   --comment-color: #{$infoColor};
-    // articles
-    --article-info: #{$infoColor};
-    --article-shadow: #{$shadowColor};
+  // articles
+  --article-info: #{$infoColor};
+  --article-shadow: #{$shadowColor};
+  // listbox
+  --listbox-shadow: #{$shadowColor};
+  --listbox-color: #{$infoColor};
+  // --dropdown
+  --dropdown-shadow: #{$shadowColor};
+  --dropdown-color: #{$infoColor};
 }

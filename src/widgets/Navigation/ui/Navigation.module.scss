@@ -2,30 +2,7 @@
 @import "shared/styles/variables";
 
 .Navigation {
+  .Navigation_list {
+    @include dflex(space-between, center, row, wrap);
+  }
 }
-
-.Navigation_list {
-  @include dflex(space-between, center, row, wrap);
-}
-
-.dark {
-}
-/* > 576px */
-@include small-tablet {
-}
-/* > 576px */
-
-/* > 768px */
-@include tablet {
-}
-/* > 768px */
-
-/* > 992px */
-@include small-desktop {
-}
-/* > 992px */
-
-/* > 1101px */
-@include desktop {
-}
-/* > 1101px */

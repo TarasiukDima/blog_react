@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { RouterDecorator } from "shared/config/storybook/RouterDecorator/RouterDecorator";
 import ArticleDetailsPageComponent from "./ArticleDetailsPage";
 import {
   ArticleBlockType,
@@ -8,7 +9,7 @@ import {
 } from "../../../../entities/Article";
 
 const meta: Meta<typeof ArticleDetailsPageComponent> = {
-  title: "pages/ArticleDetailsPage",
+  title: "pages/Article/ArticleDetailsPage",
   component: ArticleDetailsPageComponent,
   tags: ["pages"],
 };

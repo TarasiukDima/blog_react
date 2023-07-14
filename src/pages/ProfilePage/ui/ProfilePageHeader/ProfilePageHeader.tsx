@@ -6,6 +6,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button, VariantButton } from "shared/ui/Button";
 import { getUserAuthData } from "entities/User";
 import { Title } from "shared/ui/Title";
+import { VStack } from "shared/ui/Stack/";
 import {
   getProfileForm,
   getProfileReadOnly,
@@ -54,9 +55,9 @@ export const ProfilePageHeader: FC<IProfilePageHeaderProps> = ({
   };
 
   return (
-    <div className={classNames(css.ProfilePageHeader, {}, [className])}>
-      <Title>{t("Профиль")}</Title>
+    <VStack className={classNames(css.ProfilePageHeader, {}, [className])} align="center" justify="between">
+      <Title className={css.ProfilePageHeader__title}>{t("Профиль")}</Title>
       {showButton()}
-    </div>
+    </VStack>
   );
 };

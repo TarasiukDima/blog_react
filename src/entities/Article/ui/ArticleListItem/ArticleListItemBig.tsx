@@ -9,6 +9,7 @@ import { Icon } from "shared/ui/Icon";
 import { Avatar } from "shared/ui/Avatar";
 import EyeIcon from "shared/assets/icons/eye.svg";
 import defaultImg from "shared/assets/images/placeholder.png";
+import { VStack } from "shared/ui/Stack";
 import {
   ArticleBlockType,
   IArticle,
@@ -37,7 +38,7 @@ export const ArticleListItemBig = memo(
           css.big_item,
         ])}
       >
-        <div className={css.ArticleListItem__top}>
+        <VStack align="center" className={css.ArticleListItem__top}>
           <Avatar src={article.user.avatar} size={40} position="left" />
 
           <Paragraph className={css.ArticleListItem__top_user}>
@@ -47,7 +48,7 @@ export const ArticleListItemBig = memo(
           <Paragraph className={css.ArticleListItem__top_date}>
             {article.createdAt}
           </Paragraph>
-        </div>
+        </VStack>
 
         <Title Tag="h2" className={css.ArticleListItem__title}>
           {article.title}
@@ -75,7 +76,12 @@ export const ArticleListItemBig = memo(
           </Paragraph>
         )}
 
-        <div className={css.ArticleListItem__bottom}>
+        <VStack
+          allWidth
+          justify="between"
+          align="center"
+          className={css.ArticleListItem__bottom}
+        >
           <AppLink
             className={css.ArticleListItem__bottom_link}
             to={`${routesPath.articles}/${article.id}`}
@@ -90,7 +96,7 @@ export const ArticleListItemBig = memo(
             {article.views}
             <Icon Svg={EyeIcon} />
           </Paragraph>
-        </div>
+        </VStack>
       </div>
     );
   }

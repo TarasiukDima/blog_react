@@ -5,6 +5,7 @@ import GridIcon from "shared/assets/icons/grid.svg";
 import ListIcon from "shared/assets/icons/list.svg";
 import { Button, VariantButton } from "shared/ui/Button";
 import { Icon } from "shared/ui/Icon";
+import { VStack } from "shared/ui/Stack";
 import { ArticleView } from "../../model/types/article";
 import css from "./ArticleViewSelector.module.scss";
 
@@ -34,7 +35,11 @@ export const ArticleViewSelector = memo(
     };
 
     return (
-      <div className={classNames(css.ArticleViewSelector, {}, [className])}>
+      <VStack
+        align="stretch"
+        justify="start"
+        className={classNames(css.ArticleViewSelector, {}, [className])}
+      >
         {viewTypes.map((el) => (
           <Button
             className={view === el.view ? css.active : ""}
@@ -45,7 +50,7 @@ export const ArticleViewSelector = memo(
             <Icon Svg={el.icon} />
           </Button>
         ))}
-      </div>
+      </VStack>
     );
   }
 );

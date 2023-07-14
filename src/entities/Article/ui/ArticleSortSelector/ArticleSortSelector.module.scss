@@ -3,8 +3,6 @@
 
 
 .ArticleSortSelector {
-  @include dflex(flex-start, stretch, row, wrap);
-
   flex-grow: 1;
 
   .ArticleSortSelector__item{
