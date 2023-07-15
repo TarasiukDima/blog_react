@@ -8,20 +8,18 @@ import {
 import { AxiosInstance } from "axios";
 import { ILoginSchema } from "features/AuthByUsername";
 import { IAddCommentFormSchema } from "features/addCommentForm";
-import {
-  IArticleDetailsPageRecommendationsSchema,
-  IArticleDetailsCommentsSchema,
-  IArticleDetailsPageSchema,
-} from "pages/ArticleDetailsPage";
+import { IArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import { IArticleDetailsSchema } from "entities/Article";
 import { IArticlesPageSchema } from "pages/ArticlesPage";
-import { IProfileSchema } from "entities/Profile";
 import { IUserSchema } from "entities/User";
 import { IScrollSchema } from "features/scrollSave";
+import { rtkApi } from "shared/api/apiRTKQuery";
+import { IProfileSchema } from "features/editableProfileCard";
 
 export interface IStateSchema {
   user: IUserSchema;
   scroll: IScrollSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // async reducers
   loginForm?: ILoginSchema;
@@ -31,8 +29,6 @@ export interface IStateSchema {
   articlesPage?: IArticlesPageSchema;
 
   articleDetailsPage?: IArticleDetailsPageSchema;
-  // articleDetailsPage: IArticleDetailsPageSchema;
-  // articleDetailsComments?: IArticleDetailsCommentsSchema;
 }
 
 export type TStateSchemaKey = keyof IStateSchema;

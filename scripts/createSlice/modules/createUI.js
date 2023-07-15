@@ -19,17 +19,17 @@ module.exports = async (startPath, layer, sliceName) => {
   const createComponent = async () => {
     try {
       const componentName = firstCharUpperCase(sliceName);
-      await fs.mkdir(resolveUIPath(componentName));
+      // await fs.mkdir(resolveUIPath(componentName));
       await fs.writeFile(
-        resolveUIPath(componentName, `${componentName}.tsx`),
+        resolveUIPath(`${componentName}.tsx`),
         componentTemplate(componentName),
       );
       await fs.writeFile(
-        resolveUIPath(componentName, `${componentName}.stories.tsx`),
+        resolveUIPath(`${componentName}.stories.tsx`),
         storyTemplate(layer, componentName),
       );
       await fs.writeFile(
-        resolveUIPath(componentName, `${componentName}.module.scss`),
+        resolveUIPath(`${componentName}.module.scss`),
         styleTemplate(componentName),
       );
     } catch (e) {

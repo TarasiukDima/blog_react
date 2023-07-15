@@ -36,12 +36,12 @@ const LogIn: FC = memo(() => {
       <Dropdown
         items={[
           {
-            id: 1,
+            id: 111,
             content: t("Профиль"),
             href: `${routesPath.profile}/${authData.id}`,
           },
           {
-            id: 1,
+            id: 222,
             content: t("Выйти"),
             onClick: onLogout,
             ariaLabel: t("Кнопка выйти из личного кабинета"),

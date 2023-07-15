@@ -6,10 +6,10 @@ import { addCommentFormReducer } from "features/addCommentForm/model/slices/addC
 // import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice";
 import { articleDetailsPageReducer } from "pages/ArticleDetailsPage/model/slices";
 import { articlesPageReducer } from "pages/ArticlesPage/model/slices/articlesPageSlice";
-import { profileReducer } from "entities/Profile";
 import { userReducer } from "entities/User";
 import { articleReducer } from "entities/Article/model/slice/articleSlice";
 import { scrollReducer } from "features/scrollSave";
+import { profileReducer } from "features/editableProfileCard";
 
 const defaultReducers: TReducersList = {
   loginForm: loginReducer,

@@ -1,0 +1,10 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.EditableProfileCardHeader {
+  margin-bottom: 20px;
+
+  .EditableProfileCardHeader__title {
+    margin-bottom: 0;
+  }
+}
