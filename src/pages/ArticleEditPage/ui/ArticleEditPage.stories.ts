@@ -3,7 +3,7 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import ArticleEditPageComponent from "./ArticleEditPage";
 
 const meta: Meta<typeof ArticleEditPageComponent> = {
-  title: "pages/ArticleEditPage",
+  title: "pages/Article/ArticleEditPage",
   component: ArticleEditPageComponent,
   tags: ["pages"],
   args: {},

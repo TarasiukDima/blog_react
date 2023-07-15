@@ -1,21 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { ArticleListItem as ArticleListItemComponent } from "./ArticleListItem";
+import { ArticleListItem } from "./ArticleListItem";
 import {
   ArticleBlockType,
   ArticleType,
   ArticleView,
-  IArticle,
-} from "../../model/types/article";
+} from "../../model/consts/consts";
+import { IArticle } from "../../model/types/article";
 
-const meta: Meta<typeof ArticleListItemComponent> = {
+const meta: Meta<typeof ArticleListItem> = {
   title: "entities/Article/ArticleListItem",
-  component: ArticleListItemComponent,
+  component: ArticleListItem,
   tags: ["pages"],
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleListItemComponent>;
+type Story = StoryObj<typeof ArticleListItem>;
 
 const articleContent: IArticle = {
   id: "123",

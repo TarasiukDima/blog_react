@@ -11,7 +11,7 @@ const meta: Meta<typeof TabsComponent> = {
 export default meta;
 type Story = StoryObj<typeof TabsComponent>;
 
-export const TabsCircle: Story = {
+export const Tabs: Story = {
   args: {
     tabs: [
       {

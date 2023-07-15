@@ -8,7 +8,7 @@ import { Wrapper } from "shared/ui/Wrapper/ui/Wrapper";
 import { Spinner } from "shared/ui/Spinner";
 import { navigationApp } from "app/config/roteConfig";
 import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { Theme } from "shared/types";
+import { Theme } from "shared/const/common";
 import { getUserInited, userActions } from "../../../../entities/User";
 import { useTheme } from "../../../providers/ThemeProvider";
 import css from "./AppLayout.module.scss";

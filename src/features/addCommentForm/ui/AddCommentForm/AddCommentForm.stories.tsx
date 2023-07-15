@@ -7,15 +7,15 @@ const meta: Meta<typeof AddCommentForm> = {
   title: "features/Comment/AddCommentForm",
   component: AddCommentForm,
   tags: ["features"],
-  args: {},
+  args: {
+    onSendComment: action("onSendComment"),
+  },
+  decorators: [StoreDecorator({})],
 };
 
 export default meta;
 type Story = StoryObj<typeof AddCommentForm>;
 
 export const CommentForm: Story = {
-  args: {
-    onSendComment: action("onSendComment"),
-  },
-  decorators: [StoreDecorator({})],
+  args: {},
 };

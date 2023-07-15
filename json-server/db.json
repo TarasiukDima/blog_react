@@ -1045,6 +1045,18 @@
       "userId": "1",
       "text": "2222",
       "id": "04xeUm6"
+    },
+    {
+      "articleId": "20",
+      "userId": "1",
+      "text": "123",
+      "id": "BO5WH1p"
+    },
+    {
+      "articleId": "20",
+      "userId": "1",
+      "text": "321",
+      "id": "2Migcxg"
     }
   ],
   "users": [
@@ -1052,14 +1064,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://cdn1.iconfinder.com/data/icons/people-49/512/_formal_mustache_man-01-1024.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://www.pngitem.com/pimgs/m/338-3388366_meme-for-steam-avatars-hd-png-download.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://www.pngitem.com/pimgs/m/338-3388366_meme-for-steam-avatars-hd-png-download.png"
     }
   ],
@@ -1084,6 +1109,17 @@
       "country": "Kazakhstan",
       "city": "Almaty",
       "username": "user",
+      "avatar": "https://www.pngitem.com/pimgs/m/338-3388366_meme-for-steam-avatars-hd-png-download.png"
+    },
+    {
+      "id": "3",
+      "first": "manager",
+      "lastname": "managerov",
+      "age": 31,
+      "currency": "RUB",
+      "country": "Ukraine",
+      "city": "Almaty",
+      "username": "manager",
       "avatar": "https://www.pngitem.com/pimgs/m/338-3388366_meme-for-steam-avatars-hd-png-download.png"
     }
   ]

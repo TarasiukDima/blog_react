@@ -1,7 +1,7 @@
 import { FC, ReactNode, memo } from "react";
 import { Link, LinkProps } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
-import { ButtonSize } from "shared/types";
+import { ButtonSize } from "shared/const/common";
 import css from "./AppLink.module.scss";
 
 export enum VariantLink {

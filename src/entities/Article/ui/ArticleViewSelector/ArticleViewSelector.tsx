@@ -6,7 +6,7 @@ import ListIcon from "shared/assets/icons/list.svg";
 import { Button, VariantButton } from "shared/ui/Button";
 import { Icon } from "shared/ui/Icon";
 import { VStack } from "shared/ui/Stack";
-import { ArticleView } from "../../model/types/article";
+import { ArticleView } from "../../model/consts/consts";
 import css from "./ArticleViewSelector.module.scss";
 
 interface IArticleViewSelectorProps {

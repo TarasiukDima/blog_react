@@ -10,8 +10,8 @@ const meta: Meta<typeof SpanComponent> = {
 export default meta;
 type Story = StoryObj<typeof SpanComponent>;
 
-export const Primary: Story = {
+export const Span: Story = {
   args: {
-    children: "Description Description Description Description",
+    children: "Span text content",
   },
 };

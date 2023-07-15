@@ -1,7 +1,7 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Listbox } from "shared/ui/Listbox";
-import { Countries } from "../model/types/countries";
+import { Countries } from "../model/consts/countries";
 
 interface ICountriesSelectProps {
   className?: string;

@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NotFoundPage as NotFoundPageComponent } from "./NotFoundPage";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import NotFoundPageComponent from "./NotFoundPage";
 
 const meta: Meta<typeof NotFoundPageComponent> = {
   title: "pages/NotFoundPage",
   component: NotFoundPageComponent,
   tags: ["pages"],
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
+  decorators: [StoreDecorator({})],
 };
 
 export default meta;

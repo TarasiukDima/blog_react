@@ -15,7 +15,7 @@ import {
 } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
 import { Button, VariantButton } from "shared/ui/Button";
-import { Theme } from "shared/types";
+import { Theme } from "shared/const/common";
 import css from "./Modal.module.scss";
 
 interface IModalProps {

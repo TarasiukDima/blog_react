@@ -13,7 +13,7 @@ const meta: Meta<typeof HeaderComponent> = {
 export default meta;
 type Story = StoryObj<typeof HeaderComponent>;
 
-export const HeaderWithoutUser: Story = {
+export const WithoutUser: Story = {
   args: {},
   decorators: [
     StoreDecorator({
@@ -24,7 +24,7 @@ export const HeaderWithoutUser: Story = {
   ],
 };
 
-export const HeaderWithLoginUser: Story = {
+export const WithUser: Story = {
   args: {},
   decorators: [
     StoreDecorator({
@@ -33,7 +33,6 @@ export const HeaderWithLoginUser: Story = {
           id: "1",
           username: "admin",
         },
-
       },
     }),
   ],

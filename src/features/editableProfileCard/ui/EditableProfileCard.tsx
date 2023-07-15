@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Text, TextTheme } from "shared/ui/Text";
+import { Text } from "shared/ui/Text";
 import {
   DynamicModulesLoader,
   TReducersList,
@@ -16,11 +16,11 @@ import { getProfileError } from "../model/selectors/getProfileError/getProfileEr
 import { getProfileLoading } from "../model/selectors/getProfileLoading/getProfileLoading";
 import { getProfileReadOnly } from "../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { getProfileValidateErrors } from "../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
-import { ValidateProfileErrors } from "../model/types/editableProfileCardSchema";
+import { ValidateProfileErrors } from "../model/consts/consts";
 import { fetchProfileData } from "../model/services/fetchProfileData/fetchProfileData";
 import { profileActions, profileReducer } from "../model/slice/profileSlice";
 import { updateProfileData } from "../model/services/updateProfileData/updateProfileData";
-import { EditableProfileCardHeader } from "./EditableProfileCardHeader/ProfilePageHeader";
+import { EditableProfileCardHeader } from "./EditableProfileCardHeader/EditableProfileCardHeader";
 
 interface IEditableProfileCardProps {
   id: string;
@@ -123,8 +123,10 @@ export const EditableProfileCard = memo(({ id }: IEditableProfileCardProps) => {
         validateErrors.map((errorText) => (
           <Text
             key={errorText}
+            title="Error"
             text={validateErrorsTranslate[errorText] ?? ""}
-            theme={TextTheme.ERROR}
+            theme="error"
+            data-testid="EditableProfileCard.Error"
           />
         ))}
 

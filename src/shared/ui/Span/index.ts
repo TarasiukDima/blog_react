@@ -1,1 +1,1 @@
-export { Span, SpanVariants } from "./ui/Span";
+export { Span } from "./ui/Span";

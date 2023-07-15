@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Input } from "shared/ui/Input";
 import { Spinner } from "shared/ui/Spinner";
-import { Text, TextTheme } from "shared/ui/Text";
+import { Text } from "shared/ui/Text";
 import { Avatar } from "shared/ui/Avatar";
 import { Currency, CurrencySelect } from "../../../../entities/Currency";
 import { Countries, CountriesSelect } from "../../../../entities/Countries";
@@ -59,7 +59,8 @@ export const ProfileCard: FC<IProfileCardProps> = ({
         <Text
           title={t("Ошибка загрузки данных профиля")}
           text={t("Попробуйте обновить страницу")}
-          theme={TextTheme.ERROR}
+          theme="error"
+          data-testid="ProfileCard.Error"
         />
       </div>
     );
@@ -84,6 +85,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
           onChange={onChangeFirstName}
           placeholder={t("Ваше имя")}
           type="text"
+          data-testid="ProfileCard.Name"
         />
 
         <Input
@@ -92,6 +94,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
           onChange={onChangeLastName}
           placeholder={t("Ваша фамилия")}
           type="text"
+          data-testid="ProfileCard.LastName"
         />
 
         <Input
@@ -100,6 +103,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
           onChange={onChangeNickname}
           placeholder={t("Ваш ник")}
           type="text"
+          data-testid="ProfileCard.Username"
         />
 
         <Input
@@ -108,6 +112,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
           onChange={onChangeAge}
           placeholder={t("Ваш возраст")}
           type="number"
+          data-testid="ProfileCard.Age"
         />
 
         <Input
@@ -116,6 +121,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
           onChange={onChangeCity}
           placeholder={t("Ваш город")}
           type="text"
+          data-testid="ProfileCard.City"
         />
 
         <Input
@@ -124,6 +130,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
           onChange={onChangeAvatar}
           placeholder={t("Ваш аватар (ссылка)")}
           type="text"
+          data-testid="ProfileCard.Avatar"
         />
 
         <CountriesSelect
@@ -141,7 +148,12 @@ export const ProfileCard: FC<IProfileCardProps> = ({
         />
 
         {!readonly && (
-          <Input type="submit" readonly={readonly} value={t("Сохранить")} />
+          <Input
+            data-testid="ProfileCard.Save"
+            type="submit"
+            readonly={readonly}
+            value={t("Сохранить")}
+          />
         )}
       </form>
     </div>

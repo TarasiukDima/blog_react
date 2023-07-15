@@ -1,53 +1,52 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ButtonSize } from "shared/types";
+import { ButtonSize } from "shared/const/common";
+import LoginIcon from "shared/assets/icons/login.svg";
 import { Button as ButtonComponent, VariantButton } from "./Button";
 
 const meta: Meta<typeof ButtonComponent> = {
   title: "shared/Button",
   component: ButtonComponent,
   tags: ["shared"],
+  args: {
+    size: ButtonSize.M,
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof ButtonComponent>;
 
-export const ButtonWithoutStyles: Story = {
+export const WithoutStyles: Story = {
   args: {
     children: "Link without styles",
     variant: VariantButton.CLEAR,
-    size: ButtonSize.M,
   },
 };
 
-export const ButtonStandart: Story = {
+export const Standard: Story = {
   args: {
     children: "Link in text",
     variant: VariantButton.STANDARD,
-    size: ButtonSize.M,
   },
 };
 
-export const ButtonRounded: Story = {
+export const Rounded: Story = {
   args: {
     children: "Link in text",
     variant: VariantButton.ROUNDED,
-    size: ButtonSize.M,
   },
 };
 
-export const ButtonForIcons: Story = {
+export const ForIcons: Story = {
   args: {
-    children: "",
+    children: <LoginIcon />,
     variant: VariantButton.ICON_BUTTON,
-    size: ButtonSize.M,
   },
 };
 
-export const ButtonDisabled: Story = {
+export const Disabled: Story = {
   args: {
-    children: "",
+    children: "Link without styles",
     disabled: true,
     variant: VariantButton.STANDARD,
-    size: ButtonSize.M,
   },
 };

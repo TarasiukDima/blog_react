@@ -3,26 +3,11 @@
 
 .error_page {
   padding: 20px;
-  text-align: center;
 }
 
 .error_text {
   font-size: 16px;
 }
-/*  >  576 */
-@include small-tablet {
-  .error_page {
-  }
-}
-/*  >  576 */
-
-/*  >  768 */
-@include tablet {
-  .error_page {
-  }
-}
-/*  >  768 */
-
 /*  >  992 */
 @include desktop {
   .error_title {

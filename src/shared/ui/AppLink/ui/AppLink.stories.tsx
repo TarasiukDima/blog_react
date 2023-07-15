@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { ButtonSize } from "shared/types";
+import LoginIcon from "shared/assets/icons/login.svg";
+import { ButtonSize } from "shared/const/common";
 import { AppLink as AppLinkComponent, VariantLink } from "./AppLink";
 
 const meta: Meta<typeof AppLinkComponent> = {
@@ -13,21 +13,21 @@ const meta: Meta<typeof AppLinkComponent> = {
 export default meta;
 type Story = StoryObj<typeof AppLinkComponent>;
 
-export const AppLinkWithoutStyles: Story = {
+export const WithoutStyles: Story = {
   args: {
     children: "Link without styles",
     variant: VariantLink.CLEAR,
   },
 };
 
-export const AppLinkText: Story = {
+export const Text: Story = {
   args: {
     children: "Link in text",
     variant: VariantLink.TEXT_LINK,
   },
 };
 
-export const AppLinkLikeButton: Story = {
+export const LikeButton: Story = {
   args: {
     children: "Link button",
     variant: VariantLink.BUTTON_LINK,
@@ -35,9 +35,9 @@ export const AppLinkLikeButton: Story = {
   },
 };
 
-export const AppLinkLikeIcon: Story = {
+export const LikeIcon: Story = {
   args: {
-    children: "",
+    children: <LoginIcon />,
     variant: VariantLink.ICON_LINK,
   },
 };

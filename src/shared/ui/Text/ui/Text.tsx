@@ -2,23 +2,33 @@ import { memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import css from "./Text.module.scss";
 
-export enum TextTheme {
-  PRIMARY = "primary",
-  ERROR = "error",
-}
-
 interface ITextProps {
   className?: string;
   title?: string;
   text?: string;
-  theme?: TextTheme;
+  theme?: "primary" | "error";
+  "data-testid"?: string;
 }
 
 export const Text = memo(
-  ({ className, text, title, theme = TextTheme.PRIMARY }: ITextProps) => (
+  ({
+    className,
+    text,
+    title,
+    theme = "primary",
+    "data-testid": dataTestId = "",
+  }: ITextProps) => (
     <div className={classNames(css.Text, {}, [className, css[theme]])}>
-      {title && <p className={css.title}>{title}</p>}
-      {text && <p className={css.text}>{text}</p>}
+      {title && (
+        <p className={css.title} data-testid={`${dataTestId}.Header`}>
+          {title}
+        </p>
+      )}
+      {text && (
+        <p className={css.text} data-testid={`${dataTestId}.Text`}>
+          {text}
+        </p>
+      )}
     </div>
   )
 );

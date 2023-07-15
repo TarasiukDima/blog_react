@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
+import { withRouter } from "storybook-addon-react-router-v6";
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { LanguageDecorator } from "../../src/shared/config/storybook/LanguageDecorator/LanguageDecorator";
 
 const preview: Preview = {
@@ -45,12 +45,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [
-    LanguageDecorator,
-    StyleDecorator,
-    ThemeDecorator,
-    RouterDecorator,
-  ],
+  decorators: [LanguageDecorator, StyleDecorator, ThemeDecorator, withRouter],
 };
 
 export default preview;

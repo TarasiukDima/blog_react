@@ -10,7 +10,7 @@ const meta: Meta<typeof SkeletonComponent> = {
 export default meta;
 type Story = StoryObj<typeof SkeletonComponent>;
 
-export const SkeletonCircle: Story = {
+export const Circle: Story = {
   args: {
     type: "circle",
     width: 150,
@@ -18,7 +18,7 @@ export const SkeletonCircle: Story = {
   },
 };
 
-export const SkeletonSquare: Story = {
+export const Square: Story = {
   args: {
     type: "square",
     height: 150,

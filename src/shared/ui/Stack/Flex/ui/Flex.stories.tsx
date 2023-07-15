@@ -24,16 +24,46 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Row: Story = {
+export const RowStart: Story = {
   args: {
     direction: "row",
   },
 };
-export const Column: Story = {
+
+export const RowCenter: Story = {
+  args: {
+    direction: "row",
+    justify: "center",
+  },
+};
+
+export const RowEnd: Story = {
+  args: {
+    direction: "row",
+    justify: "end",
+  },
+};
+
+export const ColumnStart: Story = {
+  args: {
+    direction: "column",
+    justify: "center",
+    align: "start",
+    allWidth: true,
+  },
+};
+
+export const ColumnCenter: Story = {
   args: {
     direction: "column",
   },
 };
-export const RowCenter: Story = {
-  args: {},
+
+export const ColumnEnd: Story = {
+  args: {
+    direction: "column",
+    justify: "center",
+    align: "end",
+    allWidth: true,
+  },
 };

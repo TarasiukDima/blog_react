@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributeAnchorTarget, memo } from "react";
+import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, VariantLink } from "shared/ui/AppLink";
@@ -10,11 +10,8 @@ import { Avatar } from "shared/ui/Avatar";
 import EyeIcon from "shared/assets/icons/eye.svg";
 import defaultImg from "shared/assets/images/placeholder.png";
 import { VStack } from "shared/ui/Stack";
-import {
-  ArticleBlockType,
-  IArticle,
-  IArticleTextBlock,
-} from "../../model/types/article";
+import { ArticleBlockType } from "../../model/consts/consts";
+import { IArticle, IArticleTextBlock } from "../../model/types/article";
 import css from "./ArticleListItem.module.scss";
 
 interface IArticleListItemBigProps {

@@ -1,10 +1,11 @@
 export type { IArticle } from "./model/types/article";
+export type { IArticleDetailsSchema } from "./model/types/articleSchema";
+
 export {
   ArticleBlockType,
   ArticleType,
   ArticleView,
-} from "./model/types/article";
-export type { IArticleDetailsSchema } from "./model/types/articleSchema";
+} from "./model/consts/consts";
 
 export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
 export { ArticleList } from "./ui/ArticleList/ArticleList";

@@ -11,13 +11,13 @@ const meta: Meta<typeof AvatarComponent> = {
 export default meta;
 type Story = StoryObj<typeof AvatarComponent>;
 
-export const AvatarDefault: Story = {
+export const Default: Story = {
   args: {
     src: AvatarImg,
     alt: "image",
   },
 };
-export const AvatarWithSize: Story = {
+export const WithSize: Story = {
   args: {
     src: AvatarImg,
     alt: "image",

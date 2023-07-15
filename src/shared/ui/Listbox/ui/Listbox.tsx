@@ -42,8 +42,24 @@ export const Listbox = ({
   direction = "bottom left",
 }: IListBoxProps) => {
   return (
-    <VStack className={css.ListboxWrapper} align="end" justify="start">
-      {label && <Paragraph className={css.Label}>{label}</Paragraph>}
+    <VStack
+      className={classNames(css.ListboxWrapper, {}, [className])}
+      align="end"
+      justify="start"
+    >
+      {label && (
+        <Paragraph
+          className={classNames(
+            css.Label,
+            {
+              [css.readonly]: readonly,
+            },
+            []
+          )}
+        >
+          {label}
+        </Paragraph>
+      )}
 
       <HListbox
         as="div"
@@ -53,7 +69,7 @@ export const Listbox = ({
             [css.withLabel]: label,
             [css.withoutLabel]: !label,
           },
-          [className]
+          []
         )}
         value={value}
         onChange={onChange}
@@ -68,7 +84,7 @@ export const Listbox = ({
             []
           )}
         >
-          {value ?? defaultValue}
+          {value || defaultValue}
         </HListbox.Button>
         <HListbox.Options
           className={classNames(css.ListBox__options, {}, [

@@ -1,17 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CommentList as CommentListComponent } from "./CommentList";
+import { CommentList } from "./CommentList";
 
-const meta: Meta<typeof CommentListComponent> = {
+const meta: Meta<typeof CommentList> = {
   title: "entities/Comment/CommentList",
-  component: CommentListComponent,
+  component: CommentList,
   tags: ["entities"],
-  args: {},
-};
-
-export default meta;
-type Story = StoryObj<typeof CommentListComponent>;
-
-export const Normal: Story = {
   args: {
     comments: [
       {
@@ -27,9 +20,15 @@ export const Normal: Story = {
     ],
   },
 };
+
+export default meta;
+type Story = StoryObj<typeof CommentList>;
+
+export const Normal: Story = {
+  args: {},
+};
 export const Loading: Story = {
   args: {
-    comments: [],
     isLoading: true,
   },
 };

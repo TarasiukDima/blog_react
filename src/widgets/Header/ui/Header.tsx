@@ -5,7 +5,7 @@ import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import { Wrapper } from "shared/ui/Wrapper";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { LogIn } from "widgets/LogIn";
-import { Theme } from "shared/types";
+import { Theme } from "shared/const/common";
 import { INavigationProps, Navigation } from "widgets/Navigation";
 import css from "./Header.module.scss";
 

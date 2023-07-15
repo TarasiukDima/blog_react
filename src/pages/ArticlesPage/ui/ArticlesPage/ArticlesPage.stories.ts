@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 // import { IArticle } from "entities/Article";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import ArticlesPageComponent from "./ArticlesPage";
 
 const meta: Meta<typeof ArticlesPageComponent> = {
-  title: "pages/ArticlesPage",
+  title: "pages/Article/ArticlesPage",
   component: ArticlesPageComponent,
   tags: ["pages"],
+  decorators: [StoreDecorator({})],
 };
 
 export default meta;

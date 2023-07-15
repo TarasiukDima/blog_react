@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { ButtonSize, TRouteObject } from "shared/types";
+import { TRouteObject } from "shared/types";
 import { AppLink } from "shared/ui/AppLink";
+import { ButtonSize } from "shared/const/common";
 import { VariantLink } from "shared/ui/AppLink/ui/AppLink";
 import css from "./Navigation.module.scss";
 
@@ -20,7 +21,7 @@ const Navigation: FC<INavigationProps> = ({ navigationApp }) => {
         {navigationApp.map(({ path, id, routeTextKey }) => (
           <li key={id}>
             <AppLink
-              to={path || ''}
+              to={path || ""}
               variant={VariantLink.BUTTON_LINK}
               size={ButtonSize.M}
             >

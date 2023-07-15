@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Text as TextComponent, TextTheme } from "./Text";
+import { Text as TextComponent } from "./Text";
 
 const meta: Meta<typeof TextComponent> = {
   title: "shared/Text",
@@ -10,29 +10,32 @@ const meta: Meta<typeof TextComponent> = {
 export default meta;
 type Story = StoryObj<typeof TextComponent>;
 
+const title = "Title lorem ipsun";
+const text = "Description Description Description Description";
+
 export const Primary: Story = {
   args: {
-    title: "Title lorem ipsun",
-    text: "Description Description Description Description",
+    title,
+    text,
   },
 };
 
 export const Error: Story = {
   args: {
-    title: "Title lorem ipsun",
-    text: "Description Description Description Description",
-    theme: TextTheme.ERROR,
+    title,
+    text,
+    theme: "error",
   },
 };
 
 export const OnlyTitle: Story = {
   args: {
-    title: "Title lorem ipsun",
+    title,
   },
 };
 
 export const OnlyText: Story = {
   args: {
-    text: "Description Description Description Description",
+    text,
   },
 };

@@ -23,7 +23,7 @@ import {
   getArticlesType,
 } from "../../model/selectors/articles";
 import { articlesPageActions } from "../../model/slices/articlesPageSlice";
-import { ArticleSortField } from "../../model/types/articlesPageSchema";
+import { ArticleSortField } from "../../model/consts/consts";
 import css from "./ArticlePageFilters.module.scss";
 
 interface IArticlePageFiltersProps {

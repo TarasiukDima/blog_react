@@ -3,15 +3,6 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import { ArticleRecommendationsList as ArticleRecommendationsListComponent } from "./ArticleRecommendationsList";
 import { ArticleType, IArticle } from "../../../../entities/Article";
 
-const meta: Meta<typeof ArticleRecommendationsListComponent> = {
-  title: "pages/Article/ArticleRecommendationsList",
-  component: ArticleRecommendationsListComponent,
-  tags: ["pages"],
-};
-
-export default meta;
-type Story = StoryObj<typeof ArticleRecommendationsListComponent>;
-
 const articleContent: IArticle = {
   id: "123",
   title: "Javascript news",
@@ -28,6 +19,31 @@ const articleContent: IArticle = {
   type: [ArticleType.IT],
   blocks: [],
 };
+
+const meta: Meta<typeof ArticleRecommendationsListComponent> = {
+  title: "features/Article/ArticleRecommendationsList",
+  component: ArticleRecommendationsListComponent,
+  tags: ["pages"],
+  args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/articles?_limit=4`,
+        method: "GET",
+        status: 200,
+        response: [
+          articleContent,
+          { ...articleContent, id: "2" },
+          { ...articleContent, id: "3" },
+          { ...articleContent, id: "4" },
+        ],
+      },
+    ],
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleRecommendationsListComponent>;
 
 export const ArticleRecommendationsList: Story = {
   args: {},

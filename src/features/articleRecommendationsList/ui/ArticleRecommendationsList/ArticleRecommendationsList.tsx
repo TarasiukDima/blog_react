@@ -21,6 +21,10 @@ export const ArticleRecommendationsList = memo(
       data: recommendations,
     } = useArticleRecommendationList(countArticles);
 
+    if (isLoadingRecommendations || errorRecommendations || !recommendations) {
+      return null;
+    }
+
     return (
       <div
         className={classNames(css.ArticleRecommendationsList, {}, [className])}
@@ -28,6 +32,7 @@ export const ArticleRecommendationsList = memo(
         <Title Tag="h3">{t("Рекомендации")}</Title>
 
         <ArticleList
+          virtualized={false}
           articles={recommendations || []}
           isLoading={isLoadingRecommendations}
           target="_blank"

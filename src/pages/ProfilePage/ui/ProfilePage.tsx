@@ -6,6 +6,8 @@ import { Title } from "shared/ui/Title";
 
 const ProfilePage = () => {
   const { id } = useParams<{ id: string }>();
+
+  console.log('id', id);
   const { t } = useTranslation("profile");
 
   if (!id) {

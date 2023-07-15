@@ -8,11 +8,13 @@ import type {
   TStateSchemaKey,
 } from "./type";
 
-export {
-  StoreProvider,
-  createReduxStore,
+export type {
   IStateSchema,
-  TAppDispatch,
   IReduxStoreWithManager,
+  IThunkExtraArg,
+  IThunkConfig,
   TStateSchemaKey,
+  TAppDispatch,
 };
+
+export { StoreProvider, createReduxStore };

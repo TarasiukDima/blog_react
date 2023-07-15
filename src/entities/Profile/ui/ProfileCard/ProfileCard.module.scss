@@ -5,12 +5,13 @@
   display: block;
   border: 1px solid var(--invert-bg);
   padding: 20px;
+
+  .select {
+    margin-top: 20px;
+  }
 }
 
 .edited {
   border-color: var(--secondary-color);
 }
 
-.select {
-  margin-top: 20px;
-}

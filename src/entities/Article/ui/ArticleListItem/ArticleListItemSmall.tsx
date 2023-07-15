@@ -1,7 +1,7 @@
 import { CSSProperties, HTMLAttributeAnchorTarget, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink } from "shared/ui/AppLink";
-import { Span, SpanVariants } from "shared/ui/Span";
+import { Span } from "shared/ui/Span";
 import { routesPath } from "app/config/roteConfig";
 import { Icon } from "shared/ui/Icon";
 import EyeIcon from "shared/assets/icons/eye.svg";
@@ -32,7 +32,7 @@ export const ArticleListItemSmall = memo(
       >
         <Span
           className={css.ArticleListItem__imageWrapper}
-          variant={SpanVariants.BLOCK}
+          variant="block"
         >
           <img
             className={css.ArticleListItem__imageWrapper_image}
@@ -46,7 +46,7 @@ export const ArticleListItemSmall = memo(
 
         <Span
           className={css.ArticleListItem__link_info}
-          variant={SpanVariants.BLOCK}
+          variant="block"
         >
           <Span className={css.ArticleListItem__link_type}>
             {article.type.join(", ")}

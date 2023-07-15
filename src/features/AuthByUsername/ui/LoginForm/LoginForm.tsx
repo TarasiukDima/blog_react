@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Input } from "shared/ui/Input";
-import { Text, TextTheme } from "shared/ui/Text";
+import { Text } from "shared/ui/Text";
 import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { Spinner } from "shared/ui/Spinner";
 import {
   DynamicModulesLoader,
   TReducersList,
@@ -66,42 +67,47 @@ const LoginForm = memo(({ className = "", onSuccess }: ILoginFormProps) => {
 
   return (
     <DynamicModulesLoader reducers={initialReducers} removeAfterUnmount>
-      <form
-        className={classNames(css.LoginForm, {}, [className])}
-        onSubmit={onLoginSubmit}
-      >
-        <Text title={t("Форма авторизации")} />
-        {error && (
-          <Text
-            text={t("Вы ввели неверный логин или пароль")}
-            theme={TextTheme.ERROR}
+      <Text className={css.LoginForm__title} title={t("Форма авторизации")} />
+
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <form
+          className={classNames(css.LoginForm, {}, [className])}
+          onSubmit={onLoginSubmit}
+        >
+          {error && (
+            <Text
+              text={t("Вы ввели неверный логин или пароль")}
+              theme="error"
+            />
+          )}
+
+          <Input
+            autofocus
+            type="text"
+            className={css.input}
+            placeholder={t("Введите username")}
+            onChange={onChangeUsername}
+            value={username}
           />
-        )}
 
-        <Input
-          autofocus
-          type="text"
-          className={css.input}
-          placeholder={t("Введите username")}
-          onChange={onChangeUsername}
-          value={username}
-        />
+          <Input
+            type="text"
+            className={css.input}
+            placeholder={t("Введите пароль")}
+            onChange={onChangePassword}
+            value={password}
+          />
 
-        <Input
-          type="text"
-          className={css.input}
-          placeholder={t("Введите пароль")}
-          onChange={onChangePassword}
-          value={password}
-        />
-
-        <Input
-          type="submit"
-          className={css.loginBtn}
-          disabled={isLoading}
-          value={t("Войти")}
-        />
-      </form>
+          <Input
+            type="submit"
+            className={css.loginBtn}
+            disabled={isLoading}
+            value={t("Войти")}
+          />
+        </form>
+      )}
     </DynamicModulesLoader>
   );
 });

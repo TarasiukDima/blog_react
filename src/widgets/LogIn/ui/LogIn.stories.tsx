@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { navigationApp } from "app/config/roteConfig";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { WrapDecorator } from "shared/config/storybook/WrapDecorator/WrapDecorator";
 import { LogIn as LogInComponent } from "./LogIn";
 
 const meta: Meta<typeof LogInComponent> = {
@@ -8,19 +9,13 @@ const meta: Meta<typeof LogInComponent> = {
   component: LogInComponent,
   tags: ["widgets"],
   args: { navigationApp },
-  render: (args) => {
-    return (
-      <div style={{ padding: "50px" }}>
-        <LogInComponent {...args} />
-      </div>
-    );
-  },
+  decorators: [WrapDecorator("50px")],
 };
 
 export default meta;
 type Story = StoryObj<typeof LogInComponent>;
 
-export const LogIn: Story = {
+export const WithoutUser: Story = {
   args: {},
   decorators: [
     StoreDecorator({
@@ -31,7 +26,7 @@ export const LogIn: Story = {
   ],
 };
 
-export const LogInWithUserExist: Story = {
+export const WithUser: Story = {
   args: {},
   decorators: [
     StoreDecorator({

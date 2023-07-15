@@ -1,6 +1,6 @@
 import { FC, ButtonHTMLAttributes, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { ButtonSize } from "shared/types";
+import { ButtonSize } from "shared/const/common";
 import css from "./Button.module.scss";
 
 export enum VariantButton {

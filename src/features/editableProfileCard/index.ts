@@ -1,7 +1,7 @@
-export { EditableProfileCard } from "./ui/EditableProfileCard";
-export { IProfileSchema } from "./model/types/editableProfileCardSchema";
+export type { IProfileSchema } from "./model/types/editableProfileCardSchema";
 
 export { profileActions, profileReducer } from "./model/slice/profileSlice";
+
 export { fetchProfileData } from "./model/services/fetchProfileData/fetchProfileData";
 export { updateProfileData } from "./model/services/updateProfileData/updateProfileData";
 
@@ -11,3 +11,5 @@ export { getProfileError } from "./model/selectors/getProfileError/getProfileErr
 export { getProfileLoading } from "./model/selectors/getProfileLoading/getProfileLoading";
 export { getProfileReadOnly } from "./model/selectors/getProfileReadOnly/getProfileReadOnly";
 export { getProfileValidateErrors } from "./model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+
+export { EditableProfileCard } from "./ui/EditableProfileCard";

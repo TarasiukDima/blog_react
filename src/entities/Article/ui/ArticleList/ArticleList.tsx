@@ -3,7 +3,8 @@ import { useTranslation } from "react-i18next";
 import { List, ListRowProps, WindowScroller } from "react-virtualized";
 import { Paragraph } from "shared/ui/Paragraph";
 import { classNames } from "shared/lib/classNames/classNames";
-import { ArticleView, IArticle } from "../../model/types/article";
+import { ArticleView } from "../../model/consts/consts";
+import { IArticle } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemBigSkeleton } from "../ArticleListItem/ArticleListItemBigSkeleton";
 import { ArticleListItemSmallSkeleton } from "../ArticleListItem/ArticleListItemSmallSkeleton";
@@ -15,6 +16,7 @@ interface IArticleListProps {
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView, className?: string) => {
@@ -35,6 +37,7 @@ export const ArticleList = memo(
     className = "",
     articles,
     isLoading = false,
+    virtualized = true,
     target,
     view = ArticleView.GRID,
   }: IArticleListProps) => {
@@ -69,10 +72,23 @@ export const ArticleList = memo(
     };
 
     if (!isLoading && articles.length === 0) {
+      return <Paragraph>{t("Статьи не найдены!")}</Paragraph>;
+    }
+
+    if (!virtualized) {
       return (
-        <Paragraph className={classNames(css.ArticleList, {}, [className])}>
-          {t("Статьи не найдены!")}
-        </Paragraph>
+        <ul className={classNames(css.ArticleList, {}, [className, css[view]])}>
+          {articles.map((oneArticle) => (
+            <ArticleListItem
+              key={oneArticle.id}
+              article={oneArticle}
+              view={view}
+              target={target}
+            />
+          ))}
+
+          {isLoading && getSkeletons(view)}
+        </ul>
       );
     }
 

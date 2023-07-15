@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import AvatarIcon from "shared/assets/test/avatar.png";
 import { Currency } from "../../../entities/Currency";
 import { Countries } from "../../../entities/Countries";
-import { IProfile } from "../../../entities/Profile";
 import ProfilePageComponent from "./ProfilePage";
 
 const meta: Meta<typeof ProfilePageComponent> = {
@@ -11,33 +9,49 @@ const meta: Meta<typeof ProfilePageComponent> = {
   component: ProfilePageComponent,
   tags: ["pages"],
   args: {},
+  parameters: {
+    reactRouter: {
+      routePath: "/profile/:id",
+      routeParams: { id: 1 },
+    },
+  },
+};
+
+const userData = {
+  id: "1",
+  first: "User",
+  lastname: "Userov",
+  age: 91,
+  currency: Currency.EUR,
+  country: Countries.Belarus,
+  city: "Brest",
+  username: "admin",
+};
+
+const profileInitial = {
+  isLoading: false,
+  error: "",
+  form: userData,
+  readonly: true,
+  data: userData,
+};
+
+const userInitialState = {
+  user: {
+    _inited: true,
+    authData: { id: userData.id },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof ProfilePageComponent>;
 
-const userData: IProfile = {
-  first: "User",
-  lastname: "Userov",
-  age: 91,
-  currency: Currency.RUB,
-  country: Countries.Belarus,
-  city: "Brest",
-  username: "admin",
-  avatar: AvatarIcon,
-};
-
 export const ProfilePage: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      profile: {
-        readonly: false,
-        isLoading: false,
-        error: "",
-        data: userData,
-        form: userData,
-      },
+      profile: profileInitial,
+      ...userInitialState,
     }),
   ],
 };

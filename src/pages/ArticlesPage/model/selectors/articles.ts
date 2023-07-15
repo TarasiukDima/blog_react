@@ -1,7 +1,7 @@
 import { IStateSchema } from "app/providers/StoreProvider";
-import { OrderVariants } from "shared/types";
+import { OrderVariants } from "shared/const/common";
 import { ArticleType, ArticleView } from "../../../../entities/Article";
-import { ArticleSortField } from "../types/articlesPageSchema";
+import { ArticleSortField } from "../consts/consts";
 
 export const getArticlesPageIsLoading = (state: IStateSchema) => state.articlesPage?.isLoading || false;
 export const getArticlesPageError = (state: IStateSchema) => state.articlesPage?.error;

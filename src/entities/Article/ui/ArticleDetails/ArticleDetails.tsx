@@ -1,4 +1,4 @@
-import { ReactNode, memo, useCallback, useEffect } from "react";
+import { ReactNode, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
@@ -8,7 +8,7 @@ import {
   TReducersList,
 } from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
 import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { Text, TextTheme } from "shared/ui/Text";
+import { Text } from "shared/ui/Text";
 import { Avatar } from "shared/ui/Avatar";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Title } from "shared/ui/Title";
@@ -25,7 +25,8 @@ import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArt
 import { getArticleLoading } from "../../model/selectors/getArticleLoading/getArticleLoading";
 import { getArticleError } from "../../model/selectors/getArticleError/getArticleError";
 import { getArticleData } from "../../model/selectors/getArticleData/getArticleData";
-import { ArticleBlockType, TArticleBlock } from "../../model/types/article";
+import { ArticleBlockType } from "../../model/consts/consts";
+import { TArticleBlock } from "../../model/types/article";
 import css from "./ArticleDetails.module.scss";
 
 interface IProfileCardProps {
@@ -79,7 +80,7 @@ export const ArticleDetails = memo(
       content = (
         <Text
           title={t("Ошибка загрузки данных статьи")}
-          theme={TextTheme.ERROR}
+          theme="error"
         />
       );
     } else {

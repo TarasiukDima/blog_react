@@ -5,12 +5,15 @@ import {
 } from "@reduxjs/toolkit";
 import { IStateSchema } from "app/providers/StoreProvider";
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "shared/const/localstorage";
-import { OrderVariants, TArticleOrder } from "shared/types";
-import { ArticleType, ArticleView, IArticle } from "../../../../entities/Article";
+import { TArticleOrder } from "shared/types";
+import { OrderVariants } from "shared/const/common";
 import {
-  ArticleSortField,
-  IArticlesPageSchema,
-} from "../types/articlesPageSchema";
+  ArticleType,
+  ArticleView,
+  IArticle,
+} from "../../../../entities/Article";
+import { IArticlesPageSchema } from "../types/articlesPageSchema";
+import { ArticleSortField } from "../consts/consts";
 import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
 
 const articlesAdapter = createEntityAdapter<IArticle>({

@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, VariantButton } from "shared/ui/Button";
-import { getUserAuthData } from "entities/User";
 import { Title } from "shared/ui/Title";
 import { VStack } from "shared/ui/Stack/";
+import { getUserAuthData } from "../../../../entities/User";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { profileActions } from "../../model/slice/profileSlice";
@@ -42,11 +42,19 @@ export const EditableProfileCardHeader: FC<IEditableProfileCardHeaderProps> = ({
     }
 
     return readOnly ? (
-      <Button onClick={onEditHandler} variant={VariantButton.STANDARD}>
+      <Button
+        onClick={onEditHandler}
+        variant={VariantButton.STANDARD}
+        data-testid="EditableProfileCardHeader.Edit"
+      >
         {t("Редактировать")}
       </Button>
     ) : (
-      <Button onClick={onCancelEditHandler} variant={VariantButton.STANDARD}>
+      <Button
+        onClick={onCancelEditHandler}
+        variant={VariantButton.STANDARD}
+        data-testid="EditableProfileCardHeader.Cancel"
+      >
         {t("Отменить")}
       </Button>
     );
@@ -58,9 +66,13 @@ export const EditableProfileCardHeader: FC<IEditableProfileCardHeaderProps> = ({
       align="center"
       justify="between"
     >
-      <Title className={css.EditableProfileCardHeader__title}>
+      <Title
+        className={css.EditableProfileCardHeader__title}
+        data-testid="EditableProfileCardHeader.Title"
+      >
         {t("Профиль")}
       </Title>
+
       {showButton()}
     </VStack>
   );

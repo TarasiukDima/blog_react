@@ -10,7 +10,7 @@ const meta: Meta<typeof ParagraphComponent> = {
 export default meta;
 type Story = StoryObj<typeof ParagraphComponent>;
 
-export const Primary: Story = {
+export const Paragraph: Story = {
   args: {
     children: "Description Description Description Description",
   },

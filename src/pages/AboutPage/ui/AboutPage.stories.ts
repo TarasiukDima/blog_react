@@ -6,9 +6,6 @@ const meta: Meta<typeof AboutPageComponent> = {
   title: "pages/AboutPage",
   component: AboutPageComponent,
   tags: ["pages"],
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
   decorators: [StoreDecorator({})],
 };
 

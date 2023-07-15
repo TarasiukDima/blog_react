@@ -23,7 +23,7 @@
   background-color: var(--invert-bg);
   transition: $transition;
 
-  &:hover {
+  &:not(:disabled):hover {
     color: var(--primary-color);
     background-color: var(--bg-color);
   }

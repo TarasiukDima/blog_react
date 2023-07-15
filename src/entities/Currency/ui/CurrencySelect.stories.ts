@@ -1,20 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CurrencySelect as CurrencySelectComponent } from "./CurrencySelect";
+import { WrapDecorator } from "shared/config/storybook/WrapDecorator/WrapDecorator";
+import { CurrencySelect } from "./CurrencySelect";
 
-const meta: Meta<typeof CurrencySelectComponent> = {
+const meta: Meta<typeof CurrencySelect> = {
   title: "entities/CurrencySelect",
-  component: CurrencySelectComponent,
+  component: CurrencySelect,
   tags: ["pages"],
+  args: {},
+  decorators: [WrapDecorator("150px")],
 };
 
 export default meta;
-type Story = StoryObj<typeof CurrencySelectComponent>;
+type Story = StoryObj<typeof CurrencySelect>;
 
-export const CurrencySelect: Story = {
+export const Normal: Story = {
   args: {},
 };
 
-export const CurrencySelectDisabled: Story = {
+export const Disabled: Story = {
   args: {
     disabled: true,
   },

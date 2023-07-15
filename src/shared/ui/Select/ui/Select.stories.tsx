@@ -34,7 +34,7 @@ const meta: Meta<typeof SelectComponent> = {
 export default meta;
 type Story = StoryObj<typeof SelectComponent>;
 
-export const Primary: Story = {
+export const Normal: Story = {
   args: {
     disabled: false,
   },

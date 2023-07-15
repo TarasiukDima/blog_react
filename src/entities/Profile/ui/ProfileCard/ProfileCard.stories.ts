@@ -24,7 +24,7 @@ const userData = {
   avatar: AvatarIcon as string,
 };
 
-export const ProfileCardWithData: Story = {
+export const WithDataCanEdit: Story = {
   args: {
     readonly: false,
     isLoading: false,
@@ -33,7 +33,7 @@ export const ProfileCardWithData: Story = {
   },
 };
 
-export const ProfileCardReadonly: Story = {
+export const Readonly: Story = {
   args: {
     readonly: true,
     isLoading: false,
@@ -42,7 +42,7 @@ export const ProfileCardReadonly: Story = {
   },
 };
 
-export const ProfileCardLoading: Story = {
+export const Loading: Story = {
   args: {
     readonly: false,
     isLoading: true,
@@ -51,7 +51,7 @@ export const ProfileCardLoading: Story = {
   },
 };
 
-export const ProfileCardWithError: Story = {
+export const WithError: Story = {
   args: {
     readonly: false,
     isLoading: false,

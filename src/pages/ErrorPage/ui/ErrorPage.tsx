@@ -23,4 +23,4 @@ const ErrorPage: FC = () => {
   );
 };
 
-export { ErrorPage };
+export default ErrorPage;

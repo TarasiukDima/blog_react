@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { Avatar } from "shared/ui/Avatar";
+import { WrapDecorator } from "shared/config/storybook/WrapDecorator/WrapDecorator";
 import { Dropdown as DropdownComponent } from "./Dropdown";
 
 const meta: Meta<typeof DropdownComponent> = {
@@ -9,7 +10,10 @@ const meta: Meta<typeof DropdownComponent> = {
   tags: ["shared"],
   args: {
     open: true,
-    trigger: "Dropdown menu button",
+    trigger: (
+      <Avatar src="https://e7.pngegg.com/pngimages/139/726/png-clipart-graphics-computer-icons-user-illustration-man-at-computer-blue-electric-blue.png" />
+    ),
+    roundedTrigger: true,
     items: [
       { id: 1, content: "this is the link 1", href: "#" },
       { id: 2, content: "this is the link 2", href: "#" },
@@ -26,24 +30,23 @@ const meta: Meta<typeof DropdownComponent> = {
       { id: 5, content: "this is the link 5", href: "#" },
     ],
   },
-  decorators: [
-    (Story) => (
-      <div style={{ padding: "220px" }}>
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [WrapDecorator("220px")],
 };
 
 export default meta;
 type Story = StoryObj<typeof DropdownComponent>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    trigger: "Dropdown menu button",
+    roundedTrigger: false,
+  },
 };
 
 export const Disabled: Story = {
   args: {
+    trigger: "Dropdown menu button",
+    roundedTrigger: false,
     readonly: true,
     open: false,
   },
@@ -51,18 +54,12 @@ export const Disabled: Story = {
 
 export const LikeButtonWithIcon: Story = {
   args: {
-    trigger: (
-      <Avatar src="https://e7.pngegg.com/pngimages/139/726/png-clipart-graphics-computer-icons-user-illustration-man-at-computer-blue-electric-blue.png" />
-    ),
     roundedTrigger: true,
   },
 };
 
 export const BottomRightMenu: Story = {
   args: {
-    trigger: (
-      <Avatar src="https://e7.pngegg.com/pngimages/139/726/png-clipart-graphics-computer-icons-user-illustration-man-at-computer-blue-electric-blue.png" />
-    ),
     roundedTrigger: true,
     direction: "bottom right",
   },
@@ -70,9 +67,6 @@ export const BottomRightMenu: Story = {
 
 export const TopLeftMenu: Story = {
   args: {
-    trigger: (
-      <Avatar src="https://e7.pngegg.com/pngimages/139/726/png-clipart-graphics-computer-icons-user-illustration-man-at-computer-blue-electric-blue.png" />
-    ),
     roundedTrigger: true,
     direction: "top left",
   },
@@ -80,9 +74,6 @@ export const TopLeftMenu: Story = {
 
 export const TopRightMenu: Story = {
   args: {
-    trigger: (
-      <Avatar src="https://e7.pngegg.com/pngimages/139/726/png-clipart-graphics-computer-icons-user-illustration-man-at-computer-blue-electric-blue.png" />
-    ),
     roundedTrigger: true,
     direction: "top right",
   },

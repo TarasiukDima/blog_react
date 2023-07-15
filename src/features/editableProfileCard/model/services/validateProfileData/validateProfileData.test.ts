@@ -1,6 +1,6 @@
 import { Countries } from "../../../../../entities/Countries";
 import { Currency } from "../../../../../entities/Currency";
-import { ValidateProfileErrors } from "../../types/editableProfileCardSchema";
+import { ValidateProfileErrors } from "../../consts/consts";
 import { validateProfileData } from "./validateProfileData";
 
 describe("validateProfileData.test", () => {
