@@ -2,6 +2,7 @@
 node_modules
 .idea
 .vscode
+/reports
 /storybook-static
 .loki/report.html
 .loki/report.json
