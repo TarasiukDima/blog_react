@@ -11,6 +11,7 @@ export interface IFlexProps {
   justify?: "start" | "center" | "end" | "between" | "around";
   Tag?: keyof JSX.IntrinsicElements;
   allWidth?: boolean;
+  gap?: "6" | "10" | "15";
 }
 
 const alignToClass = {
@@ -28,6 +29,13 @@ const justifyToClass = {
   around: "jAround",
 };
 
+const gapToClass = {
+  6: "small_gap",
+  10: "middle_gap",
+  15: "big_gap",
+  undefined: "",
+};
+
 export const Flex = memo(
   ({
     className,
@@ -38,22 +46,25 @@ export const Flex = memo(
     justify = "start",
     wrap = "nowrap",
     allWidth = false,
+    gap,
   }: IFlexProps) => {
+    const flexOptionsClasses = {
+      [css.wrap]: wrap === "wrap",
+      [css.allWidth]: allWidth,
+    };
+
+    if (gap) {
+      flexOptionsClasses[css[gapToClass[gap]]] = true;
+    }
+
     return (
       <Tag
-        className={classNames(
-          css.Flex,
-          {
-            [css.wrap]: wrap === "wrap",
-            [css.allWidth]: allWidth,
-          },
-          [
-            className,
-            css[direction],
-            css[alignToClass[align]],
-            css[justifyToClass[justify]],
-          ]
-        )}
+        className={classNames(css.Flex, flexOptionsClasses, [
+          className,
+          css[direction],
+          css[alignToClass[align]],
+          css[justifyToClass[justify]],
+        ])}
       >
         {children}
       </Tag>

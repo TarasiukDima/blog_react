@@ -1,24 +1,15 @@
 @import "shared/styles/mixins";
 @import "shared/styles/variables";
 
-.Dropdown {
-  position: relative;
-
-  &.smallWidth {
-    width: fit-content;
-    max-width: 100%;
-  }
+.smallWidth {
+  width: fit-content;
+  max-width: 100%;
 }
 
 .Dropdown__trigger {
   padding: 0;
   margin: 0;
   color: var(--primary-cl);
-
-  &.disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
-  }
 
   &.rounded {
     border-radius: 50%;
@@ -32,38 +23,12 @@
 }
 
 .Dropdown__list {
-  position: absolute;
-  z-index: 1;
   width: max-content;
   min-width: 100%;
   border: 1px solid var(--dropdown-color);
-  border-radius: 5px;
-  box-shadow: 0 2px 10px var(--dropdown-shadow);
-  color: var(--invert-cl);
-  background-color: var(--invert-bg);
 
   &.disabled {
     opacity: 0.7;
-  }
-
-  &.topLeft {
-    left: 0;
-    bottom: calc(100% + 5px);
-  }
-
-  &.topRight {
-    right: 0;
-    bottom: calc(100% + 5px);
-  }
-
-  &.bottomLeft {
-    left: 0;
-    top: calc(100% + 5px);
-  }
-
-  &.bottomRight {
-    right: 0;
-    top: calc(100% + 5px);
   }
 
   button,
@@ -81,15 +46,10 @@
   width: 100%;
   padding: 8px 10px;
   text-align-last: left;
-  cursor: pointer;
   transition: $transition;
 
   &.active {
     color: var(--primary-color);
     background-color: var(--secondary-color);
-  }
-
-  &.disabled {
-    opacity: 0.7;
   }
 }

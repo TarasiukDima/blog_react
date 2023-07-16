@@ -5,7 +5,7 @@ import { ArticleSortField } from "pages/ArticlesPage";
 import { Select, SelectOptions } from "shared/ui/Select";
 import { OrderVariants } from "shared/const/common";
 import { TArticleOrder } from "shared/types";
-import { VStack } from "shared/ui/Stack";
+import { HStack } from "shared/ui/Stack";
 import css from "./ArticleSortSelector.module.scss";
 
 interface IArticleSortSelectorProps {
@@ -59,7 +59,7 @@ export const ArticleSortSelector = memo(
     );
 
     return (
-      <VStack
+      <HStack
         wrap="wrap"
         justify="start"
         align="stretch"
@@ -80,7 +80,7 @@ export const ArticleSortSelector = memo(
           value={order}
           onChange={onChangeOrder}
         />
-      </VStack>
+      </HStack>
     );
   }
 );

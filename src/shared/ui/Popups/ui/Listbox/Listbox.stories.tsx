@@ -31,6 +31,12 @@ export const Primary: Story = {
   args: {},
 };
 
+export const WithLabel: Story = {
+  args: {
+    label: "Label listbox"
+  },
+};
+
 export const Disabled: Story = {
   args: {
     readonly: true,

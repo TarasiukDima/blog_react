@@ -4,7 +4,9 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink } from "shared/ui/AppLink";
 import { Button, VariantButton } from "shared/ui/Button";
 import { DropdownDirection } from "shared/types/ui";
+import { directionToClass } from "../../styles/consts";
 import css from "./Dropdown.module.scss";
+import popupCss from "../../styles/popup.module.scss";
 
 export interface IDropdownItem {
   id: number;
@@ -25,13 +27,6 @@ interface IDropdownProps {
   open?: boolean;
 }
 
-const directionToClass = {
-  "top left": css.topLeft,
-  "top right": css.topRight,
-  "bottom left": css.bottomLeft,
-  "bottom right": css.bottomRight,
-};
-
 export const Dropdown = ({
   className,
   trigger,
@@ -46,11 +41,11 @@ export const Dropdown = ({
       as="div"
       __demoMode={open}
       className={classNames(
-        css.Dropdown,
+        "",
         {
           [css.smallWidth]: roundedTrigger,
         },
-        [className]
+        [className, popupCss.popup]
       )}
     >
       <Menu.Button
@@ -58,10 +53,10 @@ export const Dropdown = ({
         className={classNames(
           css.Dropdown__trigger,
           {
-            [css.disabled]: readonly,
             [css.rounded]: roundedTrigger,
+            [popupCss.disabled]: readonly,
           },
-          []
+          [popupCss.trigger]
         )}
       >
         {trigger}
@@ -74,7 +69,7 @@ export const Dropdown = ({
           {
             [css.disabled]: readonly,
           },
-          [directionToClass[direction]]
+          [directionToClass[direction], popupCss.options]
         )}
       >
         {items.map(({ content, id, disabled, href, onClick, ariaLabel }) => (
@@ -84,9 +79,9 @@ export const Dropdown = ({
                 css.Dropdown__list_link,
                 {
                   [css.active]: active,
-                  [css.disabled]: disabled,
+                  [popupCss.disabled]: disabled,
                 },
-                []
+                [popupCss.item]
               );
 
               return (

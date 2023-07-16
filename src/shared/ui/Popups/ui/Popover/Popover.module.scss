@@ -1,0 +1,50 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.Popover {}
+
+.Popover__trigger {
+  display: block;
+  color: var(--invert-cl);
+  border: 1px solid var(--invert-bg);
+  background-color: var(--invert-bg);
+  transition: $transition;
+
+  &:not(:disabled):hover {
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+  }
+
+
+  &.triggerLikeButton {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  &.triggerLikeIcon {
+    padding: 3px;
+    width: 45px;
+    height: 45px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: var(--invert-cl);
+      transition: $transition;
+    }
+
+    &:hover svg {
+      fill: var(--primary-color);
+    }
+
+  }
+}
+
+.Popover__panel {
+  min-width: 200px;
+  min-height: 150px;
+  max-height: 50vh;
+  padding: 10px;
+  overflow-y: auto;
+}

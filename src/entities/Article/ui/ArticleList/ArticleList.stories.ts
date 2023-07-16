@@ -11,6 +11,9 @@ const meta: Meta<typeof ArticleList> = {
   title: "entities/Article/ArticleList",
   component: ArticleList,
   tags: ["pages"],
+  args: {
+    virtualized: false,
+  }
 };
 
 export default meta;
@@ -201,7 +204,7 @@ const articlesContent: Array<IArticle> = [
   },
 ];
 
-export const SmallItem: Story = {
+export const SmallItems: Story = {
   args: {
     articles: articlesContent,
     isLoading: false,
@@ -209,7 +212,7 @@ export const SmallItem: Story = {
   },
 };
 
-export const SmallItemSkeleton: Story = {
+export const SmallItemsSkeleton: Story = {
   args: {
     articles: [],
     isLoading: true,
@@ -217,7 +220,7 @@ export const SmallItemSkeleton: Story = {
   },
 };
 
-export const BigItem: Story = {
+export const BigItems: Story = {
   args: {
     articles: articlesContent,
     isLoading: false,
@@ -225,7 +228,7 @@ export const BigItem: Story = {
   },
 };
 
-export const BigItemSkeleton: Story = {
+export const BigItemsSkeleton: Story = {
   args: {
     isLoading: true,
     articles: [],

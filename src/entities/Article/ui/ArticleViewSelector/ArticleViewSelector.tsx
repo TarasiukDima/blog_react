@@ -5,7 +5,7 @@ import GridIcon from "shared/assets/icons/grid.svg";
 import ListIcon from "shared/assets/icons/list.svg";
 import { Button, VariantButton } from "shared/ui/Button";
 import { Icon } from "shared/ui/Icon";
-import { VStack } from "shared/ui/Stack";
+import { HStack } from "shared/ui/Stack";
 import { ArticleView } from "../../model/consts/consts";
 import css from "./ArticleViewSelector.module.scss";
 
@@ -35,7 +35,7 @@ export const ArticleViewSelector = memo(
     };
 
     return (
-      <VStack
+      <HStack
         align="stretch"
         justify="start"
         className={classNames(css.ArticleViewSelector, {}, [className])}
@@ -50,7 +50,7 @@ export const ArticleViewSelector = memo(
             <Icon Svg={el.icon} />
           </Button>
         ))}
-      </VStack>
+      </HStack>
     );
   }
 );

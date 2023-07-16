@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Skeleton } from "shared/ui/Skeleton";
-import { VStack } from "shared/ui/Stack";
+import { HStack } from "shared/ui/Stack";
 import css from "./ArticleListItem.module.scss";
 
 interface IArticleListItemBigSkeletonProps {
@@ -16,8 +16,13 @@ export const ArticleListItemBigSkeleton = memo(
         css.big_item_skeleton,
       ])}
     >
-      <VStack align="center" className={css.ArticleListItem__top}>
-        <Skeleton width={40} height={40} type="circle" />
+      <HStack align="center" className={css.ArticleListItem__top}>
+        <Skeleton
+          className={css.ArticleListItem__top_avatar}
+          width={40}
+          height={40}
+          type="circle"
+        />
 
         <Skeleton
           className={css.ArticleListItem__top_user}
@@ -34,7 +39,7 @@ export const ArticleListItemBigSkeleton = memo(
           type="square"
           place="left"
         />
-      </VStack>
+      </HStack>
 
       <Skeleton
         className={css.ArticleListItem__title}
@@ -60,7 +65,7 @@ export const ArticleListItemBigSkeleton = memo(
 
       <Skeleton height={200} type="square" />
 
-      <VStack
+      <HStack
         allWidth
         justify="between"
         align="center"
@@ -81,7 +86,7 @@ export const ArticleListItemBigSkeleton = memo(
           type="square"
           place="left"
         />
-      </VStack>
+      </HStack>
     </li>
   )
 );

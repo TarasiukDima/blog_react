@@ -1,0 +1,14 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.Card {
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 2px 10px var(--card-shadow);
+  color: var(--invert-bg);
+  background-color: var(--invert-cl);
+
+  & ~ .Card {
+    margin-top: 10px;
+  }
+}

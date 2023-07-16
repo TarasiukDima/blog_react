@@ -166,6 +166,10 @@
   padding: 10px;
 
   .ArticleListItem__top {
+    .ArticleListItem__top_avatar {
+      margin-bottom: 0;
+    }
+
     .ArticleListItem__top_user {
       margin: 0 10px;
     }

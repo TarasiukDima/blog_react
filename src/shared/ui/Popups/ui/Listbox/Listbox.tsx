@@ -1,10 +1,12 @@
 import { Fragment, ReactNode } from "react";
 import { Listbox as HListbox } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { VStack } from "shared/ui/Stack";
+import { HStack } from "shared/ui/Stack";
 import { Paragraph } from "shared/ui/Paragraph";
 import { DropdownDirection } from "shared/types/ui";
+import { directionToClass } from "../../styles/consts";
 import css from "./Listbox.module.scss";
+import popupCss from "../../styles/popup.module.scss";
 
 export interface IListBoxItem {
   id: number;
@@ -24,13 +26,6 @@ interface IListBoxProps {
   onChange: (value: string) => void;
 }
 
-const directionToClass = {
-  "top left": css.topLeft,
-  "top right": css.topRight,
-  "bottom left": css.bottomLeft,
-  "bottom right": css.bottomRight,
-};
-
 export const Listbox = ({
   className,
   readonly = false,
@@ -42,7 +37,7 @@ export const Listbox = ({
   direction = "bottom left",
 }: IListBoxProps) => {
   return (
-    <VStack
+    <HStack
       className={classNames(css.ListboxWrapper, {}, [className])}
       align="end"
       justify="start"
@@ -69,7 +64,7 @@ export const Listbox = ({
             [css.withLabel]: label,
             [css.withoutLabel]: !label,
           },
-          []
+          [popupCss.popup]
         )}
         value={value}
         onChange={onChange}
@@ -79,15 +74,16 @@ export const Listbox = ({
           className={classNames(
             css.ListBox__trigger,
             {
-              [css.disabled]: readonly,
+              [popupCss.disabled]: readonly,
             },
-            []
+            [popupCss.trigger]
           )}
         >
           {value || defaultValue}
         </HListbox.Button>
         <HListbox.Options
           className={classNames(css.ListBox__options, {}, [
+            popupCss.options,
             directionToClass[direction],
           ])}
           as="ul"
@@ -105,10 +101,10 @@ export const Listbox = ({
                     css.ListBox__options_item,
                     {
                       [css.active]: active,
-                      [css.disabled]: disabled,
                       [css.selected]: selected,
+                      [popupCss.disabled]: disabled,
                     },
-                    []
+                    [popupCss.item]
                   )}
                 >
                   {item.content}
@@ -118,6 +114,6 @@ export const Listbox = ({
           ))}
         </HListbox.Options>
       </HListbox>
-    </VStack>
+    </HStack>
   );
 };

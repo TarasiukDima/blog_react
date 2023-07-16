@@ -5,7 +5,7 @@ import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, VariantButton } from "shared/ui/Button";
 import { Title } from "shared/ui/Title";
-import { VStack } from "shared/ui/Stack/";
+import { HStack } from "shared/ui/Stack/";
 import { getUserAuthData } from "../../../../entities/User";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
@@ -61,7 +61,7 @@ export const EditableProfileCardHeader: FC<IEditableProfileCardHeaderProps> = ({
   };
 
   return (
-    <VStack
+    <HStack
       className={classNames(css.EditableProfileCardHeader, {}, [className])}
       align="center"
       justify="between"
@@ -74,6 +74,6 @@ export const EditableProfileCardHeader: FC<IEditableProfileCardHeaderProps> = ({
       </Title>
 
       {showButton()}
-    </VStack>
+    </HStack>
   );
 };
