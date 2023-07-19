@@ -46,6 +46,7 @@ const Modal: FC<IModalProps> = ({
     <Portal>
       <div className={classNames(css.Modal, optionalsClasses, [className])}>
         <Overlay onClick={closeHandler} />
+
         <div className={css.Modal_wrap}>
           <Button
             variant={VariantButton.CLEAR}

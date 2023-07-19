@@ -31,6 +31,12 @@ const config: StorybookConfig = {
       if (config.resolve.extensions) {
         config.resolve.extensions.push(".ts", ".tsx");
       }
+
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        "@": path.resolve(__dirname, "../../src"),
+      };
+
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,

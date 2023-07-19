@@ -13,6 +13,7 @@ import { ArticleRecommendationsList } from "@/features/articleRecommendationsLis
 import { articleDetailsPageReducer } from "../../model/slices";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
+import { ArticleRating } from "@/features/articleRating";
 
 const reducers: TReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
@@ -36,6 +37,7 @@ const ArticleDetailsPage = () => {
       <Section>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
+        <ArticleRating articleId={id} />
         <ArticleDetailsComments id={id} />
         <ArticleRecommendationsList />
       </Section>

@@ -1156,5 +1156,72 @@
       "username": "manager",
       "avatar": "https://www.pngitem.com/pimgs/m/338-3388366_meme-for-steam-avatars-hd-png-download.png"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "I7ofk1u"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "bcPnbbZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "17",
+      "rate": 5,
+      "feedback": "",
+      "id": "HhDFE6U"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "2",
+      "profileId": "1"
+    }
   ]
 }
