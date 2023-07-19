@@ -32,7 +32,6 @@ export const ArticleRecommendationsList = memo(
         <Title Tag="h3">{t("Рекомендации")}</Title>
 
         <ArticleList
-          virtualized={false}
           articles={recommendations || []}
           isLoading={isLoadingRecommendations}
           target="_blank"

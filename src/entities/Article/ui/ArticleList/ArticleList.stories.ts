@@ -11,9 +11,7 @@ const meta: Meta<typeof ArticleList> = {
   title: "entities/Article/ArticleList",
   component: ArticleList,
   tags: ["pages"],
-  args: {
-    virtualized: false,
-  }
+  args: {},
 };
 
 export default meta;
@@ -48,7 +46,7 @@ const articlesContent: Array<IArticle> = [
       {
         id: "4",
         type: ArticleBlockType.CODE,
-        code: "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;",
+        code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
       },
       {
         id: "5",
@@ -139,7 +137,7 @@ const articlesContent: Array<IArticle> = [
       {
         id: "4",
         type: ArticleBlockType.CODE,
-        code: "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;",
+        code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
       },
       {
         id: "5",

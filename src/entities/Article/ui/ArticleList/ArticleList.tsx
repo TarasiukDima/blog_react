@@ -1,6 +1,5 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { List, ListRowProps, WindowScroller } from "react-virtualized";
 import { Paragraph } from "@/shared/ui/Paragraph";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ArticleView } from "../../model/consts/consts";
@@ -16,7 +15,6 @@ interface IArticleListProps {
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
-  virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView, className?: string) => {
@@ -37,7 +35,6 @@ export const ArticleList = memo(
     className = "",
     articles,
     isLoading = false,
-    virtualized = true,
     target,
     view = ArticleView.GRID,
   }: IArticleListProps) => {
@@ -48,71 +45,23 @@ export const ArticleList = memo(
       articles.length :
       Math.ceil(articles.length / itemsPerRow);
 
-    const rowRender = ({ index, isScrolling, key, style }: ListRowProps) => {
-      const items = [];
-      const fromIndex = index * itemsPerRow;
-      const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
-
-      for (let i = fromIndex; i < toIndex; i += 1) {
-        items.push(
-          <ArticleListItem
-            key={articles[i].id}
-            article={articles[i]}
-            view={view}
-            target={target}
-          />
-        );
-      }
-
-      return (
-        <div key={key} style={style} className={css.row}>
-          {items}
-        </div>
-      );
-    };
-
     if (!isLoading && articles.length === 0) {
       return <Paragraph>{t("Статьи не найдены!")}</Paragraph>;
     }
 
-    if (!virtualized) {
-      return (
-        <ul className={classNames(css.ArticleList, {}, [className, css[view]])}>
-          {articles.map((oneArticle) => (
-            <ArticleListItem
-              key={oneArticle.id}
-              article={oneArticle}
-              view={view}
-              target={target}
-            />
-          ))}
-
-          {isLoading && getSkeletons(view)}
-        </ul>
-      );
-    }
-
     return (
-      <WindowScroller>
-        {({ width, height, onChildScroll, isScrolling, scrollTop }) => (
-          <div
-            className={classNames(css.ArticleList, {}, [className, css[view]])}
-          >
-            <List
-              width={width ?? 700}
-              height={height ?? 700}
-              rowHeight={isBig ? height : 350}
-              rowCount={rowCount}
-              rowRenderer={rowRender}
-              autoHeight
-              onScroll={onChildScroll}
-              isScrolling={isScrolling}
-              scrollTop={scrollTop}
-            />
-            {isLoading && getSkeletons(view)}
-          </div>
-        )}
-      </WindowScroller>
+      <ul className={classNames(css.ArticleList, {}, [className, css[view]])}>
+        {articles.map((oneArticle) => (
+          <ArticleListItem
+            key={oneArticle.id}
+            article={oneArticle}
+            view={view}
+            target={target}
+          />
+        ))}
+
+        {isLoading && getSkeletons(view)}
+      </ul>
     );
   }
 );

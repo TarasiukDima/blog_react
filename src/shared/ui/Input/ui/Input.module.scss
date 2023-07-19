@@ -1,5 +1,5 @@
-@import "shared/styles/mixins";
-@import "shared/styles/variables";
+@import "@/shared/styles/mixins";
+@import "@/shared/styles/variables";
 
 .InputWrapper {
   @include dflex(flex-start, flex-end, row);
