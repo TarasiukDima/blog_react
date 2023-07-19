@@ -1,8 +1,8 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { List, ListRowProps, WindowScroller } from "react-virtualized";
-import { Paragraph } from "shared/ui/Paragraph";
-import { classNames } from "shared/lib/classNames/classNames";
+import { Paragraph } from "@/shared/ui/Paragraph";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { ArticleView } from "../../model/consts/consts";
 import { IArticle } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";

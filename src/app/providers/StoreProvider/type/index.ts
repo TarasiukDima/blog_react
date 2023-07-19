@@ -6,15 +6,15 @@ import {
   ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
-import { ILoginSchema } from "features/AuthByUsername";
-import { IAddCommentFormSchema } from "features/addCommentForm";
-import { IArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
-import { IArticleDetailsSchema } from "entities/Article";
-import { IArticlesPageSchema } from "pages/ArticlesPage";
-import { IUserSchema } from "entities/User";
-import { IScrollSchema } from "features/scrollSave";
-import { rtkApi } from "shared/api/apiRTKQuery";
-import { IProfileSchema } from "features/editableProfileCard";
+import { ILoginSchema } from "@/features/AuthByUsername";
+import { IAddCommentFormSchema } from "@/features/addCommentForm";
+import { IArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage";
+import { IArticleDetailsSchema } from "@/entities/Article";
+import { IArticlesPageSchema } from "@/pages/ArticlesPage";
+import { IUserSchema } from "@/entities/User";
+import { IScrollSchema } from "@/features/scrollSave";
+import { rtkApi } from "@/shared/api/apiRTKQuery";
+import { IProfileSchema } from "@/features/editableProfileCard";
 
 export interface IStateSchema {
   user: IUserSchema;

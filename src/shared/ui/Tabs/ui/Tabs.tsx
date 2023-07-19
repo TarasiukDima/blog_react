@@ -1,7 +1,7 @@
 import { ReactNode, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Button } from "shared/ui/Button";
-import { classNames } from "shared/lib/classNames/classNames";
+import { Button } from "@/shared/ui/Button";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import css from "./Tabs.module.scss";
 
 export interface ITabItem {

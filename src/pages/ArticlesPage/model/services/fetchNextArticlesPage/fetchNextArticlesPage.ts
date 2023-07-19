@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { IThunkConfig } from "app/providers/StoreProvider/type";
+import { IThunkConfig } from "@/app/providers/StoreProvider/type";
 import {
   getArticlesCurrentPage,
   getArticlesPageHasMore,

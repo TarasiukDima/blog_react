@@ -1,5 +1,5 @@
 import { ReactNode, memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import css from "./Flex.module.scss";
 
 export interface IFlexProps {

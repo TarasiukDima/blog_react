@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, memo, useEffect, useRef } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import css from "./Input.module.scss";
 
 type THTMLInputProps = Omit<

@@ -1,14 +1,14 @@
 import { FC, memo, useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { LoginModal } from "features/AuthByUsername";
-import { Button } from "shared/ui/Button";
-import { VariantButton } from "shared/ui/Button/ui/Button";
-import { AvatarDropdown } from "features/avatarDropdown";
-import { NotificationButton } from "features/notificationButton";
-import { ButtonSize } from "shared/const/common";
-import { HStack } from "shared/ui/Stack";
-import LoginIcon from "shared/assets/icons/login.svg";
+import { LoginModal } from "@/features/AuthByUsername";
+import { Button } from "@/shared/ui/Button";
+import { VariantButton } from "@/shared/ui/Button/ui/Button";
+import { AvatarDropdown } from "@/features/avatarDropdown";
+import { NotificationButton } from "@/features/notificationButton";
+import { ButtonSize } from "@/shared/const/common";
+import { HStack } from "@/shared/ui/Stack";
+import LoginIcon from "@/shared/assets/icons/login.svg";
 import {
   getUserAuthData,
 } from "../../../entities/User";

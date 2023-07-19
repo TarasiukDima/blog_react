@@ -1,10 +1,10 @@
 import { FC, memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "app/providers/ThemeProvider";
-import { Button } from "shared/ui/Button";
-import { Theme } from "shared/const/common";
-import { VariantButton } from "shared/ui/Button/ui/Button";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useTheme } from "@/app/providers/ThemeProvider";
+import { Button } from "@/shared/ui/Button";
+import { Theme } from "@/shared/const/common";
+import { VariantButton } from "@/shared/ui/Button/ui/Button";
 import css from "./ThemeSwitcher.module.scss";
 
 interface IThemeSwitcherProps {

@@ -1,5 +1,5 @@
-import { IStateSchema } from "app/providers/StoreProvider";
-import { OrderVariants } from "shared/const/common";
+import { IStateSchema } from "@/app/providers/StoreProvider";
+import { OrderVariants } from "@/shared/const/common";
 import { ArticleType, ArticleView } from "../../../../entities/Article";
 import { ArticleSortField } from "../consts/consts";
 

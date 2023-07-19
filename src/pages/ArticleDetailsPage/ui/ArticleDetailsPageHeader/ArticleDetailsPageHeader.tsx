@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { AppLink, VariantLink } from "shared/ui/AppLink";
-import { routesPath } from "app/config/roteConfig";
 import { useSelector } from "react-redux";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppLink, VariantLink } from "@/shared/ui/AppLink";
+import { routesPath } from "@/app/config/roteConfig";
 import { getArticleData } from "../../../../entities/Article";
 import { getCanEditArticle } from "../../model/selectors/article";
 import css from "./ArticleDetailsPageHeader.module.scss";

@@ -4,9 +4,9 @@ import {
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
-import { $api } from "shared/api/api";
-import { scrollReducer } from "features/scrollSave";
-import { rtkApi } from "shared/api/apiRTKQuery";
+import { $api } from "@/shared/api/api";
+import { scrollReducer } from "@/features/scrollSave";
+import { rtkApi } from "@/shared/api/apiRTKQuery";
 import { userReducer } from "../../../../entities/User";
 import { IStateSchema, IThunkExtraArg } from "../type";
 import { createReducerManager } from "./reducerManager";

@@ -1,10 +1,10 @@
-import { TestAsyncThunk } from "shared/lib/tests/mocks/TestAsyncThunk/TestAsyncThunk";
+import { TestAsyncThunk } from "@/shared/lib/tests/mocks/TestAsyncThunk/TestAsyncThunk";
 import { initArticlesPage } from "./initArticlesPage";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 
 jest.mock("../fetchArticlesList/fetchArticlesList");
 
-jest.spyOn(URLSearchParams.prototype, 'get').mockImplementation((key) => key);
+jest.spyOn(URLSearchParams.prototype, "get").mockImplementation((key) => key);
 
 describe("initArticlesPage.test", () => {
   const paramsUrl = jest.mocked("URLSearchParams");

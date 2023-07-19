@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { Avatar } from "shared/ui/Avatar";
-import { WrapDecorator } from "shared/config/storybook/WrapDecorator/WrapDecorator";
+import { Avatar } from "@/shared/ui/Avatar";
+import { WrapDecorator } from "@/shared/config/storybook/WrapDecorator/WrapDecorator";
 import { Dropdown as DropdownComponent } from "./Dropdown";
 
 const meta: Meta<typeof DropdownComponent> = {

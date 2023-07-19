@@ -1,9 +1,9 @@
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { AddCommentForm } from "features/addCommentForm";
-import { CommentList } from "entities/Comment";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { AddCommentForm } from "@/features/addCommentForm";
+import { CommentList } from "@/entities/Comment";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";

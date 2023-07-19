@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { WrapDecorator } from "shared/config/storybook/WrapDecorator/WrapDecorator";
+import { WrapDecorator } from "@/shared/config/storybook/WrapDecorator/WrapDecorator";
 import { CurrencySelect } from "./CurrencySelect";
 
 const meta: Meta<typeof CurrencySelect> = {

@@ -1,21 +1,14 @@
-import {
-  FC,
-  KeyboardEvent,
-  MouseEvent,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { Portal } from "shared/ui/Portal/ui/Portal";
+import { FC, ReactNode } from "react";
+import { Portal } from "@/shared/ui/Portal/ui/Portal";
 import {
   TClassesOptionsObject,
   classNames,
-} from "shared/lib/classNames/classNames";
-import { useTheme } from "app/providers/ThemeProvider";
-import { Button, VariantButton } from "shared/ui/Button";
-import { Theme } from "shared/const/common";
+} from "@/shared/lib/classNames/classNames";
+import { useTheme } from "@/app/providers/ThemeProvider";
+import { Button, VariantButton } from "@/shared/ui/Button";
+import { Theme } from "@/shared/const/common";
+import { Overlay } from "@/shared/ui/Overlay";
+import { useModal } from "@/shared/lib/hooks/useModal/useModal";
 import css from "./Modal.module.scss";
 
 interface IModalProps {
@@ -26,8 +19,6 @@ interface IModalProps {
   lazy?: boolean;
 }
 
-const ANIMATION_DELAY = 250;
-
 const Modal: FC<IModalProps> = ({
   className,
   children,
@@ -35,41 +26,11 @@ const Modal: FC<IModalProps> = ({
   closeModalHandler,
   lazy,
 }) => {
-  const [isClosing, setIsClosing] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { isClosing, isMounted, closeHandler } = useModal({
+    onClose: closeModalHandler,
+    isOpen,
+  });
   const { theme } = useTheme();
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
-
-  const closeHandler = useCallback(() => {
-    if (closeModalHandler) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        closeModalHandler();
-        setIsClosing(false);
-      }, ANIMATION_DELAY);
-    }
-    return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-    };
-  }, [closeModalHandler]);
-
-  const onKeyDownHandler = useCallback(
-    (event: KeyboardEvent<HTMLDivElement>) => {
-      if (event.key === "Escape") {
-        closeHandler();
-      }
-    },
-    [closeHandler]
-  );
 
   const optionalsClasses: TClassesOptionsObject = {
     [css.opened]: isOpen,
@@ -81,18 +42,11 @@ const Modal: FC<IModalProps> = ({
     return null;
   }
 
-  const onContentClick = (e: MouseEvent) => {
-    e.stopPropagation();
-  };
-
   return (
     <Portal>
-      <div
-        className={classNames(css.Modal, optionalsClasses, [className])}
-        onClick={closeHandler}
-        onKeyDown={onKeyDownHandler}
-      >
-        <div className={css.Modal_wrap} onClick={onContentClick}>
+      <div className={classNames(css.Modal, optionalsClasses, [className])}>
+        <Overlay onClick={closeHandler} />
+        <div className={css.Modal_wrap}>
           <Button
             variant={VariantButton.CLEAR}
             className={css.close_modal}

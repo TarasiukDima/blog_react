@@ -1,5 +1,5 @@
-import { mockLocalStorage } from "shared/lib/tests/mocks/localstorageMock/localstorageMock";
-import { USER_LOCALSTORAGE_KEY } from "shared/const/localstorage";
+import { mockLocalStorage } from "@/shared/lib/tests/mocks/localstorageMock/localstorageMock";
+import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
 import { userReducer, userActions } from "./userSlice";
 import { IUser, IUserSchema } from "../types/user";
 

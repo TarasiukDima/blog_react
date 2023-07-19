@@ -1,13 +1,13 @@
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Text } from "shared/ui/Text";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { Text } from "@/shared/ui/Text";
 import {
   DynamicModulesLoader,
   TReducersList,
-} from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
+} from "@/shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
 import { ProfileCard } from "../../../entities/Profile";
 import { Countries } from "../../../entities/Countries";
 import { Currency } from "../../../entities/Currency";

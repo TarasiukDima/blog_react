@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import AvatarIcon from "shared/assets/test/avatar.png";
+import AvatarIcon from "@/shared/assets/test/avatar.png";
 import { Currency } from "../../../../entities/Currency";
 import { Countries } from "../../../../entities/Countries";
 import { ProfileCard as ProfileCardComponent } from "./ProfileCard";

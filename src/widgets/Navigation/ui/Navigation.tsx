@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { TRouteObject } from "shared/types";
-import { AppLink } from "shared/ui/AppLink";
-import { ButtonSize } from "shared/const/common";
-import { VariantLink } from "shared/ui/AppLink/ui/AppLink";
+import { TRouteObject } from "@/shared/types";
+import { AppLink } from "@/shared/ui/AppLink";
+import { ButtonSize } from "@/shared/const/common";
+import { VariantLink } from "@/shared/ui/AppLink/ui/AppLink";
 import css from "./Navigation.module.scss";
 
 export interface INavigationProps {

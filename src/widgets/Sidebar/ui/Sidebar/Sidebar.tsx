@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import css from "./Sidebar.module.scss";
 
 interface ISidebarProps {

@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Title } from "shared/ui/Title";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Title } from "@/shared/ui/Title";
 import { ArticleList } from "../../../../entities/Article";
 import { useArticleRecommendationList } from "../../api/articleRecommendationsApi";
 import css from "./ArticleRecommendationsList.module.scss";

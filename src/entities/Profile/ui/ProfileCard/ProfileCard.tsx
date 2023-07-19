@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Input } from "shared/ui/Input";
-import { Spinner } from "shared/ui/Spinner";
-import { Text } from "shared/ui/Text";
-import { Avatar } from "shared/ui/Avatar";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Input } from "@/shared/ui/Input";
+import { Spinner } from "@/shared/ui/Spinner";
+import { Text } from "@/shared/ui/Text";
+import { Avatar } from "@/shared/ui/Avatar";
 import { Currency, CurrencySelect } from "../../../../entities/Currency";
 import { Countries, CountriesSelect } from "../../../../entities/Countries";
 import { IProfile } from "../../model/types/user";

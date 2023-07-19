@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import { Section } from "shared/ui/Section";
-import { Title } from "shared/ui/Title";
+import { Section } from "@/shared/ui/Section";
+import { Title } from "@/shared/ui/Title";
 import css from "./ArticleEditPage.module.scss";
 
 interface IArticleEditPageProps {

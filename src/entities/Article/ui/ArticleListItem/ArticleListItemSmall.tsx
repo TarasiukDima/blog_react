@@ -1,11 +1,11 @@
 import { CSSProperties, HTMLAttributeAnchorTarget, memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import { AppLink } from "shared/ui/AppLink";
-import { Span } from "shared/ui/Span";
-import { routesPath } from "app/config/roteConfig";
-import { Icon } from "shared/ui/Icon";
-import EyeIcon from "shared/assets/icons/eye.svg";
-import defaultImg from "shared/assets/images/placeholder.png";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppLink } from "@/shared/ui/AppLink";
+import { Span } from "@/shared/ui/Span";
+import { routesPath } from "@/app/config/roteConfig";
+import { Icon } from "@/shared/ui/Icon";
+import EyeIcon from "@/shared/assets/icons/eye.svg";
+import defaultImg from "@/shared/assets/images/placeholder.png";
 import { IArticle } from "../../model/types/article";
 import css from "./ArticleListItem.module.scss";
 

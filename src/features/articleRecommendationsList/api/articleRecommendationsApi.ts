@@ -1,5 +1,5 @@
-import { IArticle } from "entities/Article";
-import { rtkApi } from "shared/api/apiRTKQuery";
+import { IArticle } from "@/entities/Article";
+import { rtkApi } from "@/shared/api/apiRTKQuery";
 
 const recommendationsAPi = rtkApi.injectEndpoints({
   endpoints: (build) => ({

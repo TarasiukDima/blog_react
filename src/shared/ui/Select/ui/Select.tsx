@@ -1,5 +1,5 @@
 import React, { SelectHTMLAttributes, memo, useMemo, useRef } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import css from "./Select.module.scss";
 
 type THTMLSelectProps = Omit<

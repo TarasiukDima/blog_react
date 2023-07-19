@@ -1,11 +1,11 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import GridIcon from "shared/assets/icons/grid.svg";
-import ListIcon from "shared/assets/icons/list.svg";
-import { Button, VariantButton } from "shared/ui/Button";
-import { Icon } from "shared/ui/Icon";
-import { HStack } from "shared/ui/Stack";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import GridIcon from "@/shared/assets/icons/grid.svg";
+import ListIcon from "@/shared/assets/icons/list.svg";
+import { Button, VariantButton } from "@/shared/ui/Button";
+import { Icon } from "@/shared/ui/Icon";
+import { HStack } from "@/shared/ui/Stack";
 import { ArticleView } from "../../model/consts/consts";
 import css from "./ArticleViewSelector.module.scss";
 

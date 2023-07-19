@@ -1,7 +1,7 @@
 import { screen, waitFor } from "@testing-library/dom";
 import userEvent from "@testing-library/user-event";
-import { $api } from "shared/api/api";
-import { renderComponent } from "shared/lib/tests/renderComponent";
+import { $api } from "@/shared/api/api";
+import { renderComponent } from "@/shared/lib/tests/renderComponent";
 import { Currency } from "../../../entities/Currency";
 import { Countries } from "../../../entities/Countries";
 import { EditableProfileCard } from "./EditableProfileCard";

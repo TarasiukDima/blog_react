@@ -1,16 +1,16 @@
 import { memo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { ArticleList } from "entities/Article";
-import { getArticles } from "pages/ArticlesPage/model/slices/articlesPageSlice";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { ArticleList } from "@/entities/Article";
+import { getArticles } from "@/pages/ArticlesPage/model/slices/articlesPageSlice";
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
   getArticlesPageView,
-} from "pages/ArticlesPage/model/selectors/articles";
-import { initArticlesPage } from "pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage";
+} from "@/pages/ArticlesPage/model/selectors/articles";
+import { initArticlesPage } from "@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage";
 
 export const ArticleInfiniteList = memo(() => {
   const dispatch = useAppDispatch();

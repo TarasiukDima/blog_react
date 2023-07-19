@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { navigationApp } from "app/config/roteConfig";
+import { navigationApp } from "@/app/config/roteConfig";
 import { Navigation as NavigationComponent } from "./Navigation";
 
 const meta: Meta<typeof NavigationComponent> = {

@@ -1,4 +1,4 @@
-import { TestAsyncThunk } from "shared/lib/tests/mocks/TestAsyncThunk/TestAsyncThunk";
+import { TestAsyncThunk } from "@/shared/lib/tests/mocks/TestAsyncThunk/TestAsyncThunk";
 import { Countries } from "../../../../../entities/Countries";
 import { Currency } from "../../../../../entities/Currency";
 import { updateProfileData } from "./updateProfileData";

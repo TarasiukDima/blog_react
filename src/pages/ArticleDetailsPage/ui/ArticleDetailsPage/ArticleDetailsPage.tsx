@@ -1,15 +1,15 @@
 import { memo } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { Section } from "shared/ui/Section";
-import { Title } from "shared/ui/Title";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { Section } from "@/shared/ui/Section";
+import { Title } from "@/shared/ui/Title";
 import {
   DynamicModulesLoader,
   TReducersList,
-} from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
-import { ArticleDetails } from "entities/Article";
-import { ArticleRecommendationsList } from "features/articleRecommendationsList";
+} from "@/shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
+import { ArticleDetails } from "@/entities/Article";
+import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { articleDetailsPageReducer } from "../../model/slices";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";

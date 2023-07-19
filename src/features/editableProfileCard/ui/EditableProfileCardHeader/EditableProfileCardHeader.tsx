@@ -1,11 +1,11 @@
 import { FC, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, VariantButton } from "shared/ui/Button";
-import { Title } from "shared/ui/Title";
-import { HStack } from "shared/ui/Stack/";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, VariantButton } from "@/shared/ui/Button";
+import { Title } from "@/shared/ui/Title";
+import { HStack } from "@/shared/ui/Stack/";
 import { getUserAuthData } from "../../../../entities/User";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";

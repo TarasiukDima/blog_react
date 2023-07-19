@@ -1,12 +1,12 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { Section } from "shared/ui/Section";
-import { Title } from "shared/ui/Title";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { Section } from "@/shared/ui/Section";
+import { Title } from "@/shared/ui/Title";
 import {
   DynamicModulesLoader,
   TReducersList,
-} from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
+} from "@/shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
 import { articlesPageReducer } from "../../model/slices/articlesPageSlice";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";

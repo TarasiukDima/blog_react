@@ -3,8 +3,8 @@ import {
   createSlice,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import { IComment } from "entities/Comment";
-import { IStateSchema } from "app/providers/StoreProvider";
+import { IComment } from "@/entities/Comment";
+import { IStateSchema } from "@/app/providers/StoreProvider";
 import { IArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
 import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 

@@ -4,8 +4,8 @@ import { useStore } from "react-redux";
 import {
   IReduxStoreWithManager,
   TStateSchemaKey,
-} from "app/providers/StoreProvider";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+} from "@/app/providers/StoreProvider";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
 
 export type TReducersList = {
   [name in TStateSchemaKey]?: Reducer;

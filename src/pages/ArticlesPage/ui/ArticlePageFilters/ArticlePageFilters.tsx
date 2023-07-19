@@ -1,20 +1,20 @@
 import { memo, useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Input } from "shared/ui/Input";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Input } from "@/shared/ui/Input";
 import {
   ArticleType,
   ArticleTypeTabs,
   ArticleView,
   ArticleViewSelector,
-} from "entities/Article";
-import { ArticleSortSelector } from "entities/Article/ui/ArticleSortSelector/ArticleSortSelector";
-import { TArticleOrder } from "shared/types";
-import { Tabs, ITabItem } from "shared/ui/Tabs";
-import { fetchArticlesList } from "pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
+} from "@/entities/Article";
+import { ArticleSortSelector } from "@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector";
+import { TArticleOrder } from "@/shared/types";
+import { Tabs, ITabItem } from "@/shared/ui/Tabs";
+import { fetchArticlesList } from "@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
 import {
   getArticlesOrder,
   getArticlesPageView,

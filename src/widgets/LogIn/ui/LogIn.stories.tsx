@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { navigationApp } from "app/config/roteConfig";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { WrapDecorator } from "shared/config/storybook/WrapDecorator/WrapDecorator";
+import { navigationApp } from "@/app/config/roteConfig";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { WrapDecorator } from "@/shared/config/storybook/WrapDecorator/WrapDecorator";
 import { LogIn as LogInComponent } from "./LogIn";
 
 const meta: Meta<typeof LogInComponent> = {

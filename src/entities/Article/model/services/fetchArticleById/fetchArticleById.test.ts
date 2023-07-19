@@ -1,5 +1,5 @@
-import { TestAsyncThunk } from "shared/lib/tests/mocks/TestAsyncThunk/TestAsyncThunk";
-import { IStateSchema } from "app/providers/StoreProvider";
+import { TestAsyncThunk } from "@/shared/lib/tests/mocks/TestAsyncThunk/TestAsyncThunk";
+import { IStateSchema } from "@/app/providers/StoreProvider";
 import { fetchArticleById } from "./fetchArticleById";
 
 describe("fetchArticleById.test", () => {

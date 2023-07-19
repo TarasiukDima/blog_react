@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ButtonSize } from "shared/const/common";
-import LoginIcon from "shared/assets/icons/login.svg";
+import { ButtonSize } from "@/shared/const/common";
+import LoginIcon from "@/shared/assets/icons/login.svg";
 import { Button as ButtonComponent, VariantButton } from "./Button";
 
 const meta: Meta<typeof ButtonComponent> = {

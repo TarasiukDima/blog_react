@@ -1,15 +1,15 @@
 import React, { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Input } from "shared/ui/Input";
-import { Text } from "shared/ui/Text";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { Spinner } from "shared/ui/Spinner";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Input } from "@/shared/ui/Input";
+import { Text } from "@/shared/ui/Text";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { Spinner } from "@/shared/ui/Spinner";
 import {
   DynamicModulesLoader,
   TReducersList,
-} from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
+} from "@/shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";

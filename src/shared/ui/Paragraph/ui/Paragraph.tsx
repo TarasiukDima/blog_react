@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode, memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import css from "./Paragraph.module.scss";
 
 interface IParagraphProps {

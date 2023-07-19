@@ -3,10 +3,10 @@ import {
   createEntityAdapter,
   createSlice,
 } from "@reduxjs/toolkit";
-import { IStateSchema } from "app/providers/StoreProvider";
-import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "shared/const/localstorage";
-import { TArticleOrder } from "shared/types";
-import { OrderVariants } from "shared/const/common";
+import { IStateSchema } from "@/app/providers/StoreProvider";
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
+import { TArticleOrder } from "@/shared/types";
+import { OrderVariants } from "@/shared/const/common";
 import {
   ArticleType,
   ArticleView,

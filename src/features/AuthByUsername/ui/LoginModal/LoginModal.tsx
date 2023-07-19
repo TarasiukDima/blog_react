@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import { Modal } from "shared/ui/Modal";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Spinner } from "shared/ui/Spinner";
+import { Modal } from "@/shared/ui/Modal";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Spinner } from "@/shared/ui/Spinner";
 // import { LoginForm } from "../LoginForm/LoginForm";
 import { LoginFormAsync } from "../LoginForm/LoginForm.async";
 

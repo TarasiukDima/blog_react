@@ -8,12 +8,12 @@ import {
 } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
-import { useInfiniteScroll } from "shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
-import { getScrollByPath, scrollActions } from "features/scrollSave";
-import { classNames } from "shared/lib/classNames/classNames";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { IStateSchema } from "app/providers/StoreProvider";
+import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
+import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
+import { getScrollByPath, scrollActions } from "@/features/scrollSave";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { IStateSchema } from "@/app/providers/StoreProvider";
 import css from "./Section.module.scss";
 
 interface ISectionProps {

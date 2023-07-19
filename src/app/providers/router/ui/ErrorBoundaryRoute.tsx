@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { routesPath } from "app/config/roteConfig";
 import { useRouteError, Navigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { routesPath } from "@/app/config/roteConfig";
 
 interface IError {
   message: string;

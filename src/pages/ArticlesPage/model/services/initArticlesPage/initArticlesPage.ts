@@ -8,7 +8,7 @@ import {
   IStateSchema,
   IThunkConfig,
   IThunkExtraArg,
-} from "app/providers/StoreProvider/type";
+} from "@/app/providers/StoreProvider/type";
 import { getArticlesInitedState } from "../../selectors/articles";
 import { articlesPageActions } from "../../slices/articlesPageSlice";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";

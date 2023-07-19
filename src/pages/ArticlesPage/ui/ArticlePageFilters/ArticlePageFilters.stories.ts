@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { ArticlePageFilters as ArticlePageFiltersComponent } from "./ArticlePageFilters";
 
 const meta: Meta<typeof ArticlePageFiltersComponent> = {

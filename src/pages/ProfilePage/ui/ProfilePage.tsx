@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { EditableProfileCard } from "features/editableProfileCard";
-import { Section } from "shared/ui/Section";
-import { Title } from "shared/ui/Title";
+import { EditableProfileCard } from "@/features/editableProfileCard";
+import { Section } from "@/shared/ui/Section";
+import { Title } from "@/shared/ui/Title";
 
 const ProfilePage = () => {
   const { id } = useParams<{ id: string }>();
 
-  console.log('id', id);
+  console.log("id", id);
   const { t } = useTranslation("profile");
 
   if (!id) {

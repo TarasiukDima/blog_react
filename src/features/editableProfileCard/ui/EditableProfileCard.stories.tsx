@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { Currency } from "entities/Currency";
-import { Countries } from "entities/Countries";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { Currency } from "@/entities/Currency";
+import { Countries } from "@/entities/Countries";
 import { EditableProfileCard } from "./EditableProfileCard";
 
 const userData = {

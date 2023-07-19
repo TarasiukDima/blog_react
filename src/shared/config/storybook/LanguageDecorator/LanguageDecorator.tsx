@@ -1,7 +1,7 @@
 import { StoryFn } from "@storybook/react";
 import { Suspense, useEffect } from "react";
 import { I18nextProvider } from "react-i18next";
-import i18n from "shared/config/i18n/i18nForStorybook";
+import i18n from "@/shared/config/i18n/i18nForStorybook";
 
 i18n.on("languageChanged", (locale) => {
   const direction = i18n.dir(locale);

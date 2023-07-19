@@ -1,4 +1,4 @@
-import { IStateSchema } from "app/providers/StoreProvider";
+import { IStateSchema } from "@/app/providers/StoreProvider";
 import { getScrollValues, getScrollByPath } from "./scrollSaveSelectors";
 
 describe("ScrollSelectors.test", () => {

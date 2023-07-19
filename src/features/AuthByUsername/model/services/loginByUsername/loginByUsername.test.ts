@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from "shared/lib/tests/mocks/TestAsyncThunk/TestAsyncThunk";
-import { mockLocalStorage } from "shared/lib/tests/mocks/localstorageMock/localstorageMock";
-import { USER_LOCALSTORAGE_KEY } from "shared/const/localstorage";
+import { TestAsyncThunk } from "@/shared/lib/tests/mocks/TestAsyncThunk/TestAsyncThunk";
+import { mockLocalStorage } from "@/shared/lib/tests/mocks/localstorageMock/localstorageMock";
+import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
 import { userActions } from "../../../../../entities/User";
 import { loginByUsername } from "./loginByUsername";
 

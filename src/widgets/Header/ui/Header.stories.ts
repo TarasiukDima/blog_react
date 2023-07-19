@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { navigationApp } from "app/config/roteConfig";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { navigationApp } from "@/app/config/roteConfig";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Header as HeaderComponent } from "./Header";
 
 const meta: Meta<typeof HeaderComponent> = {

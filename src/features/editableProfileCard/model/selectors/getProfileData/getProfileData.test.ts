@@ -1,4 +1,4 @@
-import { IStateSchema } from "app/providers/StoreProvider";
+import { IStateSchema } from "@/app/providers/StoreProvider";
 import { Countries } from "../../../../../entities/Countries";
 import { Currency } from "../../../../../entities/Currency";
 import { getProfileData } from "./getProfileData";
@@ -15,7 +15,7 @@ describe("getCounter", () => {
           country: "Belarus" as Countries,
           city: "Brest",
           username: "admin",
-          avatar: 'avatar_url',
+          avatar: "avatar_url",
         },
       },
     };

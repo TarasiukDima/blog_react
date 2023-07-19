@@ -1,7 +1,7 @@
 import { StoryFn } from "@storybook/react";
-import { ThemeProvider, useTheme } from "app/providers/ThemeProvider";
 import { ReactNode, useEffect, useLayoutEffect } from "react";
-import { Theme } from "shared/const/common";
+import { ThemeProvider, useTheme } from "@/app/providers/ThemeProvider";
+import { Theme } from "@/shared/const/common";
 
 // for update state button on change global option  in storybook's tools
 const ComponentWrap = ({

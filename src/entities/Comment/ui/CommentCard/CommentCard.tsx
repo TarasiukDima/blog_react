@@ -1,10 +1,10 @@
 import { ReactNode, memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Skeleton } from "shared/ui/Skeleton";
-import { Paragraph } from "shared/ui/Paragraph";
-import { Avatar } from "shared/ui/Avatar";
-import { AppLink } from "shared/ui/AppLink";
-import { routesPath } from "app/config/roteConfig";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { Paragraph } from "@/shared/ui/Paragraph";
+import { Avatar } from "@/shared/ui/Avatar";
+import { AppLink } from "@/shared/ui/AppLink";
+import { routesPath } from "@/app/config/roteConfig";
 import { IComment } from "../../model/types/comment";
 import css from "./CommentCard.module.scss";
 

@@ -1,22 +1,22 @@
 import { ReactNode, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { classNames } from "shared/lib/classNames/classNames";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {
   DynamicModulesLoader,
   TReducersList,
-} from "shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
-import { useAppDispatch } from "shared/lib/hooks/userAppDIspatch/userAppDIspatch";
-import { Text } from "shared/ui/Text";
-import { Avatar } from "shared/ui/Avatar";
-import { Skeleton } from "shared/ui/Skeleton";
-import { Title } from "shared/ui/Title";
-import { Icon } from "shared/ui/Icon";
-import { Paragraph } from "shared/ui/Paragraph";
-import imgDefault from "shared/assets/images/placeholder.png";
-import ImgCalendar from "shared/assets/icons/calendar.svg";
-import ImgEye from "shared/assets/icons/eye.svg";
+} from "@/shared/lib/components/DynamicModulesLoader/DynamicModulesLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/userAppDIspatch/userAppDIspatch";
+import { Text } from "@/shared/ui/Text";
+import { Avatar } from "@/shared/ui/Avatar";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { Title } from "@/shared/ui/Title";
+import { Icon } from "@/shared/ui/Icon";
+import { Paragraph } from "@/shared/ui/Paragraph";
+import imgDefault from "@/shared/assets/images/placeholder.png";
+import ImgCalendar from "@/shared/assets/icons/calendar.svg";
+import ImgEye from "@/shared/assets/icons/eye.svg";
 import { ArticleCodeBlockDetails } from "../ArticleCodeBlockDetails/ArticleCodeBlockDetails";
 import { ArticleImageBlockDetails } from "../ArticleImageBlockDetails/ArticleImageBlockDetails";
 import { ArticleTextBlockDetails } from "../ArticleTextBlockDetails/ArticleTextBlockDetails";

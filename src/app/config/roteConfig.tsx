@@ -1,4 +1,4 @@
-import { TRouteObject } from "shared/types";
+import { TRouteObject } from "@/shared/types";
 
 export enum AppRoutes {
   MAIN = "main",

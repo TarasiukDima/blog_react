@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import LoginIcon from "shared/assets/icons/login.svg";
-import { ButtonSize } from "shared/const/common";
+import LoginIcon from "@/shared/assets/icons/login.svg";
+import { ButtonSize } from "@/shared/const/common";
 import { AppLink as AppLinkComponent, VariantLink } from "./AppLink";
 
 const meta: Meta<typeof AppLinkComponent> = {
