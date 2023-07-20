@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card } from "./Card";
+import { Card as CardComponent } from "./Card";
 
 const meta = {
   title: "shared/Card",
-  component: Card,
+  component: CardComponent,
   tags: ["shared"],
   args: {},
-} satisfies Meta<typeof Card>;
+} satisfies Meta<typeof CardComponent>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
+export const Card: Story = {
   args: {
-    children: "children card"
+    children: "children card",
   },
 };

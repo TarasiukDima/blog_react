@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { navigationApp } from "@/app/config/roteConfig";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { WrapDecorator } from "@/shared/config/storybook/WrapDecorator/WrapDecorator";
+import { userMockInitial } from "@/shared/lib/tests/mocks/mockData/mockData";
 import { LogIn as LogInComponent } from "./LogIn";
 
 const meta: Meta<typeof LogInComponent> = {
@@ -30,14 +31,7 @@ export const WithUser: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      user: {
-        authData: {
-          id: "1",
-          username: "admin",
-          avatar:
-            "https://e7.pngegg.com/pngimages/139/726/png-clipart-graphics-computer-icons-user-illustration-man-at-computer-blue-electric-blue.png",
-        },
-      },
+      user: userMockInitial,
     }),
   ],
 };

@@ -17,21 +17,21 @@ type Story = StoryObj<typeof ButtonComponent>;
 
 export const WithoutStyles: Story = {
   args: {
-    children: "Link without styles",
+    children: "Button without styles",
     variant: VariantButton.CLEAR,
   },
 };
 
 export const Standard: Story = {
   args: {
-    children: "Link in text",
+    children: "Button",
     variant: VariantButton.STANDARD,
   },
 };
 
 export const Rounded: Story = {
   args: {
-    children: "Link in text",
+    children: "Button",
     variant: VariantButton.ROUNDED,
   },
 };
@@ -45,7 +45,7 @@ export const ForIcons: Story = {
 
 export const Disabled: Story = {
   args: {
-    children: "Link without styles",
+    children: "Button without styles",
     disabled: true,
     variant: VariantButton.STANDARD,
   },

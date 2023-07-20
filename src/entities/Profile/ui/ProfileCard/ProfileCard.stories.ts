@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import AvatarIcon from "@/shared/assets/test/avatar.png";
-import { Currency } from "../../../../entities/Currency";
-import { Countries } from "../../../../entities/Countries";
+import { userMockData } from "@/shared/lib/tests/mocks/mockData/mockData";
 import { ProfileCard as ProfileCardComponent } from "./ProfileCard";
 
 const meta: Meta<typeof ProfileCardComponent> = {
@@ -13,22 +11,11 @@ const meta: Meta<typeof ProfileCardComponent> = {
 export default meta;
 type Story = StoryObj<typeof ProfileCardComponent>;
 
-const userData = {
-  first: "User",
-  lastname: "Userov",
-  age: 91,
-  currency: Currency.RUB,
-  country: Countries.Belarus,
-  city: "Brest",
-  username: "admin",
-  avatar: AvatarIcon as string,
-};
-
 export const WithDataCanEdit: Story = {
   args: {
     readonly: false,
     isLoading: false,
-    data: userData,
+    data: userMockData,
     error: "",
   },
 };
@@ -37,7 +24,7 @@ export const Readonly: Story = {
   args: {
     readonly: true,
     isLoading: false,
-    data: userData,
+    data: userMockData,
     error: "",
   },
 };

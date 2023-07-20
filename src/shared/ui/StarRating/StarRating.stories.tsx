@@ -25,7 +25,7 @@ export const WithSize: Story = {
   },
 };
 
-export const Choosen: Story = {
+export const Chosen: Story = {
   args: {
     selectedStars: 5,
   },

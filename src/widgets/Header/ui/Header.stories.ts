@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { navigationApp } from "@/app/config/roteConfig";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { userMockInitial } from "@/shared/lib/tests/mocks/mockData/mockData";
 import { Header as HeaderComponent } from "./Header";
 
 const meta: Meta<typeof HeaderComponent> = {
@@ -28,12 +29,7 @@ export const WithUser: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      user: {
-        authData: {
-          id: "1",
-          username: "admin",
-        },
-      },
+      user: userMockInitial,
     }),
   ],
 };

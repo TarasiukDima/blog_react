@@ -3,6 +3,8 @@ import webpack, { DefinePlugin, RuleSetRule } from "webpack";
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
 
+const SRC_PATH = "../../src";
+
 const config: StorybookConfig = {
   stories: ["../../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -15,7 +17,6 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: "@storybook/react-webpack5",
-    // name: "@storybook/react-webpack5",
     options: {},
   },
   staticDirs: ["../../public"],
@@ -24,7 +25,7 @@ const config: StorybookConfig = {
     if (config?.resolve) {
       // to check the src folder first
       config.resolve.modules = [
-        path.resolve(__dirname, "..", "..", "src"),
+        path.resolve(__dirname, SRC_PATH),
         "node_modules",
       ];
 
@@ -34,7 +35,7 @@ const config: StorybookConfig = {
 
       config.resolve.alias = {
         ...config.resolve.alias,
-        "@": path.resolve(__dirname, "../../src"),
+        "@": path.resolve(__dirname, SRC_PATH),
       };
 
       config.resolve.fallback = {

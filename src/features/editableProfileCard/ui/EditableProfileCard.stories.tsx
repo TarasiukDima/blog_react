@@ -1,34 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { Currency } from "@/entities/Currency";
-import { Countries } from "@/entities/Countries";
+import {
+  profileMockInitial,
+  userMockInitial,
+} from "@/shared/lib/tests/mocks/mockData/mockData";
 import { EditableProfileCard } from "./EditableProfileCard";
-
-const userData = {
-  id: "1",
-  first: "User",
-  lastname: "Userov",
-  age: 91,
-  currency: Currency.EUR,
-  country: Countries.Belarus,
-  city: "Brest",
-  username: "admin",
-};
-
-const profileInitial = {
-  isLoading: false,
-  error: "",
-  form: userData,
-  readonly: true,
-  data: userData,
-};
-
-const initialUserState = {
-  user: {
-    _inited: true,
-    authData: { id: userData.id }
-  },
-};
 
 const meta = {
   title: "features/EditableProfileCard",
@@ -39,8 +15,8 @@ const meta = {
   },
   decorators: [
     StoreDecorator({
-      profile: { ...profileInitial },
-      ...initialUserState,
+      profile: profileMockInitial,
+      user: userMockInitial,
     }),
   ],
 } satisfies Meta<typeof EditableProfileCard>;
@@ -56,8 +32,8 @@ export const CanEdit: Story = {
   args: {},
   decorators: [
     StoreDecorator({
-      profile: { ...profileInitial, readonly: false },
-      ...initialUserState,
+      profile: { ...profileMockInitial, readonly: false },
+      user: userMockInitial,
     }),
   ],
 };

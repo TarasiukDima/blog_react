@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { NotificationItem } from "./NotificationItem";
+import { notificationsListMockData } from "@/shared/lib/tests/mocks/mockData/mockData";
 
 const meta = {
   title: "entities/NotificationItem",
@@ -13,10 +14,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: {
-    item: {
-      id: "1",
-      title: "Уведомление 1",
-      description: "Произошло какое-то событие",
-    },
+    item: notificationsListMockData[0],
+  },
+};
+
+export const WithLink: Story = {
+  args: {
+    item: notificationsListMockData[1],
   },
 };

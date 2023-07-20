@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Popover } from "./Popover";
+import { Popover as PopoverComponent } from "./Popover";
 
 const meta = {
   title: "shared/Popover",
-  component: Popover,
+  component: PopoverComponent,
   tags: ["shared"],
   args: {},
-} satisfies Meta<typeof Popover>;
+} satisfies Meta<typeof PopoverComponent>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
+export const Popover: Story = {
   args: {
     children: "Content for show in popover",
-    trigger: "trigger popover"
+    trigger: "trigger popover",
   },
 };
